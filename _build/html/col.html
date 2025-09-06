@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Análisis de datos exploratorio &#8212; Dengue en Colombia</title>
+    <title>COLOMBIS &#8212; Dengue en Colombia</title>
   
   
   
@@ -57,10 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'col';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="COLOMBIS" href="col.html" />
+    <link rel="next" title="Atlántico" href="atl.html" />
+    <link rel="prev" title="Análisis de datos exploratorio" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -143,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,14 +167,14 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Análisis de datos exploratorio
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="col.html">COLOMBIS</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">COLOMBIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="atl.html"><strong>Atlántico</strong></a></li>
 </ul>
 
@@ -248,7 +247,7 @@
       
       
       
-      <li><a href="https://github.com/Darally06/SEMINARIO.git/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Darally06/SEMINARIO.git/issues/new?title=Issue%20on%20page%20%2Fcol.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +277,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/col.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +287,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -349,9 +348,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -362,25 +359,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Análisis de datos exploratorio</h1>
+    <h1>COLOMBIS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">1. Introducción</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-de-los-datos">2. Descripción de los datos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#origen-y-contexto">Origen y contexto</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-de-estudio">Variables de estudio</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-y-preparacion">Limpieza y preparación</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -390,73 +373,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analisis-de-datos-exploratorio">
-<h1><strong>Análisis de datos exploratorio</strong><a class="headerlink" href="#analisis-de-datos-exploratorio" title="Link to this heading">#</a></h1>
-<section id="introduccion">
-<h2>1. Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
-<p>El dengue es una enfermedad febril aguda de etiología viral, transmitida por vectores del género Aedes (A. aegypti y A. albopictus). Según la Organización mundial de la salud (OMS), esta patología representa una de las mayores cargas sanitarias en regiones tropicales y subtropicales, con un estimado de 390 millones de infecciones anuales a nivel global (OMS, 2023). Su espectro clínico varía desde formas asintomáticas hasta cuadros graves que requieren intervención médica urgente.</p>
-<p>En Colombia, el dengue constituye un reto epidemiológico prioritario debido a su patrón endemo-epidémico y la amplia distribución del vector en el territorio nacional (73.3% según el INS, 2024). El Instituto Nacional de Salud (INS) reporta ciclos epidémicos cada 3 a 5 años, asociados a factores climáticos y sociodemográficos. Desde 2013, el país ha fortalecido sus estrategias de vigilancia reforzada a través del Sistema Nacional de Vigilancia en Salud pública (SIVIGILA), que exige la notificación obligatoria de casos sospechosos y confirmados.</p>
-</section>
-<section id="descripcion-de-los-datos">
-<h2>2. Descripción de los datos<a class="headerlink" href="#descripcion-de-los-datos" title="Link to this heading">#</a></h2>
-<section id="origen-y-contexto">
-<h3>Origen y contexto<a class="headerlink" href="#origen-y-contexto" title="Link to this heading">#</a></h3>
-<p>Los datos proceden del reporte de casos de Dengue y Dengue grave en el Sistema Nacional de Vigilancia en Salud Pública (SIVIGILA) de Colombia.</p>
-<p>Para cada escala en el estudio se tomaron registros que abarcan periodos de tiempo de acuerdo a la disponibilidad de datos por nivel:</p>
-<ul class="simple">
-<li><p><strong>Colombia:</strong>
-Periodo de análisis: 2013-2023
-Cantidad de casos: +900.000</p></li>
-<li><p><strong>Atlántico</strong>
-Periodo de análisis: 2017-2024
-Cantidad de casos: +34.000</p></li>
-<li><p><strong>Barranquilla:</strong>
-Periodo de análisis: 2024
-Cantidad de casos: +3.000</p></li>
-</ul>
-</section>
-<section id="variables-de-estudio">
-<h3>Variables de estudio<a class="headerlink" href="#variables-de-estudio" title="Link to this heading">#</a></h3>
-<p>Los conjuntos de datos utilizados comparten las mismas variables de estudio que describen cada caso registrado de forma anónima.
-Se toman en cuenta 16 variables de estudio, agrupadas en las siguientes categorías:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Categoría</p></th>
-<th class="head"><p>Variables</p></th>
-<th class="head"><p>Tipo</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Demográficas</p></td>
-<td><p>Edad, Sexo, Etnia, Tipo de aseguradora</p></td>
-<td><p>Numérica/Categórica nominal</p></td>
-</tr>
-<tr class="row-odd"><td><p>Espaciales</p></td>
-<td><p>Departamento, Municipio, Area</p></td>
-<td><p>Categóricas nominales</p></td>
-</tr>
-<tr class="row-even"><td><p>Evento</p></td>
-<td><p>Evento, Tipo de caso, Semana, Año, Hospitalización, Muerte de paciente</p></td>
-<td><p>Categóricas nominales, Numéricas</p></td>
-</tr>
-<tr class="row-odd"><td><p>Temporales</p></td>
-<td><p>Fecha de inicio de síntomas, Fecha de consulta, Fecha de notificación</p></td>
-<td><p>Numérica, Categórica ordinal</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="limpieza-y-preparacion">
-<h3>Limpieza y preparación<a class="headerlink" href="#limpieza-y-preparacion" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Problemas detectados</p></li>
-<li><p>Ajustes aplicados</p></li>
-</ol>
-</section>
-</section>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="colombis">
+<h1>COLOMBIS<a class="headerlink" href="#colombis" title="Link to this heading">#</a></h1>
+<p>aqui va lo de colombia</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -489,12 +408,21 @@ Se toman en cuenta 16 variables de estudio, agrupadas en las siguientes categor�
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Análisis de datos exploratorio</strong></p>
+      </div>
+    </a>
     <a class="right-next"
-       href="col.html"
+       href="atl.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">COLOMBIS</p>
+        <p class="prev-next-title"><strong>Atlántico</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -504,27 +432,6 @@ Se toman en cuenta 16 variables de estudio, agrupadas en las siguientes categor�
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">1. Introducción</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-de-los-datos">2. Descripción de los datos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#origen-y-contexto">Origen y contexto</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-de-estudio">Variables de estudio</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-y-preparacion">Limpieza y preparación</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
