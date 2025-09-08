@@ -372,7 +372,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-datos"><strong>Calidad de Datos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-variabla-ciclo-vital"><strong>Creación Variabla Ciclo Vital</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-variable-ciclo-vital"><strong>Creación Variable Ciclo Vital</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-faltantes"><strong>Valores Faltantes</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorizar-variables"><strong>Categorizar Variables</strong></a></li>
 </ul>
@@ -416,110 +416,184 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="calidad-de-datos">
-<h2><strong>Calidad de Datos</strong><a class="headerlink" href="#calidad-de-datos" title="Link to this heading">#</a></h2>
-<section id="creacion-variabla-ciclo-vital">
-<h3><strong>Creación Variabla Ciclo Vital</strong><a class="headerlink" href="#creacion-variabla-ciclo-vital" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;Mapa\COLOMBIA.shp&quot;</span><span class="p">)</span>
-<span class="n">inc210</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;tasa_inc_dengue210.csv&quot;</span><span class="p">)</span>
-<span class="n">inc220</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;tasa_inc_dengue220.csv&quot;</span><span class="p">)</span>
-<span class="n">casos210</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;casos_dengue_clasico.csv&#39;</span><span class="p">)</span>
-<span class="n">casos220</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;casos_dengue_grave.csv&#39;</span><span class="p">)</span>
-<span class="n">col</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Data/data_colombia.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">DataSourceError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;Mapa\COLOMBIA.shp&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">inc210</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;tasa_inc_dengue210.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">inc220</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;tasa_inc_dengue220.csv&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\geopandas\io\file.py:316,</span> in <span class="ni">_read_file</span><span class="nt">(filename, bbox, mask, columns, rows, engine, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>             <span class="n">filename</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span> <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;pyogrio&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">316</span>     <span class="k">return</span> <span class="n">_read_file_pyogrio</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span>         <span class="n">filename</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span> <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;fiona&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_file_like</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\geopandas\io\file.py:576,</span> in <span class="ni">_read_file_pyogrio</span><span class="nt">(path_or_bytes, bbox, mask, rows, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>         <span class="s2">&quot;The &#39;include_fields&#39; and &#39;ignore_fields&#39; keywords are deprecated, and &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="s2">&quot;will be removed in a future release. You can use the &#39;columns&#39; keyword &quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">572</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;columns&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;include_fields&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">576</span> <span class="k">return</span> <span class="n">pyogrio</span><span class="o">.</span><span class="n">read_dataframe</span><span class="p">(</span><span class="n">path_or_bytes</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pyogrio\geopandas.py:275,</span> in <span class="ni">read_dataframe</span><span class="nt">(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, fid_as_index, use_arrow, on_invalid, arrow_to_pandas_kwargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">use_arrow</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span>     <span class="c1"># For arrow, datetimes are read as is.</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span>     <span class="c1"># For numpy IO, datetimes are read as string values to preserve timezone info</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="c1"># as numpy does not directly support timezones.</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;datetime_as_string&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">275</span> <span class="n">result</span> <span class="o">=</span> <span class="n">read_func</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="n">path_or_buffer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="n">read_geometry</span><span class="o">=</span><span class="n">read_geometry</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="n">force_2d</span><span class="o">=</span><span class="n">gdal_force_2d</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="n">skip_features</span><span class="o">=</span><span class="n">skip_features</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span>     <span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="n">fids</span><span class="o">=</span><span class="n">fids</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="n">sql</span><span class="o">=</span><span class="n">sql</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="n">sql_dialect</span><span class="o">=</span><span class="n">sql_dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span>     <span class="n">return_fids</span><span class="o">=</span><span class="n">fid_as_index</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span> <span class="k">if</span> <span class="n">use_arrow</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pyogrio\raw.py:198,</span> in <span class="ni">read</span><span class="nt">(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, return_fids, datetime_as_string, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Read OGR data source into numpy arrays.</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="sd"> IMPORTANT: non-linear geometry types (e.g., MultiSurface) are converted</span>
-<span class="sd">   (...)    194 </span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="n">dataset_kwargs</span> <span class="o">=</span> <span class="n">_preprocess_options_key_value</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">if</span> <span class="n">kwargs</span> <span class="k">else</span> <span class="p">{}</span>
-<span class="ne">--&gt; </span><span class="mi">198</span> <span class="k">return</span> <span class="n">ogr_read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="n">get_vsi_path_or_buffer</span><span class="p">(</span><span class="n">path_or_buffer</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span>     <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="n">read_geometry</span><span class="o">=</span><span class="n">read_geometry</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="n">force_2d</span><span class="o">=</span><span class="n">force_2d</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="n">skip_features</span><span class="o">=</span><span class="n">skip_features</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span>     <span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="n">mask</span><span class="o">=</span><span class="n">_mask_to_wkb</span><span class="p">(</span><span class="n">mask</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>     <span class="n">fids</span><span class="o">=</span><span class="n">fids</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="n">sql</span><span class="o">=</span><span class="n">sql</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="n">sql_dialect</span><span class="o">=</span><span class="n">sql_dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">return_fids</span><span class="o">=</span><span class="n">return_fids</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">dataset_kwargs</span><span class="o">=</span><span class="n">dataset_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">datetime_as_string</span><span class="o">=</span><span class="n">datetime_as_string</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="p">)</span>
-
-<span class="nn">File pyogrio/_io.pyx:1313,</span> in <span class="ni">pyogrio._io.ogr_read</span><span class="nt">()</span>
-
-<span class="nn">File pyogrio/_io.pyx:232,</span> in <span class="ni">pyogrio._io.ogr_open</span><span class="nt">()</span>
-
-<span class="ne">DataSourceError</span>: Mapa\COLOMBIA.shp: No such file or directory
-</pre></div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ano</th>
+      <th>area</th>
+      <th>cod_dpto_o</th>
+      <th>cod_eve</th>
+      <th>cod_mun_o</th>
+      <th>departamento</th>
+      <th>edad</th>
+      <th>fecha_consulta</th>
+      <th>fecha_hospitalizacion</th>
+      <th>fecha_inicio_sintomas</th>
+      <th>...</th>
+      <th>municipio</th>
+      <th>pertenencia_etnica</th>
+      <th>regimen_salud</th>
+      <th>semana</th>
+      <th>sexo</th>
+      <th>tipo_caso</th>
+      <th>uni_med</th>
+      <th>evento</th>
+      <th>edad_aï¿½os</th>
+      <th>ciclo_vital</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2013</td>
+      <td>1</td>
+      <td>5</td>
+      <td>210</td>
+      <td>660</td>
+      <td>ANTIOQUIA</td>
+      <td>70</td>
+      <td>2013-04-05</td>
+      <td>2013-04-06</td>
+      <td>2013-04-05</td>
+      <td>...</td>
+      <td>SAN LUIS</td>
+      <td>6</td>
+      <td>S</td>
+      <td>52</td>
+      <td>M</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Clasico</td>
+      <td>70.0</td>
+      <td>Adulto mayor</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2013</td>
+      <td>1</td>
+      <td>5</td>
+      <td>210</td>
+      <td>660</td>
+      <td>ANTIOQUIA</td>
+      <td>62</td>
+      <td>2013-02-10</td>
+      <td>NaN</td>
+      <td>2013-02-07</td>
+      <td>...</td>
+      <td>SAN LUIS</td>
+      <td>6</td>
+      <td>S</td>
+      <td>46</td>
+      <td>M</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Clasico</td>
+      <td>62.0</td>
+      <td>Adulto mayor</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2013</td>
+      <td>1</td>
+      <td>8</td>
+      <td>210</td>
+      <td>1</td>
+      <td>ATLANTICO</td>
+      <td>78</td>
+      <td>2013-12-25</td>
+      <td>NaN</td>
+      <td>2013-12-22</td>
+      <td>...</td>
+      <td>BARRANQUILLA</td>
+      <td>6</td>
+      <td>S</td>
+      <td>9</td>
+      <td>M</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Clasico</td>
+      <td>78.0</td>
+      <td>Adulto mayor</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013</td>
+      <td>3</td>
+      <td>5</td>
+      <td>210</td>
+      <td>142</td>
+      <td>ANTIOQUIA</td>
+      <td>56</td>
+      <td>2013-08-07</td>
+      <td>2013-08-07</td>
+      <td>2013-07-31</td>
+      <td>...</td>
+      <td>CARACOLI</td>
+      <td>6</td>
+      <td>S</td>
+      <td>47</td>
+      <td>M</td>
+      <td>3</td>
+      <td>1</td>
+      <td>Clasico</td>
+      <td>56.0</td>
+      <td>Adulto</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013</td>
+      <td>1</td>
+      <td>5</td>
+      <td>210</td>
+      <td>893</td>
+      <td>ANTIOQUIA</td>
+      <td>51</td>
+      <td>2013-05-11</td>
+      <td>NaN</td>
+      <td>2013-05-07</td>
+      <td>...</td>
+      <td>YONDO (CASABE)</td>
+      <td>6</td>
+      <td>C</td>
+      <td>37</td>
+      <td>M</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Clasico</td>
+      <td>51.0</td>
+      <td>Adulto</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div></div></div>
 </div>
-</div>
-</div>
+<section id="calidad-de-datos">
+<h2><strong>Calidad de Datos</strong><a class="headerlink" href="#calidad-de-datos" title="Link to this heading">#</a></h2>
+<section id="creacion-variable-ciclo-vital">
+<h3><strong>Creación Variable Ciclo Vital</strong><a class="headerlink" href="#creacion-variable-ciclo-vital" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span><span class="p">[</span><span class="s2">&quot;edad_años&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">col</span><span class="p">[</span><span class="s2">&quot;uni_med&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">],</span>   <span class="c1"># ya está en años</span>
@@ -688,50 +762,6 @@ memory usage: 173.5+ MB
 <h2><strong>Funciones</strong><a class="headerlink" href="#funciones" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa Tasa de Incidencia Dengue</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">graficar_tasa_inc_dengue</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">anio</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Grafica la tasa de incidencia de dengue por departamento en un año específico.</span>
-<span class="sd">    </span>
-<span class="sd">    Parámetros:</span>
-<span class="sd">        archivo_csv (str): ruta al CSV con las columnas [departamento, año, evento, tasa_inc_100k].</span>
-<span class="sd">        archivo_shp (str): ruta al shapefile de Colombia.</span>
-<span class="sd">        anio (int): año a graficar.</span>
-<span class="sd">        evento (str, opcional): &quot;DENGUE&quot; o &quot;DENGUE GRAVE&quot;. Si None, usa ambos.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-
-    <span class="c1"># === 2. Normalizar nombres ===</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-    <span class="c1"># === 3. Filtrar por año (y evento si se pasa como parámetro) ===</span>
-    <span class="n">df_anio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;ano&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">]</span>
-    
-
-    <span class="c1"># === 4. Unir shapefile con datos ===</span>
-    <span class="n">gdf</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_anio</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
-
-    <span class="c1"># === 5. Graficar mapa ===</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
-    <span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;tasa_inc_100k&quot;</span><span class="p">,</span>
-             <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
-             <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-             <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
-             <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-             <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s2">&quot;Tasa de incidencia (por 100k habitantes)&quot;</span><span class="p">})</span>
-    
-    <span class="n">titulo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Tasa de incidencia del dengue </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2"> en Colombia - </span><span class="si">{</span><span class="n">anio</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titulo</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">graficar_evolucion_evento</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">evento</span><span class="p">,</span> <span class="n">titulo</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Grafica la evolución semanal de casos de un evento específico (ej. 210: clásico, 220: grave).</span>
@@ -740,19 +770,19 @@ memory usage: 173.5+ MB
 
     <span class="c1"># === 1. Asegurar tipos ===</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;año&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;año&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ano&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ano&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
     <span class="c1"># === 2. Filtrar por evento ===</span>
     <span class="n">df_evento</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;evento&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">evento</span><span class="p">]</span>
 
     <span class="c1"># === 3. Agrupar por semana y año ===</span>
-    <span class="n">agg</span> <span class="o">=</span> <span class="n">df_evento</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;año&quot;</span><span class="p">,</span> <span class="s2">&quot;semana&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;casos&quot;</span><span class="p">)</span>
+    <span class="n">agg</span> <span class="o">=</span> <span class="n">df_evento</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;ano&quot;</span><span class="p">,</span> <span class="s2">&quot;semana&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;casos&quot;</span><span class="p">)</span>
 
     <span class="c1"># === 4. Crear etiqueta semana-año ===</span>
-    <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana_año&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;año&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+    <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana_año&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;ano&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
 
     <span class="c1"># === 5. Ordenar cronológicamente ===</span>
-    <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;año&quot;</span><span class="p">,</span> <span class="s2">&quot;semana&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;ano&quot;</span><span class="p">,</span> <span class="s2">&quot;semana&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># === 6. Graficar línea ===</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -803,6 +833,8 @@ memory usage: 173.5+ MB
 
     <span class="c1"># === 5. Unir shapefile con datos ===</span>
     <span class="n">gdf</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_anio</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+    <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;casos&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;casos&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
 
     <span class="c1"># === 6. Graficar mapa ===</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
@@ -1714,6 +1746,75 @@ ano
 <img alt="_images/1c426de0d00d9917e25a6626c7ff6ecc2c82fe618dce1809bea2993e9dbf7db1.png" src="_images/1c426de0d00d9917e25a6626c7ff6ecc2c82fe618dce1809bea2993e9dbf7db1.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">graficar_evolucion_hospitalizados</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">evento</span><span class="p">,</span> <span class="n">titulo</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Grafica la evolución semanal de hospitalizados por evento (&quot;Clasico&quot; o &quot;Grave&quot;).</span>
+<span class="sd">    El eje x solo muestra el año en la semana 1.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># === 1. Asegurar tipos ===</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ano&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ano&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;evento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;evento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>   <span class="c1"># Normalizar (Clasico / Grave)</span>
+
+    <span class="c1"># === 2. Filtrar por evento y hospitalizados ===</span>
+    <span class="n">df_evento</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;evento&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">evento</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;hospitalizado&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
+
+    <span class="k">if</span> <span class="n">df_evento</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No hay hospitalizados registrados para </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># === 3. Agrupar por semana y año ===</span>
+    <span class="n">agg</span> <span class="o">=</span> <span class="n">df_evento</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;ano&quot;</span><span class="p">,</span> <span class="s2">&quot;semana&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;hospitalizados&quot;</span><span class="p">)</span>
+
+    <span class="c1"># === 4. Crear etiqueta semana-año ===</span>
+    <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana_año&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;ano&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+
+    <span class="c1"># === 5. Ordenar cronológicamente ===</span>
+    <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;ano&quot;</span><span class="p">,</span> <span class="s2">&quot;semana&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># === 6. Graficar línea ===</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana_año&quot;</span><span class="p">],</span> <span class="n">agg</span><span class="p">[</span><span class="s2">&quot;hospitalizados&quot;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+    <span class="c1"># === 7. Generar título automático ===</span>
+    <span class="k">if</span> <span class="n">titulo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">titulo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Evolución semanal de hospitalizados por Dengue </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2"> (2013–2023)&quot;</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titulo</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Número de hospitalizados&quot;</span><span class="p">)</span>
+
+    <span class="c1"># === 8. Etiquetas del eje x solo en semana 1 ===</span>
+    <span class="n">xticks_pos</span> <span class="o">=</span> <span class="n">agg</span><span class="p">[</span><span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">xticks_labels</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">agg</span><span class="p">[</span><span class="s2">&quot;semana&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;ano&quot;</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">xticks_pos</span><span class="p">,</span> <span class="n">xticks_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    
+<span class="n">graficar_evolucion_hospitalizados</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s1">&#39;Clasico&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3c0a0ceed20808d5f8f5bb326563897269f5b9d5feed224d4e7c5c65e6d3a759.png" src="_images/3c0a0ceed20808d5f8f5bb326563897269f5b9d5feed224d4e7c5c65e6d3a759.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_evolucion_hospitalizados</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s1">&#39;Grave&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7221a681d906f03121e141c3bef52125c5889f52237c807cc925bfc90fe90748.png" src="_images/7221a681d906f03121e141c3bef52125c5889f52237c807cc925bfc90fe90748.png" />
+</div>
+</div>
 </section>
 <section id="mapas">
 <h2><strong>Mapas</strong><a class="headerlink" href="#mapas" title="Link to this heading">#</a></h2>
@@ -1721,7 +1822,8 @@ ano
 <h3><strong>Cantidad de Casos por Evento</strong><a class="headerlink" href="#cantidad-de-casos-por-evento" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_casos_dengue</span><span class="p">(</span><span class="n">casos210</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">anio</span><span class="o">=</span><span class="mi">2019</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;clásico&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">2024</span><span class="p">):</span>
+    <span class="n">mapa_casos_dengue</span><span class="p">(</span><span class="n">casos210</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">anio</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;clásico&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1729,7 +1831,47 @@ ano
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/02e49c3f61da2744d7e509d29ae8511ed50c508095b733233c3ddce22530e796.png" src="_images/02e49c3f61da2744d7e509d29ae8511ed50c508095b733233c3ddce22530e796.png" />
+<img alt="_images/4604b9f39e4812f3ecd6ce6e138dd84d23fcd4b41d651d37763377a491ad2e5d.png" src="_images/4604b9f39e4812f3ecd6ce6e138dd84d23fcd4b41d651d37763377a491ad2e5d.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/8dc98ca95171abec4b92bf1d5dece8a6389adcde9fc70536cfe18e7347dc147e.png" src="_images/8dc98ca95171abec4b92bf1d5dece8a6389adcde9fc70536cfe18e7347dc147e.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/3aeaf93ff24514e1201b3c7da58d07671aeb7683c4f429f8e32e0004367bf1b4.png" src="_images/3aeaf93ff24514e1201b3c7da58d07671aeb7683c4f429f8e32e0004367bf1b4.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/5116c275d5c90b40de444fa0bdf0c95ab0a9c3e0332d6e5f15691ae788517e29.png" src="_images/5116c275d5c90b40de444fa0bdf0c95ab0a9c3e0332d6e5f15691ae788517e29.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/1dd49bcf3d7168ba3288e8db0f478e1fdc5f45daf7d25367f7a5aabe624c6286.png" src="_images/1dd49bcf3d7168ba3288e8db0f478e1fdc5f45daf7d25367f7a5aabe624c6286.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/4540c91fa60e86da67a75b9120bb0e3144a8bb0b9f6dbc1da8e5eccdaeac7b73.png" src="_images/4540c91fa60e86da67a75b9120bb0e3144a8bb0b9f6dbc1da8e5eccdaeac7b73.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/4fae40a7921bda3f3ad2d13b8e7bea663823b21d9deb9257d9eba54539a0497f.png" src="_images/4fae40a7921bda3f3ad2d13b8e7bea663823b21d9deb9257d9eba54539a0497f.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/bdbb80414cafca1ca8d6607a550ef6fa0239a5246aa86010a88030e575671997.png" src="_images/bdbb80414cafca1ca8d6607a550ef6fa0239a5246aa86010a88030e575671997.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/f8dc2714458209277c3a660d219a269fa798fee04841c36382d6d8265991dd9c.png" src="_images/f8dc2714458209277c3a660d219a269fa798fee04841c36382d6d8265991dd9c.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/3303283ef74aca203301ba21c4484eb5061ac7fb7d68127993be5dee0872849f.png" src="_images/3303283ef74aca203301ba21c4484eb5061ac7fb7d68127993be5dee0872849f.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/6aae2405f02bcfbb76b875c28c75a6f350f2ec8d85503aa238ddce709bc2274c.png" src="_images/6aae2405f02bcfbb76b875c28c75a6f350f2ec8d85503aa238ddce709bc2274c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1754,7 +1896,8 @@ ano
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_casos_dengue</span><span class="p">(</span><span class="n">casos220</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">anio</span><span class="o">=</span><span class="mi">2019</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;grave&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">2024</span><span class="p">):</span>
+    <span class="n">mapa_casos_dengue</span><span class="p">(</span><span class="n">casos220</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">anio</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;grave&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1762,7 +1905,47 @@ ano
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/b38c6da4b424748267e42648344dedf99fb4c6672534e8a90f82c1dfc3fb7320.png" src="_images/b38c6da4b424748267e42648344dedf99fb4c6672534e8a90f82c1dfc3fb7320.png" />
+<img alt="_images/21bff6f2bcbd7465f1bd1408597ddf95bd19188de69402b5b3d15ddd629e5a00.png" src="_images/21bff6f2bcbd7465f1bd1408597ddf95bd19188de69402b5b3d15ddd629e5a00.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/278db9c426e5776cd4788d148fda716bebf78f0d57de78ef5638300f08162960.png" src="_images/278db9c426e5776cd4788d148fda716bebf78f0d57de78ef5638300f08162960.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/a238be110895fc8000c27dfc22adbc8a08323859bd9a4a2eec20e41e0a1da027.png" src="_images/a238be110895fc8000c27dfc22adbc8a08323859bd9a4a2eec20e41e0a1da027.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/bd33c7db688e3a400836505d5b08ea733c130ed13cf55783d7ee952955bbf411.png" src="_images/bd33c7db688e3a400836505d5b08ea733c130ed13cf55783d7ee952955bbf411.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/a562d3c72989de6de3379dfc0173d8ca8d34bc07b6907fcc4a417119cbd40c73.png" src="_images/a562d3c72989de6de3379dfc0173d8ca8d34bc07b6907fcc4a417119cbd40c73.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/f223416ddaf7ba17bf1803c253cf9f6629a9ac3a55ced47141a04771905cf3fb.png" src="_images/f223416ddaf7ba17bf1803c253cf9f6629a9ac3a55ced47141a04771905cf3fb.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/d6175573c9e56e3f273931ee2493fc65d38b0a5080445b9a68c63db2f214bb95.png" src="_images/d6175573c9e56e3f273931ee2493fc65d38b0a5080445b9a68c63db2f214bb95.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/aa107e022999c2efa7115e4fa58176977f117c8c25c336761906ec951bd80343.png" src="_images/aa107e022999c2efa7115e4fa58176977f117c8c25c336761906ec951bd80343.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/3cdff8af97baa7b7a9de40da01af32d76d192b1798548e09dd1b1b5e50861f90.png" src="_images/3cdff8af97baa7b7a9de40da01af32d76d192b1798548e09dd1b1b5e50861f90.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/c61bf9cc7ba845427fd3466d46d0c7a8922fa098383c52fa0caca9175d36edb3.png" src="_images/c61bf9cc7ba845427fd3466d46d0c7a8922fa098383c52fa0caca9175d36edb3.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/7229276facfc50372aeeaeb7482c61f0505f0b9b9eea0f6447bd780c5b016ed0.png" src="_images/7229276facfc50372aeeaeb7482c61f0505f0b9b9eea0f6447bd780c5b016ed0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1810,7 +1993,7 @@ ano
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">2015</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">2024</span><span class="p">):</span>
     <span class="n">graficar_tasa_inc_dengue</span><span class="p">(</span><span class="n">inc220</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">anio</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;clásico&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1819,11 +2002,47 @@ ano
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/1022289e94577763f83f0c2a45f09dbdc8a38f26ca9f04563acc810c53e104c5.png" src="_images/1022289e94577763f83f0c2a45f09dbdc8a38f26ca9f04563acc810c53e104c5.png" />
+<img alt="_images/c86cc6d69d642c57e14781fffaa89970afa5359aa6f6e83e8997feff0d5c9a0d.png" src="_images/c86cc6d69d642c57e14781fffaa89970afa5359aa6f6e83e8997feff0d5c9a0d.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/6e7cdbbea0d057ecf9e6d44c70e6b0c2e4adbe60a0494501de5856a617cf20ec.png" src="_images/6e7cdbbea0d057ecf9e6d44c70e6b0c2e4adbe60a0494501de5856a617cf20ec.png" />
+<img alt="_images/aafd7800b574c03e39d883355f31f104713da2e4b80ee542edb138f8eeabb568.png" src="_images/aafd7800b574c03e39d883355f31f104713da2e4b80ee542edb138f8eeabb568.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/0030203f9490755ee3242157e74e76c2d61ae7de659852618281af55e617c4d5.png" src="_images/0030203f9490755ee3242157e74e76c2d61ae7de659852618281af55e617c4d5.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/3d647156bc8e1f602db0f9221fa2992ede4f2b6ed1a2ba7cb0caf344fcfa931f.png" src="_images/3d647156bc8e1f602db0f9221fa2992ede4f2b6ed1a2ba7cb0caf344fcfa931f.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/c9ce7febc5c2a592ec917e10cfc3a091cd0541f8b3c5cf42265795a476c4986b.png" src="_images/c9ce7febc5c2a592ec917e10cfc3a091cd0541f8b3c5cf42265795a476c4986b.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/2aa5de0caca15c3b444ca608a1347a787e03404da8224a636a61cdcd06d72369.png" src="_images/2aa5de0caca15c3b444ca608a1347a787e03404da8224a636a61cdcd06d72369.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/b23395fe39f684d0907686e3f48bb22ec8acf9c5de27d70d007f94930af8d302.png" src="_images/b23395fe39f684d0907686e3f48bb22ec8acf9c5de27d70d007f94930af8d302.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/b9466526c7349b583b7dc2632130a60aabeee16ddc8e0810e21be977e85e98bb.png" src="_images/b9466526c7349b583b7dc2632130a60aabeee16ddc8e0810e21be977e85e98bb.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/be9d21304b3db72eba752d007be78da24ff349922a1f219cf333a02b340f2249.png" src="_images/be9d21304b3db72eba752d007be78da24ff349922a1f219cf333a02b340f2249.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/cbf256e16002c304ccd01eee75b23a557c9bff8d453e8f4dc5f21373d2a49ac0.png" src="_images/cbf256e16002c304ccd01eee75b23a557c9bff8d453e8f4dc5f21373d2a49ac0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1200 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/9c809204d254a57b2a223c1ff2e7e8b772aa050410b8fb34e13fba26ef3b9811.png" src="_images/9c809204d254a57b2a223c1ff2e7e8b772aa050410b8fb34e13fba26ef3b9811.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1933,7 +2152,7 @@ ano
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-datos"><strong>Calidad de Datos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-variabla-ciclo-vital"><strong>Creación Variabla Ciclo Vital</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-variable-ciclo-vital"><strong>Creación Variable Ciclo Vital</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-faltantes"><strong>Valores Faltantes</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorizar-variables"><strong>Categorizar Variables</strong></a></li>
 </ul>
