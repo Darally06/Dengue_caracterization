@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'atl';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="COLOMBIS" href="col.html" />
+    <link rel="prev" title="Análisis Exploratorio de Datos - COLOMBIA" href="col.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,7 +173,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="col.html">COLOMBIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="col.html"><strong>Análisis Exploratorio de Datos - COLOMBIA</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Atlántico</strong></a></li>
 </ul>
 
@@ -400,18 +400,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="atlantico">
 <h1><strong>Atlántico</strong><a class="headerlink" href="#atlantico" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="calidad-de-los-datos">
 <h2>1. Calidad de los datos<a class="headerlink" href="#calidad-de-los-datos" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -432,9 +420,9 @@ Data columns (total 21 columns):
  1   año                    31800 non-null  int64 
  2   edad                   31800 non-null  int64 
  3   fecha_consulta         31800 non-null  object
- 4   fecha_hospitalizacion  31800 non-null  object
+ 4   fecha_hospitalizacion  19187 non-null  object
  5   fecha_inicio_sintomas  31800 non-null  object
- 6   fecha_nacimiento       31800 non-null  object
+ 6   fecha_nacimiento       30581 non-null  object
  7   fecha_notificacion     31800 non-null  object
  8   hospitalizado          31800 non-null  int64 
  9   muerte                 31800 non-null  int64 
@@ -477,10 +465,6 @@ Columna &#39;fecha_inicio_sintomas&#39; convertida a datetime.
 Columna &#39;fecha_notificacion&#39; convertida a datetime.
 Columna &#39;fecha_nacimiento&#39; convertida a datetime.
 Columna &#39;fecha_hospitalizacion&#39; convertida a datetime.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_20520\618031299.py:5: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
-  df[col] = pd.to_datetime(df[col], errors=&quot;coerce&quot;, dayfirst=True)
 </pre></div>
 </div>
 </div>
@@ -562,8 +546,11 @@ Columna &#39;fecha_hospitalizacion&#39; convertida a datetime.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Valores faltantes por variable:
-fecha_hospitalizacion    12613
-fecha_nacimiento          1219
+fecha_consulta           19328
+fecha_hospitalizacion    24192
+fecha_inicio_sintomas    18989
+fecha_nacimiento         19614
+fecha_notificacion       19438
 dtype: int64
 </pre></div>
 </div>
@@ -584,11 +571,11 @@ Data columns (total 21 columns):
  0   area                   31800 non-null  int64         
  1   año                    31800 non-null  int64         
  2   edad                   31800 non-null  int64         
- 3   fecha_consulta         31800 non-null  datetime64[ns]
- 4   fecha_hospitalizacion  19187 non-null  datetime64[ns]
- 5   fecha_inicio_sintomas  31800 non-null  datetime64[ns]
- 6   fecha_nacimiento       30581 non-null  datetime64[ns]
- 7   fecha_notificacion     31800 non-null  datetime64[ns]
+ 3   fecha_consulta         12472 non-null  datetime64[ns]
+ 4   fecha_hospitalizacion  7608 non-null   datetime64[ns]
+ 5   fecha_inicio_sintomas  12811 non-null  datetime64[ns]
+ 6   fecha_nacimiento       12186 non-null  datetime64[ns]
+ 7   fecha_notificacion     12362 non-null  datetime64[ns]
  8   hospitalizado          31800 non-null  int64         
  9   muerte                 31800 non-null  int64         
  10  municipio              31800 non-null  object        
@@ -654,11 +641,11 @@ Data columns (total 21 columns):
  0   area                   31800 non-null  object        
  1   año                    31800 non-null  int64         
  2   edad                   31800 non-null  int64         
- 3   fecha_consulta         31800 non-null  datetime64[ns]
- 4   fecha_hospitalizacion  19187 non-null  datetime64[ns]
- 5   fecha_inicio_sintomas  31800 non-null  datetime64[ns]
- 6   fecha_nacimiento       30581 non-null  datetime64[ns]
- 7   fecha_notificacion     31800 non-null  datetime64[ns]
+ 3   fecha_consulta         12472 non-null  datetime64[ns]
+ 4   fecha_hospitalizacion  7608 non-null   datetime64[ns]
+ 5   fecha_inicio_sintomas  12811 non-null  datetime64[ns]
+ 6   fecha_nacimiento       12186 non-null  datetime64[ns]
+ 7   fecha_notificacion     12362 non-null  datetime64[ns]
  8   hospitalizado          31800 non-null  object        
  9   muerte                 31800 non-null  object        
  10  municipio              31800 non-null  object        
@@ -2254,7 +2241,7 @@ desconocido           25      0.0008       24      1        0.9600      0.0400
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">COLOMBIS</p>
+        <p class="prev-next-title"><strong>Análisis Exploratorio de Datos - COLOMBIA</strong></p>
       </div>
     </a>
 </div>
