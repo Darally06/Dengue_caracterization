@@ -384,7 +384,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-espaciales">2.4 Variables espaciales</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-binaria">Exploración binaria</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapas">3. MAPAS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasa-de-incidencia">Tasa de incidencia</a></li>
 </ul>
@@ -402,27 +401,20 @@ document.write(`
 <h1><strong>Atlántico</strong><a class="headerlink" href="#atlantico" title="Link to this heading">#</a></h1>
 <section id="calidad-de-los-datos">
 <h2>1. Calidad de los datos<a class="headerlink" href="#calidad-de-los-datos" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Leer el archivo</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Hp\DENGUE\Data\dengue_data\data_atlantico.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin_1&#39;</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 31800 entries, 0 to 31799
-Data columns (total 21 columns):
+Data columns (total 19 columns):
  #   Column                 Non-Null Count  Dtype 
 ---  ------                 --------------  ----- 
  0   area                   31800 non-null  int64 
  1   año                    31800 non-null  int64 
  2   edad                   31800 non-null  int64 
  3   fecha_consulta         31800 non-null  object
- 4   fecha_hospitalizacion  19187 non-null  object
+ 4   fecha_hospitalizacion  31800 non-null  object
  5   fecha_inicio_sintomas  31800 non-null  object
- 6   fecha_nacimiento       30581 non-null  object
+ 6   fecha_nacimiento       31800 non-null  object
  7   fecha_notificacion     31800 non-null  object
  8   hospitalizado          31800 non-null  int64 
  9   muerte                 31800 non-null  int64 
@@ -435,10 +427,8 @@ Data columns (total 21 columns):
  16  tipo_de_caso           31800 non-null  int64 
  17  uni_med_               31800 non-null  int64 
  18  evento                 31800 non-null  object
- 19  edad_años              31800 non-null  int64 
- 20  ciclo_vital            31800 non-null  object
-dtypes: int64(10), object(11)
-memory usage: 5.1+ MB
+dtypes: int64(9), object(10)
+memory usage: 4.6+ MB
 </pre></div>
 </div>
 </div>
@@ -448,7 +438,12 @@ memory usage: 5.1+ MB
 <ul class="simple">
 <li><p>Convertir fechas a datetime</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de columnas que quieres convertir</span>
 <span class="n">columnas_fecha</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fecha_consulta&quot;</span><span class="p">,</span> <span class="s2">&quot;fecha_inicio_sintomas&quot;</span><span class="p">,</span> <span class="s2">&quot;fecha_notificacion&quot;</span><span class="p">,</span> <span class="s2">&quot;fecha_nacimiento&quot;</span><span class="p">,</span> <span class="s2">&quot;fecha_hospitalizacion&quot;</span><span class="p">]</span>
@@ -467,7 +462,12 @@ Columna &#39;fecha_nacimiento&#39; convertida a datetime.
 Columna &#39;fecha_hospitalizacion&#39; convertida a datetime.
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_13660\618031299.py:5: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[col] = pd.to_datetime(df[col], errors=&quot;coerce&quot;, dayfirst=True)
+</pre></div>
 </div>
+</div>
+</details>
 </div>
 </section>
 <section id="conversion-de-la-edad">
@@ -475,7 +475,12 @@ Columna &#39;fecha_hospitalizacion&#39; convertida a datetime.
 <ul class="simple">
 <li><p>Crear edad en años</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;edad_años&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;uni_med_&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">],</span>   <span class="c1"># ya está en años</span>
                    <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;uni_med_&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">12</span><span class="p">,</span>  <span class="c1"># meses → años</span>
@@ -487,11 +492,17 @@ Columna &#39;fecha_hospitalizacion&#39; convertida a datetime.
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <ul class="simple">
 <li><p>Crear variable ciclo vital</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ciclo_vital</span><span class="p">(</span><span class="n">edad</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">edad</span><span class="p">):</span>
@@ -523,14 +534,7 @@ Columna &#39;fecha_hospitalizacion&#39; convertida a datetime.
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Hp\DENGUE\Data\dengue_data\data_atlantico.csv&quot;</span><span class="p">,</span> 
-          <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin1&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+</details>
 </div>
 </section>
 <section id="valores-faltantes">
@@ -546,51 +550,9 @@ Columna &#39;fecha_hospitalizacion&#39; convertida a datetime.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Valores faltantes por variable:
-fecha_consulta           19328
-fecha_hospitalizacion    24192
-fecha_inicio_sintomas    18989
-fecha_nacimiento         19614
-fecha_notificacion       19438
+fecha_hospitalizacion    12613
+fecha_nacimiento          1219
 dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 31800 entries, 0 to 31799
-Data columns (total 21 columns):
- #   Column                 Non-Null Count  Dtype         
----  ------                 --------------  -----         
- 0   area                   31800 non-null  int64         
- 1   año                    31800 non-null  int64         
- 2   edad                   31800 non-null  int64         
- 3   fecha_consulta         12472 non-null  datetime64[ns]
- 4   fecha_hospitalizacion  7608 non-null   datetime64[ns]
- 5   fecha_inicio_sintomas  12811 non-null  datetime64[ns]
- 6   fecha_nacimiento       12186 non-null  datetime64[ns]
- 7   fecha_notificacion     12362 non-null  datetime64[ns]
- 8   hospitalizado          31800 non-null  int64         
- 9   muerte                 31800 non-null  int64         
- 10  municipio              31800 non-null  object        
- 11  nombre_evento          31800 non-null  object        
- 12  pertenencia_etnica     31800 non-null  int64         
- 13  regimen_salud          31800 non-null  object        
- 14  semana                 31800 non-null  int64         
- 15  sexo                   31800 non-null  object        
- 16  tipo_de_caso           31800 non-null  int64         
- 17  uni_med_               31800 non-null  int64         
- 18  evento                 31800 non-null  object        
- 19  edad_años              31800 non-null  int64         
- 20  ciclo_vital            31800 non-null  object        
-dtypes: datetime64[ns](5), int64(10), object(6)
-memory usage: 5.1+ MB
 </pre></div>
 </div>
 </div>
@@ -598,25 +560,8 @@ memory usage: 5.1+ MB
 </section>
 <section id="categorizar-variables">
 <h3>Categorizar variables<a class="headerlink" href="#categorizar-variables" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;hospitalizado&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tipo_de_caso&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tipo_de_caso
-2    21500
-3    10210
-5       90
-Name: count, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapeo</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;area&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Cabecera municipal&#39;</span> <span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Centro Poblado&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Rural disperso&#39;</span><span class="p">},</span> 
     <span class="s1">&#39;hospitalizado&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Si&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;No&#39;</span><span class="p">},</span>
@@ -632,6 +577,11 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 31800 entries, 0 to 31799
@@ -641,11 +591,11 @@ Data columns (total 21 columns):
  0   area                   31800 non-null  object        
  1   año                    31800 non-null  int64         
  2   edad                   31800 non-null  int64         
- 3   fecha_consulta         12472 non-null  datetime64[ns]
- 4   fecha_hospitalizacion  7608 non-null   datetime64[ns]
- 5   fecha_inicio_sintomas  12811 non-null  datetime64[ns]
- 6   fecha_nacimiento       12186 non-null  datetime64[ns]
- 7   fecha_notificacion     12362 non-null  datetime64[ns]
+ 3   fecha_consulta         31800 non-null  datetime64[ns]
+ 4   fecha_hospitalizacion  19187 non-null  datetime64[ns]
+ 5   fecha_inicio_sintomas  31800 non-null  datetime64[ns]
+ 6   fecha_nacimiento       30581 non-null  datetime64[ns]
+ 7   fecha_notificacion     31800 non-null  datetime64[ns]
  8   hospitalizado          31800 non-null  object        
  9   muerte                 31800 non-null  object        
  10  municipio              31800 non-null  object        
@@ -664,63 +614,12 @@ memory usage: 5.1+ MB
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 </section>
 <section id="analisis-univariado">
 <h2>2. Análisis univariado<a class="headerlink" href="#analisis-univariado" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">describir_categorica</span><span class="p">(</span><span class="n">columna</span><span class="p">,</span> <span class="n">col_evento</span><span class="o">=</span><span class="s2">&quot;evento&quot;</span><span class="p">):</span>
-    <span class="c1"># Conteos y proporciones generales</span>
-    <span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-        <span class="s2">&quot;Conteo&quot;</span><span class="p">:</span> <span class="n">columna</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-        <span class="s2">&quot;Proporción&quot;</span><span class="p">:</span> <span class="n">columna</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-    <span class="p">})</span>
-
-    <span class="c1"># Renombrar índice si hay NaN</span>
-    <span class="n">tabla</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">tabla</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;NaN&quot;</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
-
-    <span class="c1"># Conteos de la variable evento cruzada con la categórica</span>
-    <span class="n">crosstab_evento</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">columna</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="n">col_evento</span><span class="p">])</span>
-
-    <span class="c1"># Unir todo</span>
-    <span class="n">tabla_completa</span> <span class="o">=</span> <span class="n">tabla</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">crosstab_evento</span><span class="p">)</span>
-
-    <span class="c1"># Agregar proporciones específicas para &#39;Clasico&#39; y &#39;Grave&#39; si existen</span>
-    <span class="k">if</span> <span class="s2">&quot;Clasico&quot;</span> <span class="ow">in</span> <span class="n">crosstab_evento</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-        <span class="n">tabla_completa</span><span class="p">[</span><span class="s2">&quot;Prop_Clasico&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tabla_completa</span><span class="p">[</span><span class="s2">&quot;Clasico&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">tabla_completa</span><span class="p">[</span><span class="s2">&quot;Conteo&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">tabla_completa</span><span class="p">[</span><span class="s2">&quot;Prop_Clasico&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">if</span> <span class="s2">&quot;Grave&quot;</span> <span class="ow">in</span> <span class="n">crosstab_evento</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-        <span class="n">tabla_completa</span><span class="p">[</span><span class="s2">&quot;Prop_Grave&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tabla_completa</span><span class="p">[</span><span class="s2">&quot;Grave&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">tabla_completa</span><span class="p">[</span><span class="s2">&quot;Conteo&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">tabla_completa</span><span class="p">[</span><span class="s2">&quot;Prop_Grave&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📌 Variable: </span><span class="si">{</span><span class="n">columna</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">tabla_completa</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-----------------------------------&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tabla descriptivo de numericas</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">describir_numerica</span><span class="p">(</span><span class="n">columna</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📌 Variable: </span><span class="si">{</span><span class="n">columna</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Min </span><span class="si">{</span><span class="n">columna</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max</span><span class="si">{</span><span class="n">columna</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">columna</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">columna</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">columna</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">columna</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-----------------------------------&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="variables-demograficas">
 <h3>2.1 Variables demográficas<a class="headerlink" href="#variables-demograficas" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -729,142 +628,12 @@ memory usage: 5.1+ MB
 <li><p>Pertenencia étnica</p></li>
 <li><p>Regimen de salud</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DESCRIPCIÓN DE VARIABLES CATEGÓRICAS&quot;</span><span class="p">)</span>
-<span class="n">describir_categorica</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;ciclo_vital&quot;</span><span class="p">])</span>
-<span class="n">describir_categorica</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sexo&quot;</span><span class="p">])</span>
-<span class="n">describir_categorica</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pertenencia_etnica&quot;</span><span class="p">])</span>
-<span class="n">describir_categorica</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;regimen_salud&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DESCRIPCIÓN DE VARIABLES CATEGÓRICAS
-
-📌 Variable: ciclo_vital
-                  Conteo  Proporción  Clasico  Grave  Prop_Clasico  Prop_Grave
-ciclo_vital                                                                   
-Adolescencia       14572      0.4582    14211    361        0.9752      0.0248
-Adulto              7120      0.2239     6931    189        0.9735      0.0265
-Infancia            6554      0.2061     6444    110        0.9832      0.0168
-Primera infancia    2784      0.0875     2737     47        0.9831      0.0169
-Adulto mayor         586      0.0184      563     23        0.9608      0.0392
-Menor de 1 año       135      0.0042      132      3        0.9778      0.0222
-Ancianidad            49      0.0015       45      4        0.9184      0.0816
-
------------------------------------
-
-📌 Variable: sexo
-           Conteo  Proporción  Clasico  Grave  Prop_Clasico  Prop_Grave
-sexo                                                                   
-Masculino   16724      0.5259    16341    383        0.9771      0.0229
-Femenino    15076      0.4741    14722    354        0.9765      0.0235
-
------------------------------------
-
-📌 Variable: pertenencia_etnica
-                    Conteo  Proporción  Clasico  Grave  Prop_Clasico  \
-pertenencia_etnica                                                     
-Otro                 31281      0.9837    30552    729        0.9767   
-Negro                  397      0.0125      392      5        0.9874   
-Rom                     46      0.0014       45      1        0.9783   
-Indigena                38      0.0012       37      1        0.9737   
-Raizal                  36      0.0011       35      1        0.9722   
-Palenquero               2      0.0001        2      0        1.0000   
-
-                    Prop_Grave  
-pertenencia_etnica              
-Otro                    0.0233  
-Negro                   0.0126  
-Rom                     0.0217  
-Indigena                0.0263  
-Raizal                  0.0278  
-Palenquero              0.0000  
-
------------------------------------
-
-📌 Variable: regimen_salud
-               Conteo  Proporción  Clasico  Grave  Prop_Clasico  Prop_Grave
-regimen_salud                                                              
-Subsidiado      15590      0.4903    15220    370        0.9763      0.0237
-Contributivo    14091      0.4431    13778    313        0.9778      0.0222
-Excepción        1144      0.0360     1133     11        0.9904      0.0096
-No asegurado      699      0.0220      661     38        0.9456      0.0544
-Indeterminado     209      0.0066      206      3        0.9856      0.0144
-Especial           67      0.0021       65      2        0.9701      0.0299
-
------------------------------------
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráficos de variables categóricas</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">graficar_categorica</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">nombre_grafico</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">nombre_grafico</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    
-    <span class="n">conteo</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">conteo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">conteo</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2E4265&#39;</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Categoría&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frecuencia&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">conteo</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.1</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráficos de variables categóricas - Pie</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">graficar_categorica_pie</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">nombre_grafico</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">nombre_grafico</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-    <span class="n">conteo</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-    <span class="c1"># Pie chart</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span>
-        <span class="n">conteo</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-        <span class="n">labels</span><span class="o">=</span><span class="n">conteo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span>
-        <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span>   <span class="c1"># porcentajes con 1 decimal</span>
-        <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>       <span class="c1"># para que arranque desde arriba</span>
-        <span class="n">colors</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;Set3&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">conteo</span><span class="p">))</span>  <span class="c1"># paleta de colores</span>
-    <span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>  <span class="c1"># Para que sea un círculo perfecto</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_categorica</span><span class="p">(</span><span class="s2">&quot;ciclo_vital&quot;</span><span class="p">,</span> <span class="s2">&quot;Distribución por Ciclo Vital&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
-<span class="n">graficar_categorica_pie</span><span class="p">(</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span> <span class="s2">&quot;Distribución por Sexo&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
-
-<span class="n">etnia_filtrada</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pertenencia_etnica&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Otro&quot;</span><span class="p">]</span>
-<span class="n">graficar_categorica</span><span class="p">(</span><span class="s1">&#39;pertenencia_etnica&#39;</span><span class="p">,</span> <span class="s2">&quot;Distribución por Pertenencia Étnica&quot;</span><span class="p">,</span> <span class="n">etnia_filtrada</span><span class="p">)</span>
-
-<span class="n">df_regimen_principal</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;regimen_salud&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;Contributivo&quot;</span><span class="p">,</span> <span class="s2">&quot;Subsidiado&quot;</span><span class="p">])]</span>
-<span class="n">df_regimen_otros</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;regimen_salud&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;Contributivo&quot;</span><span class="p">,</span> <span class="s2">&quot;Subsidiado&quot;</span><span class="p">])]</span>
-<span class="n">graficar_categorica_pie</span><span class="p">(</span><span class="s2">&quot;regimen_salud&quot;</span><span class="p">,</span> <span class="s2">&quot;Distribución Régimen de Salud&quot;</span><span class="p">,</span> <span class="n">df_regimen_principal</span><span class="p">)</span>
-<span class="n">graficar_categorica</span><span class="p">(</span><span class="s2">&quot;regimen_salud&quot;</span><span class="p">,</span> <span class="s2">&quot;Distribución Régimen de Salud (Otros)&quot;</span><span class="p">,</span> <span class="n">df_regimen_otros</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="_images/9dfe32d0d2653a064f98ec84f965dde067cf484a86ab4922d65333fba21c3191.png" src="_images/9dfe32d0d2653a064f98ec84f965dde067cf484a86ab4922d65333fba21c3191.png" />
-<img alt="_images/8432bbec7490b33a12e107d4d61b9ee9a06b1f5b81b346819e7d2eb228e8a094.png" src="_images/8432bbec7490b33a12e107d4d61b9ee9a06b1f5b81b346819e7d2eb228e8a094.png" />
+<img alt="_images/17e271c04a34268bc0837990517a1191d0bc8230d8b62c90cb340642786ec7ab.png" src="_images/17e271c04a34268bc0837990517a1191d0bc8230d8b62c90cb340642786ec7ab.png" />
 <img alt="_images/792791e341d33fe8f7dd5c3687ba13dd621b3e0f86dea773f53020d5d621db2f.png" src="_images/792791e341d33fe8f7dd5c3687ba13dd621b3e0f86dea773f53020d5d621db2f.png" />
-<img alt="_images/7e168e902a157344e04527f3f4f0ef604e57ff982560cdfc41afeab2460b1d17.png" src="_images/7e168e902a157344e04527f3f4f0ef604e57ff982560cdfc41afeab2460b1d17.png" />
+<img alt="_images/39171c8e1cba3ec8c04358657df5a8f22c53d3089fc726054a700d2f73d11514.png" src="_images/39171c8e1cba3ec8c04358657df5a8f22c53d3089fc726054a700d2f73d11514.png" />
 <img alt="_images/df705e8c8fcf625ef05c880f85ddf5cfd9b261db2bc39858e4975a58241da01d.png" src="_images/df705e8c8fcf625ef05c880f85ddf5cfd9b261db2bc39858e4975a58241da01d.png" />
 </div>
 </div>
@@ -1425,7 +1194,7 @@ año
 
 <span class="c1"># Graficar</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">casos_semana</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">],</span> <span class="n">casos_semana</span><span class="p">[</span><span class="s2">&quot;casos&quot;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">casos_semana</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">],</span> <span class="n">casos_semana</span><span class="p">[</span><span class="s2">&quot;casos&quot;</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Marcar solo los años en el eje X</span>
 <span class="n">años_unicos</span> <span class="o">=</span> <span class="n">casos_semana</span><span class="p">[</span><span class="s2">&quot;año&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -1442,7 +1211,7 @@ año
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/426e4a961f73d532a3a8785407e3b257e4dee576bd05007fe50fb026e6a39499.png" src="_images/426e4a961f73d532a3a8785407e3b257e4dee576bd05007fe50fb026e6a39499.png" />
+<img alt="_images/9f382cf09866d4c29370e8a1845f2d52f0a2875dd24b188546db96080986c669.png" src="_images/9f382cf09866d4c29370e8a1845f2d52f0a2875dd24b188546db96080986c669.png" />
 </div>
 </div>
 </section>
@@ -1506,207 +1275,15 @@ desconocido           25      0.0008       24      1        0.9600      0.0400
 </div>
 </section>
 </section>
-<section id="exploracion-binaria">
-<h2>Exploración binaria<a class="headerlink" href="#exploracion-binaria" title="Link to this heading">#</a></h2>
-</section>
 <section id="mapas">
 <h2>3. MAPAS<a class="headerlink" href="#mapas" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># REELEER DATA</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Hp\DENGUE\Data\dengue_data\data_atlantico.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin_1&#39;</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-
-<span class="c1"># Población proyectada</span>
-<span class="n">poblacion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Hp\DENGUE\Data\dengue_data\tabla_municipios.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf_8&#39;</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># Shapefile de Atlántico</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Hp\DENGUE\Data\dengue_data\atlantico_municipios.shp&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf_8&#39;</span><span class="p">)</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;mpio_cnmbr&#39;</span><span class="p">:</span> <span class="s1">&#39;MUNICIPIO&#39;</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;MUNICIPIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;BARRANQUILLA&#39;, &#39;SOLEDAD&#39;, &#39;REPELÓN&#39;, &#39;JUAN DE ACOSTA&#39;, &#39;GALAPA&#39;,
-       &#39;USIACURÍ&#39;, &#39;BARANOA&#39;, &#39;POLONUEVO&#39;, &#39;SABANALARGA&#39;, &#39;SABANAGRANDE&#39;,
-       &#39;MALAMBO&#39;, &#39;LURUACO&#39;, &#39;CAMPO DE LA CRUZ&#39;, &#39;SANTO TOMÁS&#39;,
-       &#39;desconocido&#39;, &#39;TUBARÁ&#39;, &#39;PONEDERA&#39;, &#39;PUERTO COLOMBIA&#39;, &#39;MANATÍ&#39;,
-       &#39;CANDELARIA&#39;, &#39;PALMAR DE VARELA&#39;, &#39;SUAN&#39;, &#39;PIOJÓ&#39;, &#39;SANTA LUCÍA&#39;],
-      dtype=object)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;MUNICIPIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;BARANOA&#39;, &#39;BARRANQUILLA&#39;, &#39;CAMPO DE LA CRUZ&#39;, &#39;CANDELARIA&#39;,
-       &#39;GALAPA&#39;, &#39;JUAN DE ACOSTA&#39;, &#39;LURUACO&#39;, &#39;MALAMBO&#39;, &#39;MANATÍ&#39;,
-       &#39;PALMAR DE VARELA&#39;, &#39;PIOJÓ&#39;, &#39;POLONUEVO&#39;, &#39;PONEDERA&#39;,
-       &#39;PUERTO COLOMBIA&#39;, &#39;REPELÓN&#39;, &#39;SABANAGRANDE&#39;, &#39;SABANALARGA&#39;,
-       &#39;SANTA LUCÍA&#39;, &#39;SANTO TOMÁS&#39;, &#39;SOLEDAD&#39;, &#39;SUAN&#39;, &#39;TUBARÁ&#39;,
-       &#39;USIACURÍ&#39;], dtype=object)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agrupamos casos por municipio, año y evento</span>
-<span class="n">casos</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span> <span class="s2">&quot;AÑO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENTO&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;casos&quot;</span><span class="p">)</span>
-<span class="c1"># Total acumulado (sin año, solo municipio y evento)</span>
-<span class="n">casos_total</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENTO&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;casos&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">casos_total</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           MUNICIPIO   EVENTO  casos
-0            BARANOA  Clasico   1008
-1            BARANOA    Grave     20
-2       BARRANQUILLA  Clasico  16397
-3       BARRANQUILLA    Grave    346
-4   CAMPO DE LA CRUZ  Clasico    144
-5   CAMPO DE LA CRUZ    Grave      7
-6         CANDELARIA  Clasico     52
-7         CANDELARIA    Grave      3
-8             GALAPA  Clasico    845
-9             GALAPA    Grave     31
-10    JUAN DE ACOSTA  Clasico    246
-11    JUAN DE ACOSTA    Grave      6
-12           LURUACO  Clasico    278
-13           LURUACO    Grave      6
-14           MALAMBO  Clasico   1657
-15           MALAMBO    Grave     40
-16            MANATÍ  Clasico    250
-17            MANATÍ    Grave      7
-18  PALMAR DE VARELA  Clasico    108
-19  PALMAR DE VARELA    Grave      2
-20             PIOJÓ  Clasico     67
-21             PIOJÓ    Grave      2
-22         POLONUEVO  Clasico    395
-23         POLONUEVO    Grave      4
-24          PONEDERA  Clasico    186
-25          PONEDERA    Grave      3
-26   PUERTO COLOMBIA  Clasico    724
-27   PUERTO COLOMBIA    Grave     56
-28           REPELÓN  Clasico    101
-29           REPELÓN    Grave      5
-30      SABANAGRANDE  Clasico     98
-31      SABANAGRANDE    Grave      1
-32       SABANALARGA  Clasico   1062
-33       SABANALARGA    Grave     31
-34       SANTA LUCÍA  Clasico     41
-35       SANTO TOMÁS  Clasico     84
-36           SOLEDAD  Clasico   6841
-37           SOLEDAD    Grave    156
-38              SUAN  Clasico    115
-39              SUAN    Grave      4
-40            TUBARÁ  Clasico     79
-41            TUBARÁ    Grave      5
-42          USIACURÍ  Clasico    261
-43          USIACURÍ    Grave      1
-44       desconocido  Clasico     24
-45       desconocido    Grave      1
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtrar datos sin Barranquilla</span>
-<span class="n">df_q</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;BARRANQUILLA&quot;</span><span class="p">]</span>
-
-<span class="c1"># Agrupar por municipio, año y evento</span>
-<span class="n">tabla</span> <span class="o">=</span> <span class="n">df_q</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span><span class="s2">&quot;AÑO&quot;</span><span class="p">,</span><span class="s2">&quot;EVENTO&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;casos&quot;</span><span class="p">)</span>
-<span class="n">tabla</span><span class="p">[</span><span class="s1">&#39;AÑO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2017, 2018, 2019, 2020, 2021, 2022, 2023])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de eventos a graficar</span>
-<span class="n">eventos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Clasico&quot;</span><span class="p">,</span> <span class="s2">&quot;Grave&quot;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">evento</span> <span class="ow">in</span> <span class="n">eventos</span><span class="p">:</span>
-    <span class="c1"># Filtrar solo el evento actual</span>
-    <span class="n">tabla_evento</span> <span class="o">=</span> <span class="n">tabla</span><span class="p">[</span><span class="n">tabla</span><span class="p">[</span><span class="s2">&quot;EVENTO&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">evento</span><span class="p">]</span>
-    
-    <span class="c1"># Crear tabla pivote para heatmap</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">tabla_evento</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-        <span class="n">index</span><span class="o">=</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span> 
-        <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;AÑO&quot;</span><span class="p">,</span> 
-        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;casos&quot;</span><span class="p">,</span> 
-        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">)</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-    
-    <span class="c1"># Graficar heatmap</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">pivot</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Casos de Dengue </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2"> por Municipio y Año (sin Barranquilla)&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Municipio&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="_images/04e6afae8dc6fcbb1897e9edc4b19c492d03603fb0682718d4b6e8d8ff0c59d4.png" src="_images/04e6afae8dc6fcbb1897e9edc4b19c492d03603fb0682718d4b6e8d8ff0c59d4.png" />
 <img alt="_images/328de82401c980e37f78424ed4e08ccc848b2f6892dab4d7e9e01144fd034b5e.png" src="_images/328de82401c980e37f78424ed4e08ccc848b2f6892dab4d7e9e01144fd034b5e.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eventos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Clasico&quot;</span><span class="p">,</span> <span class="s2">&quot;Grave&quot;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">evento</span> <span class="ow">in</span> <span class="n">eventos</span><span class="p">:</span>
-    <span class="n">anios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;AÑO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">anios</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># años + total</span>
-
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">anios</span><span class="p">):</span>
-        <span class="n">casos_anio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;AÑO&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;EVENTO&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">evento</span><span class="p">)]</span>
-        <span class="n">casos_anio</span> <span class="o">=</span> <span class="n">casos_anio</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;CASOS&quot;</span><span class="p">)</span>
-        <span class="n">gdf_plot</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">casos_anio</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        
-        <span class="n">gdf_plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;CASOS&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
-                      <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dengue </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">anio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Total de casos por evento</span>
-    <span class="n">casos_total</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;EVENTO&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">evento</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;CASOS&quot;</span><span class="p">)</span>
-    <span class="n">gdf_total</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">casos_total</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-    <span class="n">gdf_total</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;CASOS&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
-                   <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dengue </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2"> Total&quot;</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="_images/f323ba42105b597984d84dc8c0478ca1397cfe3eef282dfca7ec0dc3c5938a68.png" src="_images/f323ba42105b597984d84dc8c0478ca1397cfe3eef282dfca7ec0dc3c5938a68.png" />
 <img alt="_images/c2b492d0a28247c29618b049cec7d1e2dae87137619e2d7401989af366b3102a.png" src="_images/c2b492d0a28247c29618b049cec7d1e2dae87137619e2d7401989af366b3102a.png" />
@@ -2098,63 +1675,13 @@ desconocido           25      0.0008       24      1        0.9600      0.0400
 <p>230 rows × 6 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">evento</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Clasico&quot;</span><span class="p">,</span><span class="s2">&quot;Grave&quot;</span><span class="p">]:</span>
-    <span class="n">anios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_incidencia</span><span class="p">[</span><span class="s2">&quot;AÑO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">anios</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">anios</span><span class="p">):</span>
-        <span class="n">casos_anio</span> <span class="o">=</span> <span class="n">df_incidencia</span><span class="p">[(</span><span class="n">df_incidencia</span><span class="p">[</span><span class="s2">&quot;AÑO&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_incidencia</span><span class="p">[</span><span class="s2">&quot;EVENTO&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">evento</span><span class="p">)]</span>
-        <span class="n">gdf_plot</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">casos_anio</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-        <span class="n">gdf_plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;TASA_INCIDENCIA&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
-                      <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dengue </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">anio</span><span class="si">}</span><span class="s2"> (Tasa x100k)&quot;</span><span class="p">)</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Total acumulado</span>
-    <span class="n">casos_total</span> <span class="o">=</span> <span class="n">df_incidencia</span><span class="p">[</span><span class="n">df_incidencia</span><span class="p">[</span><span class="s2">&quot;EVENTO&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">evento</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
-        <span class="s2">&quot;casos&quot;</span><span class="p">:</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;POBLACION&quot;</span><span class="p">:</span><span class="s2">&quot;sum&quot;</span>
-    <span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="n">casos_total</span><span class="p">[</span><span class="s2">&quot;TASA_INCIDENCIA&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">casos_total</span><span class="p">[</span><span class="s2">&quot;casos&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">casos_total</span><span class="p">[</span><span class="s2">&quot;POBLACION&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100000</span>
-
-    <span class="n">gdf_total</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">casos_total</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-    <span class="n">gdf_total</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;TASA_INCIDENCIA&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
-                   <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dengue </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2"> Total (Tasa x100k)&quot;</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="_images/66bc36b4de62181d5200b878089577bbc2c4e83c637038f9bc99c930a0e03d71.png" src="_images/66bc36b4de62181d5200b878089577bbc2c4e83c637038f9bc99c930a0e03d71.png" />
 <img alt="_images/90e896335c2b276131fc683890602d3843d9bd431f10a00f07386d4e562a5f65.png" src="_images/90e896335c2b276131fc683890602d3843d9bd431f10a00f07386d4e562a5f65.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtrar por evento y excluir Barranquilla</span>
-<span class="n">df_heat</span> <span class="o">=</span> <span class="n">df_incidencia</span><span class="p">[(</span><span class="n">df_incidencia</span><span class="p">[</span><span class="s2">&quot;EVENTO&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Clasico&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_incidencia</span><span class="p">[</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;BARRANQUILLA&quot;</span><span class="p">)]</span>
-
-<span class="c1"># Pivotear para heatmap</span>
-<span class="n">heatmap_data</span> <span class="o">=</span> <span class="n">df_heat</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;MUNICIPIO&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;AÑO&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;TASA_INCIDENCIA&quot;</span><span class="p">)</span>
-
-<span class="c1"># Graficar</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">heatmap_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.1f&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Incidencia de Dengue Clásico por Municipio y Año (x 100k hab)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="_images/051115b806522cbad36b244fbc5b18ae4881626a440062327b429717e7e38675.png" src="_images/051115b806522cbad36b244fbc5b18ae4881626a440062327b429717e7e38675.png" />
 </div>
@@ -2274,7 +1801,6 @@ desconocido           25      0.0008       24      1        0.9600      0.0400
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-espaciales">2.4 Variables espaciales</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-binaria">Exploración binaria</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapas">3. MAPAS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasa-de-incidencia">Tasa de incidencia</a></li>
 </ul>
