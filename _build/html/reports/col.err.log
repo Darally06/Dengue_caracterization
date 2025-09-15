@@ -35,8 +35,8 @@ col = pd.read_csv('Data/data_colombia.csv', encoding='latin1')
 ------------------
 
 
-[31m---------------------------------------------------------------------------[39m
-[31mDataSourceError[39m                           Traceback (most recent call last)
+[31m----------------------------------------------------------------------[39m
+[31mDataSourceError[39m                      Traceback (most recent call last)
 [36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
 [32m----> [39m[32m1[39m shp = gpd.read_file([33m"[39m[33mMapa[39m[33m\[39m[33mCOLOMBIA.shp[39m[33m"[39m)
 [32m      2[39m inc210 = pd.read_csv([33m"[39m[33mtasa_inc_dengue210.csv[39m[33m"[39m)
