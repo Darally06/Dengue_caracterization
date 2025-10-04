@@ -5,6 +5,6 @@ format: jb-book
 root: intro
 chapters:
 - file: col
-- file: Atlantico
+- file: atl
 - file: Barranquilla
 
