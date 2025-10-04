@@ -57,11 +57,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'atl';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Atlantico';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Barranquilla" href="Barranquilla.html" />
-    <link rel="prev" title="Colombia" href="col.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -173,9 +173,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="col.html"><strong>Colombia</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Atlántico</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html"><strong>Atlántico</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Barranquilla.html"><strong>Barranquilla</strong></a></li>
 </ul>
 
@@ -248,7 +248,7 @@
       
       
       
-      <li><a href="https://github.com/Darally06/Dengue_caracterization/issues/new?title=Issue%20on%20page%20%2Fatl.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Darally06/Dengue_caracterization/issues/new?title=Issue%20on%20page%20%2FAtlantico.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="_sources/atl.ipynb" target="_blank"
+      <li><a href="_sources/Atlantico.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,8 +382,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapas">3. MAPAS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-por-evento"><em>Casos por Evento</em></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasa-de-incidencia"><em>Tasa de incidencia</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rem"><em>REM</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-binaria">Exploración binaria</a></li>
 </ul>
             </nav>
         </div>
@@ -401,77 +401,35 @@ document.write(`
 <p>Está situado al norte del territorio nacional, límita por el norte y noreste con el mar Caribe, en una extensión aproximada de 90 Km; desde el rompeolas occidental en Bocas de Ceniza, hasta las salinas de Galerazamba. Al este, con el río Magdalena, en una longitud de 105 Km, contados desde su desembocadura en Bocas de Ceniza hasta el desprendimiento del Canal del Dique en Calamar; al sur, suroeste y oeste con el departamento de Bolívar desde Calamar hasta las Salinas de Galerazamba.</p>
 <p>Presenta un clima tropical de tipo estepa y sabana de carácter árido en la desembocadura del río Magdalena y alrededores de Barranquilla; semi-árido en las fajas aledañas al litoral y al río Magdalena y semihúmedo desde Sabanalarga hacia el sur.</p>
 <p><img alt="image.png" src="attachment:image.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Se realizará un análisis excluyendo la ciudad capital Barranquilla.</p>
-</div>
 <section id="calidad-de-los-datos">
 <h2>Calidad de los datos<a class="headerlink" href="#calidad-de-los-datos" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Leer el archivo</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Hp\DENGUE\Data\procesados\atl_pros.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin_1&#39;</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Excluir registros de Barranquilla</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;municipio&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;BARRANQUILLA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;C:\\Users\\Hp\\DENGUE\\Data\\procesados\\atl_pros.csv&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 15057 entries, 7 to 31799
+Data columns (total 18 columns):
+ #   Column                 Non-Null Count  Dtype 
+---  ------                 --------------  ----- 
+ 0   area                   15057 non-null  object
+ 1   año                    15057 non-null  int64 
+ 2   fecha_consulta         15057 non-null  object
+ 3   fecha_hospitalizacion  9530 non-null   object
+ 4   fecha_inicio_sintomas  15057 non-null  object
+ 5   fecha_nacimiento       14534 non-null  object
+ 6   fecha_notificacion     15057 non-null  object
+ 7   hospitalizado          15057 non-null  object
+ 8   muerte                 15057 non-null  object
+ 9   municipio              15057 non-null  object
+ 10  regimen_salud          15057 non-null  object
+ 11  semana                 15057 non-null  int64 
+ 12  sexo                   15057 non-null  object
+ 13  tipo_de_caso           15057 non-null  object
+ 14  evento                 15057 non-null  object
+ 15  edad_años              15057 non-null  int64 
+ 16  ciclo_vital            15057 non-null  object
+ 17  grupo_etnico           15057 non-null  object
+dtypes: int64(3), object(15)
+memory usage: 2.2+ MB
 </pre></div>
 </div>
 </div>
@@ -606,7 +564,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_28072\2790285505.py:7: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_21900\2790285505.py:7: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   desc = df.groupby(grupo)[variable].agg(
 </pre></div>
 </div>
@@ -741,7 +699,7 @@ dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📌 Evento: Clasico
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_28072\2790285505.py:7: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_21900\2790285505.py:7: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   desc = df.groupby(grupo)[variable].agg(
 </pre></div>
 </div>
@@ -866,7 +824,7 @@ dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📌 Evento: Grave
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_28072\2790285505.py:7: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_21900\2790285505.py:7: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   desc = df.groupby(grupo)[variable].agg(
 </pre></div>
 </div>
@@ -1016,7 +974,7 @@ dtype: int64
 5        Ancianidad    25   Shapiro-Wilk   0.0037  No normal
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_28072\575974444.py:8: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_21900\575974444.py:8: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   for g, data in df.groupby(grupo):
 </pre></div>
 </div>
@@ -1043,7 +1001,7 @@ dtype: int64
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
     <span class="c1"># --- 3. Boxplot por ciclo vital ---</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">grupo</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;Set2&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Boxplot de edades por ciclo vital&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Ciclo vital&quot;</span><span class="p">)</span>
@@ -1057,14 +1015,14 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/04fd3c4c227440fdf84ab5813e5306054e2f5e8d722910e3b3b9ace3a4ce72de1.png" src="_images/04fd3c4c227440fdf84ab5813e5306054e2f5e8d722910e3b3b9ace3a4ce72de1.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_28072\1163753633.py:20: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_21900\898680975.py:20: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(data=df, x=grupo, y=variable, palette=&quot;Set2&quot;)
 </pre></div>
 </div>
-<img alt="_images/beab4d89a28a5325120ef6e776b95a57936356f4b3e17b78a2f5bbc5b8dbacd0.png" src="_images/beab4d89a28a5325120ef6e776b95a57936356f4b3e17b78a2f5bbc5b8dbacd0.png" />
+<img alt="_images/662ade99594aaeac4fab174b83293bdad9aec1423a900433d247c7cc8a9da3ed.png" src="_images/662ade99594aaeac4fab174b83293bdad9aec1423a900433d247c7cc8a9da3ed.png" />
 </div>
 </div>
 <p>En la primera infancia (1–5 años) y la infancia (6–11 años) se observa una baja dispersión de las edades, lo cual indica una población homogénea y bien delimitada en estos grupos etarios. De igual manera, en la adolescencia (12–18 años) las edades se concentran principalmente en la mitad superior del rango, sin presencia de valores atípicos.</p>
@@ -1813,79 +1771,16 @@ Name: Total_semana, dtype: int64
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/c4a102a14970225ee2c976bc6b12b3548aed36fd851beefcc56e288d0862d4b9.png" src="_images/c4a102a14970225ee2c976bc6b12b3548aed36fd851beefcc56e288d0862d4b9.png" />
-<img alt="_images/ea0055fe2f86f563cd4f0bee33b4e0873edf2ed8bb2d324a717888912dde380e.png" src="_images/ea0055fe2f86f563cd4f0bee33b4e0873edf2ed8bb2d324a717888912dde380e.png" />
+<img alt="_images/97d7cf88796c978f147c4257b1eacf9fee926888c66099820bb722512e39f6c3.png" src="_images/97d7cf88796c978f147c4257b1eacf9fee926888c66099820bb722512e39f6c3.png" />
+<img alt="_images/fb6e1c097493f218588beb3ab6858325c64d6371ef152afc291746592075fce3.png" src="_images/fb6e1c097493f218588beb3ab6858325c64d6371ef152afc291746592075fce3.png" />
 </div>
 </div>
-</section>
-<section id="tasa-de-incidencia">
-<h2><em>Tasa de incidencia</em><a class="headerlink" href="#tasa-de-incidencia" title="Link to this heading">#</a></h2>
 </section>
 <section id="rem">
 <h2><em>REM</em><a class="headerlink" href="#rem" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Dengue\Data\REM_Clasico_Periodo_Atl.csv&quot;</span><span class="p">)</span>
-<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Dengue\Data\REM_Grave_Periodo_Atl.csv&quot;</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">graficar_periodos</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Grafica un panel de mapas del REM de dengue en Colombia por años,</span>
-<span class="sd">    cada uno con su escala individual.</span>
-<span class="sd">    </span>
-<span class="sd">    Parámetros:</span>
-<span class="sd">        df (pd.DataFrame): datos con columnas [departamento, anio, rem].</span>
-<span class="sd">        shp (gpd.GeoDataFrame): shapefile de Colombia con columna DPTO_CNMBR.</span>
-<span class="sd">        evento (str, opcional): tipo de evento (&quot;Clásico&quot;, &quot;Grave&quot;, etc.).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="c1"># === 1. Normalizar nombres ===</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;municipio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;municipio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;mpio_cnmbr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;mpio_cnmbr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-    <span class="c1"># === 2. Lista de años únicos ordenados ===</span>
-    <span class="n">anios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;periodo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-
-    <span class="c1"># === 3. Crear figure y ejes ===</span>
-    <span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">nrows</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">anios</span><span class="p">)</span> <span class="o">+</span> <span class="n">ncols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">ncols</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
-    <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">anios</span><span class="p">):</span>
-        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">df_anio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;periodo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">]</span>
-        <span class="n">gdf_anio</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_anio</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;mpio_cnmbr&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;municipio&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
-        <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-        <span class="n">vmin</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-        <span class="n">vmax</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-
-        <span class="c1"># Graficar mapa</span>
-        <span class="n">gdf_anio</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-            <span class="n">column</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">,</span>
-            <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
-            <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-            <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
-            <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span>
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-            <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;REM&quot;</span><span class="p">}</span>
-        <span class="p">)</span>
-
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">anio</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Ocultar subplots vacíos</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)):</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="c1"># === 4. Título global ===</span>
-    <span class="n">titulo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;REM del dengue </span><span class="si">{</span><span class="n">evento</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;general&#39;</span><span class="si">}</span><span class="s2"> en Colombia en los periodos (</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">)–(</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">titulo</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unidecode</span><span class="w"> </span><span class="kn">import</span> <span class="n">unidecode</span>
 </pre></div>
 </div>
 </div>
@@ -1898,33 +1793,7 @@ Name: Total_semana, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\TAWTOCA\anaconda3\envs\machine\lib\site-packages\geopandas\geodataframe.py:1968: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  super().__setitem__(key, value)
-</pre></div>
-</div>
-<img alt="_images/159916f6f03ce98089487a8de6480d1396ba310ebe84525b2b51351628071c04.png" src="_images/159916f6f03ce98089487a8de6480d1396ba310ebe84525b2b51351628071c04.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_periodos</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">shp_atlantico</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Clásico&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\TAWTOCA\anaconda3\envs\machine\lib\site-packages\geopandas\geodataframe.py:1968: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  super().__setitem__(key, value)
-</pre></div>
-</div>
-<img alt="_images/cfb9e743bf84e21857e3e35f458a4034048a652d912d6737dc7259ea20d5af8a.png" src="_images/cfb9e743bf84e21857e3e35f458a4034048a652d912d6737dc7259ea20d5af8a.png" />
+<img alt="_images/fd303108c21dab1a8d9b1676ed543daff4cdf0af6622ca718b4225aa9b459f18.png" src="_images/fd303108c21dab1a8d9b1676ed543daff4cdf0af6622ca718b4225aa9b459f18.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1935,78 +1804,89 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\TAWTOCA\anaconda3\envs\machine\lib\site-packages\geopandas\geodataframe.py:1968: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  super().__setitem__(key, value)
-</pre></div>
-</div>
-<img alt="_images/a0dafe3070a245ddd56ac3588188f41b6581ff554ad0ffd19d50bbd8152f61a8.png" src="_images/a0dafe3070a245ddd56ac3588188f41b6581ff554ad0ffd19d50bbd8152f61a8.png" />
+<img alt="_images/865536e7d455573ae1358f5bee6b3fc7ab3431ed9435e9bba311f08481c483bc.png" src="_images/865536e7d455573ae1358f5bee6b3fc7ab3431ed9435e9bba311f08481c483bc.png" />
 </div>
 </div>
+</section>
+<section id="exploracion-binaria">
+<h2>Exploración binaria<a class="headerlink" href="#exploracion-binaria" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_periodos</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">shp_atlantico</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Grave&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">chi2_contingency</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">prueba_independencia_chi</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+    <span class="c1"># 1. Seleccionar variables categóricas</span>
+    <span class="n">cat_vars</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s1">&#39;bool&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    
+    <span class="n">resultados</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># 2. Iterar sobre pares únicos</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cat_vars</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cat_vars</span><span class="p">)):</span>
+            <span class="n">var1</span> <span class="o">=</span> <span class="n">cat_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">var2</span> <span class="o">=</span> <span class="n">cat_vars</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+            <span class="c1"># 3. Crear tabla de contingencia</span>
+            <span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">var1</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="n">var2</span><span class="p">])</span>
+
+            <span class="c1"># 4. Aplicar prueba chi-cuadrado</span>
+            <span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">tabla</span><span class="p">)</span>
+
+            <span class="c1"># 5. Evaluar independencia</span>
+            <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="n">alpha</span><span class="p">:</span>  <span class="c1"># Solo guardar si son dependientes</span>
+                <span class="n">resultado</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;Variable 1&#39;</span><span class="p">:</span> <span class="n">var1</span><span class="p">,</span>
+                    <span class="s1">&#39;Variable 2&#39;</span><span class="p">:</span> <span class="n">var2</span><span class="p">,</span>
+                    <span class="s1">&#39;p-valor&#39;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+                    <span class="s1">&#39;Independientes&#39;</span><span class="p">:</span> <span class="s1">&#39;No&#39;</span>
+                <span class="p">}</span>
+                <span class="n">resultados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+
+    <span class="c1"># 6. Convertir a DataFrame para revisión</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+
+<span class="n">df_resultados</span> <span class="o">=</span> <span class="n">prueba_independencia_chi</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_resultados</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\TAWTOCA\anaconda3\envs\machine\lib\site-packages\geopandas\geodataframe.py:1968: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  super().__setitem__(key, value)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Variable 1     Variable 2  p-valor Independientes
+0            AREA  HOSPITALIZADO   0.0006             No
+1            AREA      MUNICIPIO   0.0000             No
+2            AREA  REGIMEN_SALUD   0.0000             No
+3            AREA           SEXO   0.0010             No
+4            AREA   TIPO_DE_CASO   0.0114             No
+5            AREA    CICLO_VITAL   0.0163             No
+6            AREA   GRUPO_ETNICO   0.0000             No
+7   HOSPITALIZADO      MUNICIPIO   0.0000             No
+8   HOSPITALIZADO  REGIMEN_SALUD   0.0000             No
+9   HOSPITALIZADO         EVENTO   0.0000             No
+10  HOSPITALIZADO    CICLO_VITAL   0.0000             No
+11  HOSPITALIZADO   GRUPO_ETNICO   0.0000             No
+12         MUERTE      MUNICIPIO   0.0183             No
+13         MUERTE         EVENTO   0.0000             No
+14      MUNICIPIO  REGIMEN_SALUD   0.0000             No
+15      MUNICIPIO   TIPO_DE_CASO   0.0000             No
+16      MUNICIPIO         EVENTO   0.0000             No
+17      MUNICIPIO    CICLO_VITAL   0.0000             No
+18      MUNICIPIO   GRUPO_ETNICO   0.0000             No
+19  REGIMEN_SALUD           SEXO   0.0005             No
+20  REGIMEN_SALUD   TIPO_DE_CASO   0.0000             No
+21  REGIMEN_SALUD         EVENTO   0.0000             No
+22  REGIMEN_SALUD    CICLO_VITAL   0.0000             No
+23  REGIMEN_SALUD   GRUPO_ETNICO   0.0000             No
+24           SEXO    CICLO_VITAL   0.0000             No
+25   TIPO_DE_CASO         EVENTO   0.0348             No
+26   TIPO_DE_CASO    CICLO_VITAL   0.0000             No
+27   TIPO_DE_CASO   GRUPO_ETNICO   0.0000             No
+28         EVENTO    CICLO_VITAL   0.0004             No
+29    CICLO_VITAL   GRUPO_ETNICO   0.0189             No
 </pre></div>
 </div>
-<img alt="_images/38ae206ef38ecf58989121de671a1eec2cb83b835b71dcbe3aebbeaa26cfcc73.png" src="_images/38ae206ef38ecf58989121de671a1eec2cb83b835b71dcbe3aebbeaa26cfcc73.png" />
 </div>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>Exploración bivariada (comparaciones)</p></li>
-</ol>
-<p>4.1 Demografía vs evento/desenlace</p>
-<p>Edad × hospitalización.</p>
-<p>Sexo × tipo de caso.</p>
-<p>Aseguradora × mortalidad.</p>
-<p>4.2 Geografía vs desenlace</p>
-<p>Municipios/localidades con mayor hospitalización o mortalidad.</p>
-<p>Tasas de casos por 100.000 hab.</p>
-<p>4.3 Temporalidad vs desenlace</p>
-<p>Hospitalización y mortalidad por año y semana.</p>
-<p>Comparaciones antes/después de picos epidémicos.</p>
-<ol class="arabic simple" start="5">
-<li><p>Pruebas estadísticas</p></li>
-</ol>
-<p>Pruebas de proporción:</p>
-<p>Diferencia en proporciones de hospitalización por sexo.</p>
-<p>Diferencia en proporciones de mortalidad entre municipios/localidades.</p>
-<p>Chi-cuadrado de independencia:</p>
-<p>Sexo × tipo de caso.</p>
-<p>Edad (categorías) × hospitalización.</p>
-<p>Municipio × mortalidad.</p>
-<p>Pruebas de medias:</p>
-<p>Diferencia en promedio de edad entre hospitalizados vs no hospitalizados.</p>
-<p>Diferencia en diferencia de días (síntomas→consulta) por municipio.</p>
-<ol class="arabic simple" start="6">
-<li><p>Análisis multivariado</p></li>
-</ol>
-<p>Correlación entre variables numéricas</p>
-<p>Edad, diferencia de días, semana.</p>
-<p>Heatmap de correlaciones.</p>
-<p>Análisis de correspondencias múltiples (ACM/MCA)</p>
-<p>Para variables categóricas: sexo, etnia, aseguradora, municipio/localidad.</p>
-<p>Ver si aparecen perfiles de pacientes.</p>
-<p>Clustering exploratorio (opcional)</p>
-<p>Agrupar barrios/localidades por perfil de casos.</p>
-<ol class="arabic simple" start="7">
-<li><p>Resumen y hallazgos clave</p></li>
-</ol>
-<p>Principales patrones encontrados.</p>
-<p>Variables críticas para explicar hospitalización y mortalidad.</p>
-<p>Brechas de información (faltantes o inconsistencias).</p>
 </section>
 </section>
 
@@ -2040,24 +1920,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="col.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>Colombia</strong></p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Barranquilla.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Barranquilla</strong></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -2084,8 +1946,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapas">3. MAPAS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-por-evento"><em>Casos por Evento</em></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasa-de-incidencia"><em>Tasa de incidencia</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rem"><em>REM</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-binaria">Exploración binaria</a></li>
 </ul>
   </nav></div>
 
