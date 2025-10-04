@@ -25,27 +25,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# REELEER DATA
-#df = pd.read_csv(r"C:\Users\Hp\DENGUE\Data\dengue_data\data_atlantico.csv", encoding='latin_1', low_memory=False)
-df.columns = df.columns.str.upper()
-
-# Población proyectada
-poblacion = pd.read_csv(r"C:\Users\Hp\DENGUE\Data\dengue_data\tabla_municipios.csv", encoding='utf_8', low_memory=False)
-
-# Shapefile de Atlántico
-gdf = gpd.read_file(r"C:\Users\Hp\DENGUE\Data\dengue_data\atlantico_municipios.shp", encoding='utf_8')
-gdf = gdf.rename(columns={'mpio_cnmbr': 'MUNICIPIO'})
+# Leer el archivo
+df = pd.read_csv(r"C:\Users\Hp\DENGUE\Data\procesados\atl_pros.csv", encoding='latin_1', low_memory=False)
+# Excluir registros de Barranquilla
+df = df[df["municipio"] != "BARRANQUILLA"].copy()
+# Guardar solo Barranquilla
+#df_barranquilla = df[df["municipio"] == "Barranquilla"].copy()
+# Guardar todos los demás (sin Barranquilla)
+#df_sin_barranquilla = df[df["municipio"] != "Barranquilla"].copy()
+df.info()
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mFileNotFoundError[39m                         Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[25][39m[32m, line 6[39m
-[32m      3[39m df.columns = df.columns.str.upper()
-[32m      5[39m [38;5;66;03m# Población proyectada[39;00m
-[32m----> [39m[32m6[39m poblacion = pd.read_csv([33mr[39m[33m"[39m[33mC:[39m[33m\[39m[33mUsers[39m[33m\[39m[33mHp[39m[33m\[39m[33mDENGUE[39m[33m\[39m[33mData[39m[33m\[39m[33mdengue_data[39m[33m\[39m[33mtabla_municipios.csv[39m[33m"[39m, encoding=[33m'[39m[33mutf_8[39m[33m'[39m, low_memory=[38;5;28;01mFalse[39;00m)
-[32m      8[39m [38;5;66;03m# Shapefile de Atlántico[39;00m
-[32m      9[39m gdf = gpd.read_file([33mr[39m[33m"[39m[33mC:[39m[33m\[39m[33mUsers[39m[33m\[39m[33mHp[39m[33m\[39m[33mDENGUE[39m[33m\[39m[33mData[39m[33m\[39m[33mdengue_data[39m[33m\[39m[33matlantico_municipios.shp[39m[33m"[39m, encoding=[33m'[39m[33mutf_8[39m[33m'[39m)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 2[39m
+[32m      1[39m [38;5;66;03m# Leer el archivo[39;00m
+[32m----> [39m[32m2[39m df = pd.read_csv([33mr[39m[33m"[39m[33mC:[39m[33m\[39m[33mUsers[39m[33m\[39m[33mHp[39m[33m\[39m[33mDENGUE[39m[33m\[39m[33mData[39m[33m\[39m[33mprocesados[39m[33m\[39m[33matl_pros.csv[39m[33m"[39m, encoding=[33m'[39m[33mlatin_1[39m[33m'[39m, low_memory=[38;5;28;01mFalse[39;00m)
+[32m      3[39m [38;5;66;03m# Excluir registros de Barranquilla[39;00m
+[32m      4[39m df = df[df[[33m"[39m[33mmunicipio[39m[33m"[39m] != [33m"[39m[33mBARRANQUILLA[39m[33m"[39m].copy()
 
 [36mFile [39m[32m~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:1026[39m, in [36mread_csv[39m[34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)[39m
 [32m   1013[39m kwds_defaults = _refine_defaults_read(
@@ -101,5 +99,5 @@ gdf = gdf.rename(columns={'mpio_cnmbr': 'MUNICIPIO'})
 [32m    881[39m         [38;5;66;03m# Binary mode[39;00m
 [32m    882[39m         handle = [38;5;28mopen[39m(handle, ioargs.mode)
 
-[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'C:\\Users\\Hp\\DENGUE\\Data\\dengue_data\\tabla_municipios.csv'
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'C:\\Users\\Hp\\DENGUE\\Data\\procesados\\atl_pros.csv'
 
