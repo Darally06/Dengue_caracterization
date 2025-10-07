@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: EDA_Atlantico
+- file: EDA_Colombia
 - file: EDA_Atlantico
 - file: Barranquilla
 
