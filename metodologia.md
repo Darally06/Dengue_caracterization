@@ -1,4 +1,4 @@
-# ***Metodología de la Investigación***
+# ***Acerca del Proyecto***
 
 ## **Objetivos**
 
@@ -55,3 +55,4 @@ Analizar la distribución geo-espacial de los casos de dengue en Colombia, con �
     - Patrones estacionales 
 
     - Revisar que lo encontrado corresponda a los boletines epidemiológicos  
+

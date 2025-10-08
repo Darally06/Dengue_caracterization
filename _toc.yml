@@ -4,6 +4,8 @@
 format: jb-book
 root: intro
 chapters:
+- file: metodologia
+- file: datos
 - file: EDA_Colombia
 - file: EDA_Atlantico
 - file: REM_COL
