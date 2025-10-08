@@ -6,5 +6,7 @@ root: intro
 chapters:
 - file: EDA_Colombia
 - file: EDA_Atlantico
-- file: Barranquilla
+- file: REM_COL
+- file: REM_ATL
+
 
