@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Análisis Geo-Espacial del Dengue en Colombia [Caso Atlántico] &#8212; Dengue en Colombia</title>
+    <title>Acerca del Proyecto &#8212; Dengue en Colombia</title>
   
   
   
@@ -57,12 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'metodologia';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Acerca del Proyecto" href="metodologia.html" />
+    <link rel="next" title="Sobre los Datos [Fuentes y ETL]" href="datos.html" />
+    <link rel="prev" title="Análisis Geo-Espacial del Dengue en Colombia [Caso Atlántico]" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -170,14 +167,14 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Análisis Geo-Espacial del Dengue en Colombia [Caso Atlántico]
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="metodologia.html"><em><strong>Acerca del Proyecto</strong></em></a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em><strong>Acerca del Proyecto</strong></em></a></li>
 <li class="toctree-l1"><a class="reference internal" href="datos.html"><em><strong>Sobre los Datos [Fuentes y ETL]</strong></em></a></li>
 <li class="toctree-l1"><a class="reference internal" href="EDA_Colombia.html"><strong>Colombia</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="EDA_Atlantico.html"><strong>Atlántico</strong></a></li>
@@ -254,7 +251,7 @@
       
       
       
-      <li><a href="https://github.com/Darally06/Dengue_caracterization/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Darally06/Dengue_caracterization/issues/new?title=Issue%20on%20page%20%2Fmetodologia.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -284,7 +281,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/metodologia.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Análisis Geo-Espacial del Dengue en Colombia [Caso Atlántico]</h1>
+    <h1>Acerca del Proyecto</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -378,12 +375,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contextualizacion"><strong>Contextualización</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema"><strong>Problema</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antecedentes"><strong>Antecedentes</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anotaciones-de-los-antecedentes"><em>Anotaciones de los Antecedentes</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos"><strong>Objetivos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general"><em>General</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#especificos"><em>Específicos</em></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-clave"><strong>Preguntas Clave</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia"><strong>Metodología</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -395,65 +393,54 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analisis-geo-espacial-del-dengue-en-colombia-caso-atlantico">
-<h1><em><strong>Análisis Geo-Espacial del Dengue en Colombia [Caso Atlántico]</strong></em><a class="headerlink" href="#analisis-geo-espacial-del-dengue-en-colombia-caso-atlantico" title="Link to this heading">#</a></h1>
-<section id="contextualizacion">
-<h2><strong>Contextualización</strong><a class="headerlink" href="#contextualizacion" title="Link to this heading">#</a></h2>
-<p>El dengue es una enfermedad febril aguda de etiología viral, transmitida por vectores del género <em>Aedes</em> (<em>A. aegypti</em> y <em>A. albopictus</em>). Según la <a class="reference external" href="https://www.who.int/es/news-room/fact-sheets/detail/dengue-and-severe-dengue">Organización Mundial de la Salud (OMS, 2023)</a>, esta patología representa una de las mayores cargas sanitarias en regiones tropicales y subtropicales, con un estimado de <strong>390 millones de infecciones anuales</strong> a nivel global. Su espectro clínico abarca desde cuadros leves hasta formas graves potencialmente mortales que requieren atención médica urgente.</p>
-<p>A nivel mundial, el dengue constituye una de las enfermedades virales transmitidas por mosquitos de mayor expansión geográfica, con presencia en más de 120 países. En América Latina, la circulación endémica del virus se ha consolidado en las últimas décadas, con picos epidémicos recurrentes impulsados por factores climáticos, urbanización descontrolada y deficiencias en el control vectorial. En Colombia, el dengue representa un problema prioritario de salud pública debido a su patrón endemo-epidémico y a la amplia distribución del vector en el territorio nacional, que alcanza el <strong>73.3%</strong> de los municipios, según el <a class="reference external" href="https://www.ins.gov.co">Instituto Nacional de Salud (INS, 2024)</a>.</p>
-<p>El dengue tiene consecuencias significativas en la salud pública y en la sociedad. En el ámbito sanitario, genera alta demanda de atención médica, saturación hospitalaria durante los brotes y riesgos de mortalidad en poblaciones vulnerables. Desde el punto de vista social y económico, los periodos epidémicos provocan pérdida de productividad laboral, ausentismo escolar y costos elevados para los sistemas de salud locales. Además, la percepción de riesgo y las medidas preventivas implementadas en comunidades afectadas impactan el bienestar general y la dinámica cotidiana de la población.</p>
-<p>La vulnerabilidad frente al dengue en Colombia está determinada por factores ambientales, socioeconómicos y normativos. La urbanización no planificada, la deficiente gestión del agua y la acumulación de residuos favorecen la proliferación del vector. Desde el plano institucional, el país cuenta con un marco regulatorio que respalda la vigilancia y el control del dengue, sustentado en la <strong>Ley 9 de 1979</strong> (Código Sanitario Nacional), la <strong>Ley 715 de 2001</strong> (competencias en salud pública) y los lineamientos del <strong>Sistema Nacional de Vigilancia en Salud Pública (SIVIGILA)</strong>, que establece la notificación obligatoria de los casos sospechosos y confirmados. Adicionalmente, el <strong>Plan Decenal de Salud Pública 2022–2031</strong> incorpora estrategias de prevención, control vectorial y educación comunitaria orientadas a reducir la carga de la enfermedad.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="acerca-del-proyecto">
+<h1><em><strong>Acerca del Proyecto</strong></em><a class="headerlink" href="#acerca-del-proyecto" title="Link to this heading">#</a></h1>
+<section id="objetivos">
+<h2><strong>Objetivos</strong><a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h2>
+<section id="general">
+<h3><em>General</em><a class="headerlink" href="#general" title="Link to this heading">#</a></h3>
+<p>Analizar la distribución espacio-temporal de los casos de dengue en Colombia, con énfasis en el departamento del Atlántico con el fin de identificar patrones de riesgo.</p>
 </section>
-<section id="problema">
-<h2><strong>Problema</strong><a class="headerlink" href="#problema" title="Link to this heading">#</a></h2>
-<p>El dengue constituye uno de los principales problemas de salud pública en Colombia y en gran parte de América Latina, debido a su alta incidencia, la carga epidemiológica que genera y la estrecha relación que mantiene con factores ambientales y climáticos. La presencia del mosquito Aedes aegypti en gran parte del territorio nacional, junto con diversos factores climáticos, ha facilitado que esta enfermedad permanezca de forma endémica y represente un riesgo para la población.</p>
-<p>En este contexto, resulta fundamental comprender la distribución espacial del virus, que no todos los territorios presentan el mismo nivel de riesgo. Zonas urbanas densamente pobladas, con problemas para acceder a la salud pública o con condiciones climáticas particulares, tienden a mostrar una mayor incidencia, lo que plantea retos diversos para la vigilancia epidemiológica y la implementación de medidas de control.</p>
-<p>Aunque existen reportes y análisis a nivel nacional, en los que se identifican departamentos con alta carga de casos, no siempre se cuenta con un estudio detallado que permita comprender las particularidades de cada región. En el caso del Atlántico, y de manera más específica, de la ciudad de Barranquilla, el aumento poblacional y las condiciones ambientales favorecen la transmisión del dengue, pero la información disponible a menudo se limita a cifras globales que no permiten identificar claramente las áreas más afectadas dentro del territorio ni los factores espaciales asociados a la propagación del virus.  Esta falta de análisis detallado limita la capacidad al momento de priorizar recursos, focalizar campañas de prevención y responder de forma adecuada y oportuna a los brotes de la enfermedad.</p>
-<p>Por lo tanto, se hace necesario un análisis geo-espacial que permita identificar patrones de distribución del dengue en Colombia, con énfasis en el Atlántico y en Barranquilla. Este tipo de estudio no solo contribuirá a reconocer zonas de mayor riesgo dentro del territorio, sino que también proporcionará una base sólida para diseñar estrategias de intervención más focalizadas y eficaces.</p>
-</section>
-<section id="antecedentes">
-<h2><strong><a class="reference external" href="https://uninorte-my.sharepoint.com/:w:/g/personal/daniellaguerra_uninorte_edu_co/EaFc_6JVUttLkH3sMu8MYo4BOD-LLKBUlwujXVze6RIcEQ?e=aMb08c">Antecedentes</a></strong><a class="headerlink" href="#antecedentes" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Fuentes-Vallejo (2017)</strong><br />
-<strong>Tema:</strong> Distribución espacio-temporal del dengue en un contexto urbano hiperendémico en Girardot (Cundinamarca).<br />
-<strong>Métodos:</strong> Análisis de conglomerados espaciales (Getis-Ord) y espacio-temporales (Kulldorff).<br />
-<strong>Objetivo:</strong> Identificar patrones de transmisión y su relación con la dinámica territorial.<br />
-<strong>Resultados:</strong> Se observó una concentración de casos en el suroeste de la ciudad, con mayor incidencia durante las temporadas secas.<br />
-<strong>Región:</strong> Girardot, Cundinamarca, Colombia.</p></li>
-<li><p><strong>Hernández et al. (2017)</strong><br />
-<strong>Tema:</strong> Epidemiología y georreferenciación del dengue en un hospital de segundo nivel.<br />
-<strong>Métodos:</strong> Estudio retrospectivo de casos entre 2010 y 2014, utilizando datos del sistema SIVIGILA y herramientas EpiInfo y EpiMap.<br />
-<strong>Objetivo:</strong> Describir la incidencia, mortalidad y distribución geográfica de los casos en El Espinal.<br />
-<strong>Resultados:</strong> Se identificó alta incidencia en población joven (1–24 años), un comportamiento bimodal y una distribución asociada a la densidad poblacional.<br />
-<strong>Región:</strong> Municipio de El Espinal, Tolima.</p></li>
-<li><p><strong>Muñoz, Poveda, Arbeláez &amp; Vélez (2021)</strong><br />
-<strong>Tema:</strong> Dinámicas espacio-temporales del dengue en relación con el clima local y el fenómeno ENSO (2007–2017).<br />
-<strong>Métodos:</strong> Correlaciones cruzadas, análisis de ondículas y causalidad no lineal (PCMCI).<br />
-<strong>Objetivo:</strong> Evaluar la relación entre ENSO, variables climáticas y casos de dengue en Colombia.<br />
-<strong>Resultados:</strong> Se encontró que las fases de El Niño y La Niña influyen en aumentos y disminuciones de los casos, con mayor impacto en las regiones Pacífica y Andina.<br />
-<strong>Región:</strong> Nacional, con énfasis en Pacífico y Andes.</p></li>
-<li><p><strong>Marceló-Díaz &amp; Lesmes (2022)</strong><br />
-<strong>Tema:</strong> Análisis espacio-temporal de conglomerados de dengue en el suroccidente de Colombia (2014–2019).<br />
-<strong>Métodos:</strong> Modelos de Poisson, análisis Getis-Ord, índice de pupas y análisis de vecino más cercano.<br />
-<strong>Objetivo:</strong> Identificar áreas de alta transmisión de dengue a diferentes escalas (departamental, municipal y local).<br />
-<strong>Resultados:</strong> El municipio de Patía (Cauca) fue identificado como zona crítica, con alta incidencia y concentración de pupas.<br />
-<strong>Región:</strong> Departamento del Cauca, suroccidente colombiano.</p></li>
-<li><p><strong>Ortega-Lenis et al. (2024)</strong><br />
-<strong>Tema:</strong> Efectos de la variabilidad climática en la distribución del dengue en el Valle del Cauca (2001–2019).<br />
-<strong>Métodos:</strong> Modelos jerárquicos bayesianos espacio-temporales.<br />
-<strong>Objetivo:</strong> Analizar patrones espacio-temporales y cuantificar factores de riesgo asociados al dengue.<br />
-<strong>Resultados:</strong> La temperatura y la precipitación mostraron efectos retardados sobre el riesgo de transmisión, lo que evidencia su potencial para sistemas de alerta temprana.<br />
-<strong>Región:</strong> Valle del Cauca, Colombia.</p></li>
-</ol>
-<section id="anotaciones-de-los-antecedentes">
-<h3><em>Anotaciones de los Antecedentes</em><a class="headerlink" href="#anotaciones-de-los-antecedentes" title="Link to this heading">#</a></h3>
-<p>De los artículos revisados, se han tomado referencias de la metodología de trabajo, modelos estadísticos y análisis aplicados (Modelos de Poisson, correlaciones cruzadas, análisis de conglomerados, modelos espacio-temporales), así como el tratamiento de datos relacionados con variables climáticas, demográficas y de eventos de salud pública.</p>
-<p>Se ha tomado como artículo guía la publicación de Marceló Díaz &amp; Lesmes (2022), con la intención de realizar un análisis espacio-temporal del dengue en el departamento del Atlántico y, en particular, en la Ciudad de Barranquilla. Asi mismo, se integrará la descripción de las dinámicas espacio-temporales asociadas al clima en el Atlántico, siguiendo el enfoque de Muñoz, et al. (2021) y Ortega et al. (2024), mediante el uso de variables meteorológicas proporcionadas por el IDEAM.</p>
-<p>Por otro lado, se pretende caracterizar los casos en Colombia con base en la incidencia relacionada a la densidad poblacional, siguiendo la idea de Hernández et al. (2017). A diferencia de las investigaciones previas, este estudio busca aportar un análisis focalizado en el Atlántico, con énfasis en Barranquilla, lo cual permitirá generar evidencia localizada en el contexto urbano de alta vulnerabilidad.</p>
+<section id="especificos">
+<h3><em>Específicos</em><a class="headerlink" href="#especificos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Identificar focos espaciales en la ocurrencia de los casos de dengue en Colombia.</p></li>
+<li><p>Analizar la relación entre las variables climáticas y la distribución espacial de los casos de dengue en el Atlántico.</p></li>
+<li><p>Identificar las áreas de mayor vulnerabilidad geográfica y poblacional dentro de Barranquilla.</p></li>
+</ul>
 </section>
 </section>
-<div class="toctree-wrapper compound">
-</div>
+<section id="preguntas-clave">
+<h2><strong>Preguntas Clave</strong><a class="headerlink" href="#preguntas-clave" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>¿De qué manera se distribuye el dengue en Colombia durante el periodo 2013-2023?</p></li>
+<li><p>¿Qué semanas epidemiológicas o periodos pueden considerarse críticas en términos de brotes en Colombia? ¿Existen patrones cíclicos?</p></li>
+<li><p>¿En qué departamentos se evidencia mayores brotes?</p></li>
+<li><p>¿Se puede detectar zonas de alto riesgo en Colombia?</p></li>
+<li><p>¿De qué manera se distribuye el dengue en el Atlántico durante el periodo 2017-2023?</p></li>
+<li><p>¿Cómo analizar la relación entre las variables climáticas y la distribución espacial de los casos de dengue en el Atlántico?</p></li>
+<li><p>¿Qué relación existe entre la temperatura, la precipitación y la humedad con la variabilidad de los casos de dengue en el Atlántico?</p></li>
+<li><p>¿Qué municipios dentro del Atlántico presentan mayor concentración de casos?</p></li>
+<li><p>¿Qué semanas epidemiológicas pueden considerarse críticas en términos de brotes?</p></li>
+<li><p>¿Cómo puede este análisis apoyar la planificación y focalización de estrategias en salud pública en el Atlántico?</p></li>
+</ul>
+</section>
+<section id="metodologia">
+<h2><strong>Metodología</strong><a class="headerlink" href="#metodologia" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Caracterización de casos:</strong>  Se quiere mostrar la distribución de casos en la unidad geográfica.</p></li>
+<li><p><strong>Incidencia de casos:</strong> Cálculo de la tasa de incidencia REM a partir de la proyección poblacional DANE. Buscamos detectar zonas de alto y bajo riesgo, aumentos o variaciones en la dinámica de casos.</p></li>
+<li><p><strong>Covariables meteorológicas:</strong> Uso de indicadores climáticos para verificar si estas tienen influencia en la cantidad de casos por semana.  La influencia debe calcularse con efecto a la semana siguiente.</p></li>
+<li><p><strong>Análisis espacio-tiempo:</strong> Buscamos detectar patrones el comportamiento cíclico de los casos en general y por evento, en diferentes periodos de tiempo:</p>
+<ul>
+<li><p>Semana epidemiológica</p></li>
+<li><p>Periodo epidemiológico (4 semanas)</p></li>
+<li><p>Patrones estacionales</p></li>
+<li><p>Revisar que lo encontrado corresponda a los boletines epidemiológicos</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -486,12 +473,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><em><strong>Análisis Geo-Espacial del Dengue en Colombia [Caso Atlántico]</strong></em></p>
+      </div>
+    </a>
     <a class="right-next"
-       href="metodologia.html"
+       href="datos.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><em><strong>Acerca del Proyecto</strong></em></p>
+        <p class="prev-next-title"><em><strong>Sobre los Datos [Fuentes y ETL]</strong></em></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -511,12 +507,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contextualizacion"><strong>Contextualización</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema"><strong>Problema</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antecedentes"><strong>Antecedentes</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anotaciones-de-los-antecedentes"><em>Anotaciones de los Antecedentes</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos"><strong>Objetivos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general"><em>General</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#especificos"><em>Específicos</em></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-clave"><strong>Preguntas Clave</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia"><strong>Metodología</strong></a></li>
 </ul>
   </nav></div>
 

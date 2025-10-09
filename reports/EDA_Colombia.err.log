@@ -31,8 +31,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# [Gráfico] Mapa casos por departamento según evento', '', 'eventos = ["Clasico", "Grave"]', '', 'for evento in eventos:']
+['# [Configuración] Leer data', 'df = pd.read_csv(r"https://media.githubusercontent.com/media/Darally06/DATOS_DENGUE/refs/heads/main/Data_Colombia.csv")', "df['desenlace'] = df['desenlace'].replace('0', 'Fallecido')", '', '# Leer shapefile']
 ...
-['    for j in range(len(anios) + 1, len(axes)):', '        axes[j].axis("off")', '', '    plt.tight_layout()', '    plt.show()']
+['casos = pd.read_csv("Resumen/casos_dep_colombia.csv")', '', 'poblacion = pd.read_csv("Poblacion/Poblacion_nacional.csv", encoding="latin_1")', '', 'df.info()']
 -------------------
 
