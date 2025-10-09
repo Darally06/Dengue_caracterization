@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'EDA_Atlantico';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Barranquilla" href="Barranquilla.html" />
+    <link rel="next" title="Razón Estandarizada de Morbilidad [Colombia]" href="REM_COL.html" />
     <link rel="prev" title="Colombia" href="EDA_Colombia.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,14 +169,17 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Análisis de datos exploratorio
+                    Análisis Geo-Espacial del Dengue en Colombia [Caso Atlántico]
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="metodologia.html"><em><strong>Acerca del Proyecto</strong></em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html"><em><strong>Sobre los Datos [Fuentes y ETL]</strong></em></a></li>
 <li class="toctree-l1"><a class="reference internal" href="EDA_Colombia.html"><strong>Colombia</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Atlántico</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Barranquilla.html"><strong>Barranquilla</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="REM_COL.html">Razón Estandarizada de Morbilidad [Colombia]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="REM_ATL.html">Razón Estandarizada de Morbilidad [Atlántico]</a></li>
 </ul>
 
     </div>
@@ -372,28 +375,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptivo-de-variables"><strong>1. Descriptivo de variables</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-demograficas">➡️ Variables demográficas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-de-evento">➡️ Variables de evento</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-espaciales">➡️ Variables espaciales</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-netos">Casos netos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-por-densidad-poblacional">Casos por densidad poblacional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptivo-de-variables"><em><strong>1. Descriptivo de variables</strong></em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-demograficas"><strong>Variables demográficas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-de-evento"><strong>Variables de evento</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-espaciales"><strong>Variables espaciales</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-netos"><em>Casos netos</em></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-por-densidad-poblacional"><em>Casos por densidad poblacional</em></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-temporales">➡️ Variables temporales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-temporales"><strong>Variables temporales</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-estadistico"><strong>2. Análisis estadístico</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruebas-de-independencia-de-variables-categoricas">🔹 Pruebas de independencia de variables categóricas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Variables demográficas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado-variables-de-evento-segun-demografia">🔹 Análisis bivariado: Variables de evento según demografía</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hospitalizacion-de-pacientes">Hospitalización de pacientes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-de-caso">Tipo de caso</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desenlace">Desenlace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruebas-de-independencia-de-variables-categoricas"><strong>Pruebas de independencia de variables categóricas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Variables demográficas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado-variables-de-evento-segun-demografia"><strong>Análisis bivariado: Variables de evento según demografía</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hospitalizacion-de-pacientes"><em>Hospitalización de pacientes</em></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-de-caso"><em>Tipo de caso</em></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desenlace"><em>Desenlace</em></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporalidad-de-casos">🔹 Temporalidad de casos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-espacial-de-casos">🔹 Distribución de espacial de casos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporalidad-de-casos"><strong>Temporalidad de casos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-espacial-de-casos"><strong>Distribución de espacial de casos</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -468,9 +471,9 @@ dtype: int64
 </div>
 </div>
 <section id="descriptivo-de-variables">
-<h2><strong>1. Descriptivo de variables</strong><a class="headerlink" href="#descriptivo-de-variables" title="Link to this heading">#</a></h2>
+<h2><em><strong>1. Descriptivo de variables</strong></em><a class="headerlink" href="#descriptivo-de-variables" title="Link to this heading">#</a></h2>
 <section id="variables-demograficas">
-<h3>➡️ Variables demográficas<a class="headerlink" href="#variables-demograficas" title="Link to this heading">#</a></h3>
+<h3><strong>Variables demográficas</strong><a class="headerlink" href="#variables-demograficas" title="Link to this heading">#</a></h3>
 <p>La población infectada por dengue en el Atlántico está en su mayoría, en edad adolescente (42.2%), seguida de población adulta (22.1%) e infantes (21.8%); estos grupos etarios son los de mayor exposición al estar en el medio educativo y laboral. Se resalta que para la población adulto mayor y ancianidad, se presentan una proporción más elevada de dengue grave, lo que manifiesta una mayor vulnerabilidad clínica en estas etapas.</p>
 <p>La distribución de casos por sexo es equilibrada, siento el 52.4% masculinos. En términos étnicos, solo un 2.17% de casos se asocia a pacientes pertenecientes a un grupo étnico. Los pacientes, en su mayoría están afiliados al régimen de salud subsidiado (53.5%) y contributivo (39.1%), no obstante, aunque la población de pacientes no asegurados representan apenas el 2.3% de los casos, concentran una mayor proporción de dengue grave (6.3%), lo que sugiere una posible asociación entre la ausencia de cobertura en salud y un peor desenlace clínico del dengue.</p>
 <div class="cell docutils container">
@@ -653,10 +656,11 @@ dtype: int64
 <span class="sd">    2. Densidad por ciclo vital</span>
 <span class="sd">    3. Boxplot por ciclo vital</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#08306B&quot;</span><span class="p">,</span> <span class="s2">&quot;#08519C&quot;</span><span class="p">,</span> <span class="s2">&quot;#2171B5&quot;</span><span class="p">,</span> <span class="s2">&quot;#4292C6&quot;</span><span class="p">,</span> <span class="s2">&quot;#6BAED6&quot;</span><span class="p">,</span> <span class="s2">&quot;#9ECAE1&quot;</span><span class="p">]</span>
 
     <span class="c1"># --- 2. Densidad por ciclo vital ---</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="n">grupo</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="n">grupo</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribución de edades por ciclo vital&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Edad&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Densidad&quot;</span><span class="p">)</span>
@@ -677,14 +681,14 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e2fc5ac1727e3ea7bbb0b6b556e6e7778306b5052d58b97308686581bac56f0e.png" src="_images/e2fc5ac1727e3ea7bbb0b6b556e6e7778306b5052d58b97308686581bac56f0e.png" />
+<img alt="_images/c4326f419007ae028229cd91505fd11559c8e120801cac977dcebfe40c7ca00c.png" src="_images/c4326f419007ae028229cd91505fd11559c8e120801cac977dcebfe40c7ca00c.png" />
 <img alt="_images/51ebd8f2a5daab0e75a0cee58f67a1a24a43795d9dbbfbf9e5d4ce4ac88108b7.png" src="_images/51ebd8f2a5daab0e75a0cee58f67a1a24a43795d9dbbfbf9e5d4ce4ac88108b7.png" />
 </div>
 </div>
 <p>Los gráficos representan la distribución de la edad, discriminada por grupos etarios, donde se evidencia que para las primeras etapas de la vida, la distribución de la edad de los pacientes es homogénea. La etapa adulta es la de mayor variabilidad, con sesgo positivo, lo que indica una mayor proporción de casos hacia los adultos mas jóvenes. Misma dinámica se aprecia para el grupo Adulto mayor y Ancianidad.</p>
 </section>
 <section id="variables-de-evento">
-<h3>➡️ Variables de evento<a class="headerlink" href="#variables-de-evento" title="Link to this heading">#</a></h3>
+<h3><strong>Variables de evento</strong><a class="headerlink" href="#variables-de-evento" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DESCRIPCIÓN DE VARIABLES DE EVENTO&quot;</span><span class="p">)</span>
@@ -745,9 +749,9 @@ Fallecido       7      0.0004        0      7        0.0000      1.0000
 <p>En relación a los fallecidos, la mortalidad registrada es mínima, existiendo solo 7 pacientes fallecidos, todos por dengue grave.</p>
 </section>
 <section id="variables-espaciales">
-<h3>➡️ Variables espaciales<a class="headerlink" href="#variables-espaciales" title="Link to this heading">#</a></h3>
+<h3><strong>Variables espaciales</strong><a class="headerlink" href="#variables-espaciales" title="Link to this heading">#</a></h3>
 <section id="casos-netos">
-<h4>Casos netos<a class="headerlink" href="#casos-netos" title="Link to this heading">#</a></h4>
+<h4><em>Casos netos</em><a class="headerlink" href="#casos-netos" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DESCRIPCIÓN DE VARIABLES ESPACIALES&quot;</span><span class="p">)</span>
@@ -856,7 +860,7 @@ DESCONOCIDO           27      0.0015       26      1        0.9630      0.0370
 </div>
 </section>
 <section id="casos-por-densidad-poblacional">
-<h4>Casos por densidad poblacional<a class="headerlink" href="#casos-por-densidad-poblacional" title="Link to this heading">#</a></h4>
+<h4><em>Casos por densidad poblacional</em><a class="headerlink" href="#casos-por-densidad-poblacional" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Tabla] Casos por municipio</span>
@@ -934,13 +938,6 @@ DESCONOCIDO           27      0.0015       26      1        0.9630      0.0370
   </thead>
   <tbody>
     <tr>
-      <th>22</th>
-      <td>USIACURÍ</td>
-      <td>400</td>
-      <td>107917.0</td>
-      <td>37.065523</td>
-    </tr>
-    <tr>
       <th>11</th>
       <td>POLONUEVO</td>
       <td>447</td>
@@ -990,18 +987,25 @@ DESCONOCIDO           27      0.0015       26      1        0.9630      0.0370
       <td>16.809612</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>MANATÍ</td>
-      <td>264</td>
-      <td>171632.0</td>
-      <td>15.381747</td>
-    </tr>
-    <tr>
       <th>16</th>
       <td>SABANALARGA</td>
       <td>1177</td>
       <td>785276.0</td>
       <td>14.988361</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>SUAN</td>
+      <td>151</td>
+      <td>103469.0</td>
+      <td>14.593743</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>PONEDERA</td>
+      <td>260</td>
+      <td>202652.0</td>
+      <td>12.829876</td>
     </tr>
   </tbody>
 </table>
@@ -1023,7 +1027,7 @@ DESCONOCIDO           27      0.0015       26      1        0.9630      0.0370
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d6276445029c3bf97bd9eaf8520e128778954e0419338b684ebf813cc908e31a.png" src="_images/d6276445029c3bf97bd9eaf8520e128778954e0419338b684ebf813cc908e31a.png" />
+<img alt="_images/33f0bc8d27ce93887c7c9e7681ab28bef31b34033e5fd4fe44c03e355f3504c0.png" src="_images/33f0bc8d27ce93887c7c9e7681ab28bef31b34033e5fd4fe44c03e355f3504c0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1033,14 +1037,14 @@ DESCONOCIDO           27      0.0015       26      1        0.9630      0.0370
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    22.000000
-mean     14.429214
-std       8.490318
-min       3.947491
-25%       7.047110
-50%      14.324278
-75%      18.794080
-max      37.065523
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    15.000000
+mean     15.285692
+std       6.864260
+min       4.798004
+25%       9.805293
+50%      14.988361
+75%      20.040332
+max      28.707765
 Name: densidad_global, dtype: float64
 </pre></div>
 </div>
@@ -1056,43 +1060,10 @@ Name: densidad_global, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;densidad_global&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/a88500f4fe5f099defddc716196a005742ea0c85036e54d2bd0052abffa703a6.png" src="_images/a88500f4fe5f099defddc716196a005742ea0c85036e54d2bd0052abffa703a6.png" />
+<img alt="_images/f3c032cccee86c7e9b033f923d57824bcbec1416eb30c682007883737181b978.png" src="_images/f3c032cccee86c7e9b033f923d57824bcbec1416eb30c682007883737181b978.png" />
 </div>
 </div>
 <p>La densidad poblacional de casos de dengue por municipio presenta una gran variabilidad. El valor promedio es de aproximadamente 14.3 casos por cada 10,000 habitantes, con una desviación estándar de 8.4 casos. Un 25% de los municipios reporta entre 7 a 14.3 casos, mostrando entonces la mitad de los territorios no reportan más de 15 casos por cada 10,000 habitantes. El municipio de Usiacurí es el de mayor densidad de casos (37), este es un dato atípico al conjunto, representando una tasa muy alta. La distribución de la densidad es sesgada hacia la derecha, con municipios de Polovuevo, Baranoa, Galapa y Puerto Colombia reportando más de 20 casos por cada 10,000 habitantes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Tabla] Densidad de casos por municipio y año </span>
-<span class="n">totales_mun</span> <span class="o">=</span> <span class="n">tabla_mun</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;municipio&quot;</span><span class="p">)[</span><span class="s2">&quot;densidad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">municipios_filtrados</span> <span class="o">=</span> <span class="n">totales_mun</span><span class="p">[</span><span class="n">totales_mun</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
-<span class="n">tabla_filtrada</span> <span class="o">=</span> <span class="n">tabla_mun</span><span class="p">[</span><span class="n">tabla_mun</span><span class="p">[</span><span class="s2">&quot;municipio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">municipios_filtrados</span><span class="p">)]</span>
-
-<span class="n">eventos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Clasico&quot;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">evento</span> <span class="ow">in</span> <span class="n">eventos</span><span class="p">:</span>
-    <span class="n">tabla_evento</span> <span class="o">=</span> <span class="n">tabla_filtrada</span><span class="p">[</span><span class="n">tabla_filtrada</span><span class="p">[</span><span class="s2">&quot;evento&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">evento</span><span class="p">]</span>
-    <span class="c1"># Crear tabla pivote</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">tabla_evento</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-        <span class="n">index</span><span class="o">=</span><span class="s2">&quot;municipio&quot;</span><span class="p">,</span> 
-        <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;año&quot;</span><span class="p">,</span> 
-        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;densidad&quot;</span><span class="p">,</span> 
-        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-
-    <span class="c1"># Graficar</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">pivot</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Purples&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Casos de Dengue </span><span class="si">{</span><span class="n">evento</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Municipio&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/e7555c504e9bf55a27979d50794c18648c4307105aec807bd1100694bce232cf.png" src="_images/e7555c504e9bf55a27979d50794c18648c4307105aec807bd1100694bce232cf.png" />
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Gráfico] Mapa casos por municipio según evento</span>
@@ -1142,14 +1113,14 @@ Name: densidad_global, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e748631d5afc8e061bb316270710696cab6b6d3c5ad4de7b2cbbafbe602e735f.png" src="_images/e748631d5afc8e061bb316270710696cab6b6d3c5ad4de7b2cbbafbe602e735f.png" />
-<img alt="_images/399c626bb7659b3d5dd86943e823415b29f7065ec57e2dc73f25b50626357d76.png" src="_images/399c626bb7659b3d5dd86943e823415b29f7065ec57e2dc73f25b50626357d76.png" />
+<img alt="_images/457595fd51c9d661261a4e4b617b0ec5c479247e1f035bdd3693f200d7e48e47.png" src="_images/457595fd51c9d661261a4e4b617b0ec5c479247e1f035bdd3693f200d7e48e47.png" />
+<img alt="_images/6bf156acfef803ae881496ffd4e8effba7bb877a7e5cdcb3063d03630f674397.png" src="_images/6bf156acfef803ae881496ffd4e8effba7bb877a7e5cdcb3063d03630f674397.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="variables-temporales">
-<h3>➡️ Variables temporales<a class="headerlink" href="#variables-temporales" title="Link to this heading">#</a></h3>
+<h3><strong>Variables temporales</strong><a class="headerlink" href="#variables-temporales" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">describir_categorica</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;año&quot;</span><span class="p">])</span>
@@ -1395,12 +1366,18 @@ año
     <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
 
     <span class="n">años</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_conteo</span><span class="p">[</span><span class="s1">&#39;año&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-    <span class="n">colores</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">años</span><span class="p">))</span>  <span class="c1"># paleta con N tonos</span>
+    
+    <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#08306B&quot;</span><span class="p">,</span> <span class="s2">&quot;#08519C&quot;</span><span class="p">,</span> <span class="s2">&quot;#2171B5&quot;</span><span class="p">,</span> <span class="s2">&quot;#4292C6&quot;</span><span class="p">,</span> <span class="s2">&quot;#6BAED6&quot;</span><span class="p">,</span> <span class="s2">&quot;#9ECAE1&quot;</span><span class="p">,</span> <span class="s2">&quot;#C6DBEF&quot;</span><span class="p">]</span>
+    <span class="n">colores</span> <span class="o">=</span> <span class="n">palette</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">años</span><span class="p">)]</span>  <span class="c1"># selecciona N colores según la cantidad de años</span>
 
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">año</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">años</span><span class="p">):</span>
         <span class="n">datos_año</span> <span class="o">=</span> <span class="n">df_conteo</span><span class="p">[</span><span class="n">df_conteo</span><span class="p">[</span><span class="s1">&#39;año&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">año</span><span class="p">]</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">datos_año</span><span class="p">[</span><span class="s1">&#39;semana&#39;</span><span class="p">],</span> <span class="n">datos_año</span><span class="p">[</span><span class="s1">&#39;casos&#39;</span><span class="p">],</span> 
-                <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">año</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">colores</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">datos_año</span><span class="p">[</span><span class="s1">&#39;semana&#39;</span><span class="p">],</span> 
+            <span class="n">datos_año</span><span class="p">[</span><span class="s1">&#39;casos&#39;</span><span class="p">],</span> 
+            <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">año</span><span class="p">),</span> 
+            <span class="n">color</span><span class="o">=</span><span class="n">colores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="p">)</span>
         
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">nombre_grafico</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Semana del año&quot;</span><span class="p">)</span>
@@ -1410,16 +1387,13 @@ año
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
+
 <span class="n">graficar_casos_semanales_por_año</span><span class="p">(</span><span class="n">conteo_semanal</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hp\AppData\Local\Temp\ipykernel_39628\1452467844.py:9: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed in 3.11. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap()`` or ``pyplot.get_cmap()`` instead.
-  colores = cm.get_cmap(&#39;Blues&#39;, len(años))  # paleta con N tonos
-</pre></div>
-</div>
-<img alt="_images/6075153b95fa9fb191ea77429fa52fb540718be2edc3f03945cd758b7ead47db.png" src="_images/6075153b95fa9fb191ea77429fa52fb540718be2edc3f03945cd758b7ead47db.png" />
+<img alt="_images/1c1c4c597be0abb9876db76448376ecf6fe5ab7ed1ee3573ab841f8fd4caf7d9.png" src="_images/1c1c4c597be0abb9876db76448376ecf6fe5ab7ed1ee3573ab841f8fd4caf7d9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1561,7 +1535,7 @@ año
 </div>
 </div>
 <section id="pruebas-de-independencia-de-variables-categoricas">
-<h3>🔹 Pruebas de independencia de variables categóricas<a class="headerlink" href="#pruebas-de-independencia-de-variables-categoricas" title="Link to this heading">#</a></h3>
+<h3><strong>Pruebas de independencia de variables categóricas</strong><a class="headerlink" href="#pruebas-de-independencia-de-variables-categoricas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Test] Prueba de Chi-Cuadrado</span>
@@ -1618,7 +1592,7 @@ año
 </div>
 </section>
 <section id="id1">
-<h3>Variables demográficas<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><strong>Variables demográficas</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demograficas_c</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sexo&quot;</span><span class="p">,</span> <span class="s2">&quot;ciclo_vital&quot;</span><span class="p">,</span><span class="s2">&quot;grupo_etnico&quot;</span><span class="p">,</span><span class="s2">&quot;regimen_salud&quot;</span><span class="p">]</span>
@@ -2054,9 +2028,9 @@ año
 <p>Con respecto a las variables relacionadas con el evento epidemiológico, se observa que la hospitalización y desenlace están significativamente asociados con el evento. Además, la hospitalización y el tipo de caso tienen una asociación significativa, lo que sugiere que los casos confirmados o probables tienen diferente propensión a ser hospitalizados.</p>
 </section>
 <section id="analisis-bivariado-variables-de-evento-segun-demografia">
-<h3>🔹 Análisis bivariado: Variables de evento según demografía<a class="headerlink" href="#analisis-bivariado-variables-de-evento-segun-demografia" title="Link to this heading">#</a></h3>
+<h3><strong>Análisis bivariado: Variables de evento según demografía</strong><a class="headerlink" href="#analisis-bivariado-variables-de-evento-segun-demografia" title="Link to this heading">#</a></h3>
 <section id="hospitalizacion-de-pacientes">
-<h4>Hospitalización de pacientes<a class="headerlink" href="#hospitalizacion-de-pacientes" title="Link to this heading">#</a></h4>
+<h4><em>Hospitalización de pacientes</em><a class="headerlink" href="#hospitalizacion-de-pacientes" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -2093,7 +2067,7 @@ año
 </div>
 </section>
 <section id="tipo-de-caso">
-<h4>Tipo de caso<a class="headerlink" href="#tipo-de-caso" title="Link to this heading">#</a></h4>
+<h4><em>Tipo de caso</em><a class="headerlink" href="#tipo-de-caso" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -2130,7 +2104,7 @@ año
 </div>
 </section>
 <section id="desenlace">
-<h4>Desenlace<a class="headerlink" href="#desenlace" title="Link to this heading">#</a></h4>
+<h4><em>Desenlace</em><a class="headerlink" href="#desenlace" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_fallecidos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;desenlace&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Fallecido&quot;</span><span class="p">]</span>
@@ -2167,7 +2141,7 @@ año
 </section>
 </section>
 <section id="temporalidad-de-casos">
-<h3>🔹 Temporalidad de casos<a class="headerlink" href="#temporalidad-de-casos" title="Link to this heading">#</a></h3>
+<h3><strong>Temporalidad de casos</strong><a class="headerlink" href="#temporalidad-de-casos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Test] Shapiro para normalidad</span>
@@ -2409,7 +2383,7 @@ año
 <p>De acuerdo a la función de autocorrelación ACF, la serie tiene una Autocorrelación positiva decreciente, es decir, que los valores de semanas cercanas están correlacionados, y la correlación disminuye gradualmente a medida que aumenta el lag,  esto indica que los casos dependen de semanas anteriores. La autocorrelación es significativa hasta ~15 semanas. El decaimiento gradual sugiere un una tendencia. Esto indica que para las semanas cercanas, el número de casos es cercano, reflejando la forma en que la enfermedad se propaga en el tiempo.</p>
 </section>
 <section id="distribucion-de-espacial-de-casos">
-<h3>🔹 Distribución de espacial de casos<a class="headerlink" href="#distribucion-de-espacial-de-casos" title="Link to this heading">#</a></h3>
+<h3><strong>Distribución de espacial de casos</strong><a class="headerlink" href="#distribucion-de-espacial-de-casos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Test] Índice de Moran</span>
@@ -2431,7 +2405,7 @@ año
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Índice de Moran: 0.1705486844015851
-Valor-p: 0.002
+Valor-p: 0.004
 </pre></div>
 </div>
 </div>
@@ -2528,11 +2502,11 @@ Valor-p: 0.002
       </div>
     </a>
     <a class="right-next"
-       href="Barranquilla.html"
+       href="REM_COL.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Barranquilla</strong></p>
+        <p class="prev-next-title">Razón Estandarizada de Morbilidad [Colombia]</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2552,28 +2526,28 @@ Valor-p: 0.002
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptivo-de-variables"><strong>1. Descriptivo de variables</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-demograficas">➡️ Variables demográficas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-de-evento">➡️ Variables de evento</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-espaciales">➡️ Variables espaciales</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-netos">Casos netos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-por-densidad-poblacional">Casos por densidad poblacional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptivo-de-variables"><em><strong>1. Descriptivo de variables</strong></em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-demograficas"><strong>Variables demográficas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-de-evento"><strong>Variables de evento</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-espaciales"><strong>Variables espaciales</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-netos"><em>Casos netos</em></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-por-densidad-poblacional"><em>Casos por densidad poblacional</em></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-temporales">➡️ Variables temporales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-temporales"><strong>Variables temporales</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-estadistico"><strong>2. Análisis estadístico</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruebas-de-independencia-de-variables-categoricas">🔹 Pruebas de independencia de variables categóricas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Variables demográficas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado-variables-de-evento-segun-demografia">🔹 Análisis bivariado: Variables de evento según demografía</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hospitalizacion-de-pacientes">Hospitalización de pacientes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-de-caso">Tipo de caso</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desenlace">Desenlace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruebas-de-independencia-de-variables-categoricas"><strong>Pruebas de independencia de variables categóricas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Variables demográficas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado-variables-de-evento-segun-demografia"><strong>Análisis bivariado: Variables de evento según demografía</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hospitalizacion-de-pacientes"><em>Hospitalización de pacientes</em></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-de-caso"><em>Tipo de caso</em></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desenlace"><em>Desenlace</em></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporalidad-de-casos">🔹 Temporalidad de casos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-espacial-de-casos">🔹 Distribución de espacial de casos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporalidad-de-casos"><strong>Temporalidad de casos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-espacial-de-casos"><strong>Distribución de espacial de casos</strong></a></li>
 </ul>
 </li>
 </ul>

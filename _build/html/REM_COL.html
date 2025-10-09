@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Razón de Enfermedad o Morbilidad [REM] &#8212; Dengue en Colombia</title>
+    <title>Razón Estandarizada de Morbilidad [Colombia] &#8212; Dengue en Colombia</title>
   
   
   
@@ -57,9 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'REM_COL';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Razón Estandarizada de Morbilidad [Atlántico]" href="REM_ATL.html" />
+    <link rel="prev" title="Atlántico" href="EDA_Atlantico.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -169,14 +171,17 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Análisis de datos exploratorio
+                    Análisis Geo-Espacial del Dengue en Colombia [Caso Atlántico]
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="metodologia.html"><em><strong>Acerca del Proyecto</strong></em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="datos.html"><em><strong>Sobre los Datos [Fuentes y ETL]</strong></em></a></li>
 <li class="toctree-l1"><a class="reference internal" href="EDA_Colombia.html"><strong>Colombia</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="EDA_Atlantico.html"><strong>Atlántico</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Barranquilla.html"><strong>Barranquilla</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Razón Estandarizada de Morbilidad [Colombia]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="REM_ATL.html">Razón Estandarizada de Morbilidad [Atlántico]</a></li>
 </ul>
 
     </div>
@@ -362,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Razón de Enfermedad o Morbilidad [REM]</h1>
+    <h1>Razón Estandarizada de Morbilidad [Colombia]</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -372,7 +377,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rem"><em>REM</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rem-por-ano"><strong>REM por Año</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rem-por-periodo"><strong>REM por Periodo</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -384,14 +390,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="razon-de-enfermedad-o-morbilidad-rem">
-<h1>Razón de Enfermedad o Morbilidad [REM]<a class="headerlink" href="#razon-de-enfermedad-o-morbilidad-rem" title="Link to this heading">#</a></h1>
-<p>Tasa de morbilidad que mide la frecuencia de casos de una enfermedad en relación con la población expuesta.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="razon-estandarizada-de-morbilidad-colombia">
+<h1>Razón Estandarizada de Morbilidad [Colombia]<a class="headerlink" href="#razon-estandarizada-de-morbilidad-colombia" title="Link to this heading">#</a></h1>
+<p>La Razón Estandarizada de Morbilidad (REM) es un indicador epidemiológico que permite comparar la carga de una enfermedad entre diferentes territorios, ajustando por el tamaño de su población. Se obtiene al dividir el número de casos observados en cada departamento, en el caso de <strong>Colombia</strong>, por el número de casos esperados, calculados a partir de la tasa nacional de incidencia. Este indicador facilita identificar áreas con exceso o déficit de morbilidad respecto al promedio nacional, evidenciando territorios donde el riesgo de enfermar es mayor o menor al esperado. En el caso del dengue, la REM resulta útil para reconocer patrones espaciales de transmisión y priorizar regiones que requieren mayores esfuerzos de vigilancia y control vectorial.</p>
+<div class="math notranslate nohighlight">
+\[
+REM_{Colombia} = \frac{O_{Colombia}}{E_{Colombia}}
+\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( O_{Colombia} \)</span>= número de casos observados en la zona,</p></li>
+<li><p><span class="math notranslate nohighlight">\( E_{Colombia} \)</span>= número de casos esperados según la tasa nacional de incidencia.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Configuración] Imports</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 </pre></div>
 </div>
 </div>
@@ -400,97 +417,40 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Configuración] Lectura de archivos</span>
 
-<span class="n">rem_clasico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Data\Clasico\REM_Clasico_Largo.csv&quot;</span><span class="p">)</span>
-<span class="n">rem_grave</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Data\Grave\REM_Grave_Largo.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># [Configuración] Lectura de archivos</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">rem_clasico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Data\Clasico\REM_Clasico_Largo.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">rem_grave</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Data\Grave\REM_Grave_Largo.csv&quot;</span><span class="p">)</span>
+<span class="c1">## Archivos CSV de REM</span>
+<span class="n">rem_clasico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;REM/REM_Clasico_COL.csv&quot;</span><span class="p">)</span>
+<span class="n">rem_grave</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;REM/REM_Grave_COL.csv&quot;</span><span class="p">)</span>
+<span class="n">rem_periodo_grave</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;REM/REM_PERIODO_Grave_COL.csv&quot;</span><span class="p">)</span>
+<span class="n">rem_periodo_clasico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;REM/REM_PERIODO_Clasico_COL.csv&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\parsers\readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File ~\anaconda3\envs\dengue\Lib\site-packages\pandas\io\common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;Data\\Clasico\\REM_Clasico_Largo.csv&#39;
+<span class="c1">## Archivo shapefile de departamentos</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;Mapas/Departamento/MGN_ADM_DPTO_POLITICO.shp&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf_8&#39;</span><span class="p">)</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;dpto_cnmbr&#39;</span><span class="p">:</span> <span class="s1">&#39;departamento&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">graficar_panel_rem</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Funciones] Graficar panel de mapas REM por años</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">graficar_panel_rem</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Grafica un panel de mapas del REM de dengue en Colombia por años,</span>
 <span class="sd">    cada uno con su escala individual.</span>
 <span class="sd">    </span>
 <span class="sd">    Parámetros:</span>
-<span class="sd">        df (pd.DataFrame): datos con columnas [departamento, anio, rem].</span>
-<span class="sd">        shp (gpd.GeoDataFrame): shapefile de Colombia con columna DPTO_CNMBR.</span>
+<span class="sd">        df (pd.DataFrame): datos con columnas [departamento, año, rem].</span>
+<span class="sd">        shp (gpd.GeoDataFrame): shapefile de Colombia.</span>
 <span class="sd">        evento (str, opcional): tipo de evento (&quot;Clásico&quot;, &quot;Grave&quot;, etc.).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># === 1. Normalizar nombres ===</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
     <span class="c1"># === 2. Lista de años únicos ordenados ===</span>
-    <span class="n">anios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="n">anios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;año&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 
     <span class="c1"># === 3. Crear figure y ejes ===</span>
     <span class="n">ncols</span> <span class="o">=</span> <span class="mi">4</span>
@@ -500,16 +460,16 @@ document.write(`
 
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">anios</span><span class="p">):</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">df_anio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">]</span>
-        <span class="n">gdf_anio</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_anio</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
-        <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">df_anio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;año&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">]</span>
+        <span class="n">gdf_anio</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_anio</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+        <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;REM&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;REM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-        <span class="n">vmin</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-        <span class="n">vmax</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">vmin</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;REM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">vmax</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;REM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
         <span class="c1"># Graficar mapa</span>
         <span class="n">gdf_anio</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-            <span class="n">column</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">,</span>
+            <span class="n">column</span><span class="o">=</span><span class="s2">&quot;REM&quot;</span><span class="p">,</span>
             <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
             <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
             <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
@@ -526,70 +486,110 @@ document.write(`
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)):</span>
         <span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 
-    <span class="c1"># === 4. Título global ===</span>
+    
     <span class="n">titulo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;REM del dengue </span><span class="si">{</span><span class="n">evento</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;general&#39;</span><span class="si">}</span><span class="s2"> en Colombia (</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">–</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">titulo</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_panel_rem</span><span class="p">(</span><span class="n">rem_clasico</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Clasico&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/028b3466ba8836b2c02540d3a9043f16b8e3886ba0a298e0cfb0e1666da225cd.png" src="_images/028b3466ba8836b2c02540d3a9043f16b8e3886ba0a298e0cfb0e1666da225cd.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla_clasico_rem</span> <span class="o">=</span> <span class="n">rem_clasico</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
 
-<span class="c1"># === 3. Graficar heatmap ===</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">tabla_clasico_rem</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;REM&#39;</span><span class="p">})</span>
+<span class="c1"># [Funciones] Graficar panel de mapas REM por periodos.</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;REM del Dengue Clasico por Departamento y Año&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Departamento&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">graficar_periodos</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Grafica un panel de mapas del REM de dengue en Colombia por periiodos,</span>
+<span class="sd">    cada uno con su escala individual.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        df (pd.DataFrame): datos con columnas [departamento, periodo, rem].</span>
+<span class="sd">        shp (gpd.GeoDataFrame): shapefile de Colombia.</span>
+<span class="sd">        evento (str, opcional): tipo de evento (&quot;Clásico&quot;, &quot;Grave&quot;, etc.).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    
+    <span class="n">anios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;periodo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+    
+    <span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">nrows</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">anios</span><span class="p">)</span> <span class="o">+</span> <span class="n">ncols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">ncols</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">anios</span><span class="p">):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">df_anio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;periodo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">]</span>
+        <span class="n">gdf_anio</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_anio</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+        <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;REM&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;REM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">vmin</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;REM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">vmax</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;REM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+        <span class="c1"># Graficar mapa</span>
+        <span class="n">gdf_anio</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">column</span><span class="o">=</span><span class="s2">&quot;REM&quot;</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
+            <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+            <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;REM&quot;</span><span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">anio</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Ocultar subplots vacíos</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)):</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+    
+    <span class="n">titulo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;REM del dengue </span><span class="si">{</span><span class="n">evento</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;general&#39;</span><span class="si">}</span><span class="s2"> en Colombia (</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">–</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">titulo</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/a321e523968ed1eb2e0ba1b6350229a95ff4a1483664c06102ce0739a529c46e.png" src="_images/a321e523968ed1eb2e0ba1b6350229a95ff4a1483664c06102ce0739a529c46e.png" />
 </div>
-</div>
+<section id="rem-por-ano">
+<h2><strong>REM por Año</strong><a class="headerlink" href="#rem-por-ano" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === 1. Pivotear ===</span>
-<span class="n">tabla_clasico_rem</span> <span class="o">=</span> <span class="n">rem_clasico</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_panel_rem</span><span class="p">(</span><span class="n">rem_clasico</span><span class="p">,</span> <span class="n">gdf</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Clásico&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En los primeros años, los valores de REM se mantienen relativamente moderados, con una concentración de mayor morbilidad en los departamentos del centro y sur del país. A partir de <strong>2018</strong>, se observan incrementos notorios en territorios como <strong>Guaviare</strong> y <strong>Amazonas</strong>, donde los valores alcanzan niveles significativamente superiores a 1, reflejando un riesgo relativo elevado frente al promedio nacional. En <strong>2019</strong> y <strong>2023</strong> esta tendencia se acentúa, consolidando a la <strong>región amazónica</strong> como un foco persistente de alta carga relativa. En contraste, algunos años intermedios, como <strong>2017</strong> y <strong>2020</strong>, presentan valores más bajos y una distribución más uniforme, sugiriendo un comportamiento menos concentrado de la morbilidad por dengue.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla_clasico_rem</span> <span class="o">=</span> <span class="n">rem_clasico</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
     <span class="n">index</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
     <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
     <span class="n">values</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
 <span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># === 2. Seleccionar top 10 departamentos con mayores valores de REM ===</span>
 <span class="n">top10_departamentos</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">tabla_clasico_rem</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># máximo de cada depto en todos los años</span>
-    <span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                  <span class="c1"># los 10 más altos</span>
-    <span class="o">.</span><span class="n">index</span>                         <span class="c1"># nombres de los deptos</span>
+    <span class="n">tabla_clasico_rem</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+    <span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                  
+    <span class="o">.</span><span class="n">index</span>                         
 <span class="p">)</span>
 <span class="n">tabla_top10</span> <span class="o">=</span> <span class="n">tabla_clasico_rem</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">top10_departamentos</span><span class="p">]</span>
 
-<span class="c1"># === 3. Graficar heatmap ===</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
     <span class="n">tabla_top10</span><span class="p">,</span>
     <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
     <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span>              <span class="c1"># &lt;-- mostrar con 2 decimales</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span>             
     <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
     <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;REM&#39;</span><span class="p">}</span>
 <span class="p">)</span>
@@ -609,130 +609,23 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === 1. Aplanar la tabla a formato largo ===</span>
-<span class="n">df_long</span> <span class="o">=</span> <span class="n">tabla_clasico_rem</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-    <span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
-    <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
-    <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
-<span class="p">)</span>
-
-<span class="c1"># === 2. Ordenar por rem descendente y tomar los 10 más altos ===</span>
-<span class="n">top10_rem</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># === 3. Mostrar resultado ===</span>
-<span class="n">top10_rem</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_panel_rem</span><span class="p">(</span><span class="n">rem_grave</span><span class="p">,</span> <span class="n">gdf</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Grave&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>departamento</th>
-      <th>anio</th>
-      <th>rem</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>182</th>
-      <td>GUAVIARE</td>
-      <td>2018</td>
-      <td>10.059163</td>
-    </tr>
-    <tr>
-      <th>198</th>
-      <td>AMAZONAS</td>
-      <td>2019</td>
-      <td>7.409221</td>
-    </tr>
-    <tr>
-      <th>307</th>
-      <td>CASANARE</td>
-      <td>2022</td>
-      <td>5.643007</td>
-    </tr>
-    <tr>
-      <th>219</th>
-      <td>META</td>
-      <td>2019</td>
-      <td>5.372049</td>
-    </tr>
-    <tr>
-      <th>314</th>
-      <td>GUAVIARE</td>
-      <td>2022</td>
-      <td>5.154250</td>
-    </tr>
-    <tr>
-      <th>208</th>
-      <td>CASANARE</td>
-      <td>2019</td>
-      <td>4.384685</td>
-    </tr>
-    <tr>
-      <th>330</th>
-      <td>AMAZONAS</td>
-      <td>2023</td>
-      <td>4.229248</td>
-    </tr>
-    <tr>
-      <th>50</th>
-      <td>GUAVIARE</td>
-      <td>2014</td>
-      <td>4.103420</td>
-    </tr>
-    <tr>
-      <th>186</th>
-      <td>META</td>
-      <td>2018</td>
-      <td>4.039955</td>
-    </tr>
-    <tr>
-      <th>351</th>
-      <td>META</td>
-      <td>2023</td>
-      <td>3.881751</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<img alt="_images/356772a42876117f772015d4990edb1210327598dcfb1135204d6de3815be6ad.png" src="_images/356772a42876117f772015d4990edb1210327598dcfb1135204d6de3815be6ad.png" />
 </div>
+</div>
+<p>Durante los primeros años, en el caso del dengue grave, particularmente en <strong>2015</strong>, destacan <strong>Tolima</strong> y <strong>Huila</strong> con valores de <strong>REM superiores a 5</strong>, lo que refleja que la proporción de casos graves fue mucho mayor a la esperada en estas zonas. En <strong>2016</strong> se observa un cambio de foco hacia la región de la <strong>Orinoquía</strong>, mientras que en <strong>2017</strong> los valores disminuyen de manera considerable. No obstante, en <strong>2018</strong> reaparecen concentraciones elevadas en algunos departamentos del centro y suroccidente, con <strong>REM = 4</strong>, lo que indica una reactivación relativa de las formas graves de la enfermedad.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_panel_rem</span><span class="p">(</span><span class="n">rem_grave</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Grave&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/96f93c8e3cc1b08c09082d1a38507ad7033fa2a76fc84691a380b274a807885b.png" src="_images/96f93c8e3cc1b08c09082d1a38507ad7033fa2a76fc84691a380b274a807885b.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === 1. Pivotear ===</span>
-<span class="n">tabla_grave_rem</span> <span class="o">=</span> <span class="n">rem_grave</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla_grave_rem</span> <span class="o">=</span> <span class="n">rem_grave</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
     <span class="n">index</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
     <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
     <span class="n">values</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
 <span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># === 2. Seleccionar top 10 departamentos con mayores valores de REM ===</span>
 <span class="n">top10_departamentos</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">tabla_grave_rem</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># máximo de cada depto en todos los años</span>
     <span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                  <span class="c1"># los 10 más altos</span>
@@ -740,13 +633,12 @@ document.write(`
 <span class="p">)</span>
 <span class="n">tabla_top10</span> <span class="o">=</span> <span class="n">tabla_grave_rem</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">top10_departamentos</span><span class="p">]</span>
 
-<span class="c1"># === 3. Graficar heatmap ===</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
     <span class="n">tabla_top10</span><span class="p">,</span>
     <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
     <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span>              <span class="c1"># &lt;-- mostrar con 2 decimales</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span>
     <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
     <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;REM&#39;</span><span class="p">}</span>
 <span class="p">)</span>
@@ -764,607 +656,31 @@ document.write(`
 <img alt="_images/bbc3a9ba9225ef5f9e98bf5bf4651be7f16eeb360ba3024bfa6a172d516beaac.png" src="_images/bbc3a9ba9225ef5f9e98bf5bf4651be7f16eeb360ba3024bfa6a172d516beaac.png" />
 </div>
 </div>
+</section>
+<section id="rem-por-periodo">
+<h2><strong>REM por Periodo</strong><a class="headerlink" href="#rem-por-periodo" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === 1. Aplanar la tabla a formato largo ===</span>
-<span class="n">df_long</span> <span class="o">=</span> <span class="n">tabla_grave_rem</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-    <span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
-    <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
-    <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
-<span class="p">)</span>
-
-<span class="c1"># === 2. Ordenar por rem descendente y tomar los 10 más altos ===</span>
-<span class="n">top10_rem</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># === 3. Mostrar resultado ===</span>
-<span class="n">top10_rem</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_periodos</span><span class="p">(</span><span class="n">rem_periodo_clasico</span><span class="p">,</span> <span class="n">gdf</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Clásico&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>departamento</th>
-      <th>anio</th>
-      <th>rem</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>115</th>
-      <td>GUAINIA</td>
-      <td>2016</td>
-      <td>9.640146</td>
-    </tr>
-    <tr>
-      <th>216</th>
-      <td>HUILA</td>
-      <td>2019</td>
-      <td>7.679201</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>TOLIMA</td>
-      <td>2015</td>
-      <td>6.231520</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ARAUCA</td>
-      <td>2013</td>
-      <td>6.096377</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>META</td>
-      <td>2014</td>
-      <td>5.503307</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>TOLIMA</td>
-      <td>2013</td>
-      <td>5.359629</td>
-    </tr>
-    <tr>
-      <th>84</th>
-      <td>HUILA</td>
-      <td>2015</td>
-      <td>5.127114</td>
-    </tr>
-    <tr>
-      <th>150</th>
-      <td>HUILA</td>
-      <td>2017</td>
-      <td>5.052288</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>HUILA</td>
-      <td>2020</td>
-      <td>5.032080</td>
-    </tr>
-    <tr>
-      <th>270</th>
-      <td>BOLIVAR</td>
-      <td>2021</td>
-      <td>4.550099</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<img alt="_images/22399890d8509947aa87781b7b3336e9d5ff2bce914bba0412048508b74af722.png" src="_images/22399890d8509947aa87781b7b3336e9d5ff2bce914bba0412048508b74af722.png" />
 </div>
+</div>
+<p>Durante el primer periodo <strong>(2013–2016)</strong>, se observa una alta carga relativa en varios departamentos del centro del país, destacándose valores elevados en <strong>Tolima</strong> y <strong>Meta</strong>. En el segundo periodo <strong>(2017–2020)</strong>, la distribución se desplaza hacia regiones del suroriente, con un aumento notable en departamentos amazónicos. Finalmente, entre <strong>(2021–2023)</strong>, la persistencia del dengue clásico se mantiene con focos en el oriente y sur del país, mostrando un patrón más estable, aunque con intensidades aún elevadas en regiones amazónicas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Data\Clasico\REM_Clasico_Periodo.csv&quot;</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">graficar_periodos</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Grafica un panel de mapas del REM de dengue en Colombia por años,</span>
-<span class="sd">    cada uno con su escala individual.</span>
-<span class="sd">    </span>
-<span class="sd">    Parámetros:</span>
-<span class="sd">        df (pd.DataFrame): datos con columnas [departamento, anio, rem].</span>
-<span class="sd">        shp (gpd.GeoDataFrame): shapefile de Colombia con columna DPTO_CNMBR.</span>
-<span class="sd">        evento (str, opcional): tipo de evento (&quot;Clásico&quot;, &quot;Grave&quot;, etc.).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="c1"># === 1. Normalizar nombres ===</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-    <span class="c1"># === 2. Lista de años únicos ordenados ===</span>
-    <span class="n">anios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;periodo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-
-    <span class="c1"># === 3. Crear figure y ejes ===</span>
-    <span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">nrows</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">anios</span><span class="p">)</span> <span class="o">+</span> <span class="n">ncols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">ncols</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
-    <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">anios</span><span class="p">):</span>
-        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">df_anio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;periodo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">]</span>
-        <span class="n">gdf_anio</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_anio</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
-        <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-        <span class="n">vmin</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-        <span class="n">vmax</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-
-        <span class="c1"># Graficar mapa</span>
-        <span class="n">gdf_anio</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-            <span class="n">column</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">,</span>
-            <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
-            <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-            <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
-            <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span>
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-            <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;rem&quot;</span><span class="p">}</span>
-        <span class="p">)</span>
-
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">anio</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Ocultar subplots vacíos</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)):</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="c1"># === 4. Título global ===</span>
-    <span class="n">titulo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;REM del dengue </span><span class="si">{</span><span class="n">evento</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;general&#39;</span><span class="si">}</span><span class="s2"> en Colombia (</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">–</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">titulo</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_periodos</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Clasico&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_periodos</span><span class="p">(</span><span class="n">rem_periodo_grave</span><span class="p">,</span> <span class="n">gdf</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Grave&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/01e21d0a065dbec753a2c013983131c05b6e4a96ff859bae716d3f9e36159403.png" src="_images/01e21d0a065dbec753a2c013983131c05b6e4a96ff859bae716d3f9e36159403.png" />
+<img alt="_images/a48c80e1eafa438eaea52190e73d0ac6514b22c916df511dab68fcd6c20624d8.png" src="_images/a48c80e1eafa438eaea52190e73d0ac6514b22c916df511dab68fcd6c20624d8.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Data\Grave\REM_Grave_Periodo.csv&quot;</span><span class="p">)</span>
-<span class="n">graficar_periodos</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Grave&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/6bd5e60e8b4ce8670ced7ceea059117a374c27e6673bd0b913fa2223c34fa7c3.png" src="_images/6bd5e60e8b4ce8670ced7ceea059117a374c27e6673bd0b913fa2223c34fa7c3.png" />
-</div>
-</div>
-<section id="rem">
-<h2><em>REM</em><a class="headerlink" href="#rem" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rem_clasico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Data\Clasico\REM_Clasico_Largo.csv&quot;</span><span class="p">)</span>
-<span class="n">rem_grave</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Data\Grave\REM_Grave_Largo.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">graficar_panel_rem</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Grafica un panel de mapas del REM de dengue en Colombia por años,</span>
-<span class="sd">    cada uno con su escala individual.</span>
-<span class="sd">    </span>
-<span class="sd">    Parámetros:</span>
-<span class="sd">        df (pd.DataFrame): datos con columnas [departamento, anio, rem].</span>
-<span class="sd">        shp (gpd.GeoDataFrame): shapefile de Colombia con columna DPTO_CNMBR.</span>
-<span class="sd">        evento (str, opcional): tipo de evento (&quot;Clásico&quot;, &quot;Grave&quot;, etc.).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="c1"># === 1. Normalizar nombres ===</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shp</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-    <span class="c1"># === 2. Lista de años únicos ordenados ===</span>
-    <span class="n">anios</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-
-    <span class="c1"># === 3. Crear figure y ejes ===</span>
-    <span class="n">ncols</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="n">nrows</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">anios</span><span class="p">)</span> <span class="o">+</span> <span class="n">ncols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">ncols</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
-    <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">anio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">anios</span><span class="p">):</span>
-        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">df_anio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">anio</span><span class="p">]</span>
-        <span class="n">gdf_anio</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_anio</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
-        <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-        <span class="n">vmin</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-        <span class="n">vmax</span> <span class="o">=</span> <span class="n">gdf_anio</span><span class="p">[</span><span class="s2">&quot;rem&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-
-        <span class="c1"># Graficar mapa</span>
-        <span class="n">gdf_anio</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-            <span class="n">column</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">,</span>
-            <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span><span class="p">,</span>
-            <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-            <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
-            <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span>
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-            <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;REM&quot;</span><span class="p">}</span>
-        <span class="p">)</span>
-
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">anio</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Ocultar subplots vacíos</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)):</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-
-    <span class="c1"># === 4. Título global ===</span>
-    <span class="n">titulo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;REM del dengue </span><span class="si">{</span><span class="n">evento</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;general&#39;</span><span class="si">}</span><span class="s2"> en Colombia (</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">–</span><span class="si">{</span><span class="n">anios</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">titulo</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_panel_rem</span><span class="p">(</span><span class="n">rem_clasico</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Clasico&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/fa45f0d681630a633ad23eb6ab1305004d305a69e43a6fb10559a46427c529cb.png" src="_images/fa45f0d681630a633ad23eb6ab1305004d305a69e43a6fb10559a46427c529cb.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla_clasico_rem</span> <span class="o">=</span> <span class="n">rem_clasico</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># === 3. Graficar heatmap ===</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">tabla_clasico_rem</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;REM&#39;</span><span class="p">})</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;REM del Dengue Clasico por Departamento y Año&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Departamento&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/1a667c3d6a40e48a861bd98741ea1d15d6725683d1fc2fffae6fd45d8c4742ad.png" src="_images/1a667c3d6a40e48a861bd98741ea1d15d6725683d1fc2fffae6fd45d8c4742ad.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === 1. Pivotear ===</span>
-<span class="n">tabla_clasico_rem</span> <span class="o">=</span> <span class="n">rem_clasico</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
-    <span class="n">index</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
-    <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
-    <span class="n">values</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># === 2. Seleccionar top 10 departamentos con mayores valores de REM ===</span>
-<span class="n">top10_departamentos</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">tabla_clasico_rem</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># máximo de cada depto en todos los años</span>
-    <span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                  <span class="c1"># los 10 más altos</span>
-    <span class="o">.</span><span class="n">index</span>                         <span class="c1"># nombres de los deptos</span>
-<span class="p">)</span>
-<span class="n">tabla_top10</span> <span class="o">=</span> <span class="n">tabla_clasico_rem</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">top10_departamentos</span><span class="p">]</span>
-
-<span class="c1"># === 3. Graficar heatmap ===</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
-    <span class="n">tabla_top10</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span><span class="p">,</span>
-    <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span>              <span class="c1"># &lt;-- mostrar con 2 decimales</span>
-    <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;REM&#39;</span><span class="p">}</span>
-<span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Top 10 Departamentos con mayor REM del Dengue Clásico&quot;</span><span class="p">,</span> 
-          <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Departamento&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/5a6dbdad3b0e5fa91cb8e56fce8482da51d8ba4b0af1187a7cc678f525d0ea64.png" src="_images/5a6dbdad3b0e5fa91cb8e56fce8482da51d8ba4b0af1187a7cc678f525d0ea64.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === 1. Aplanar la tabla a formato largo ===</span>
-<span class="n">df_long</span> <span class="o">=</span> <span class="n">tabla_clasico_rem</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-    <span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
-    <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
-    <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
-<span class="p">)</span>
-
-<span class="c1"># === 2. Ordenar por rem descendente y tomar los 10 más altos ===</span>
-<span class="n">top10_rem</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># === 3. Mostrar resultado ===</span>
-<span class="n">top10_rem</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>departamento</th>
-      <th>anio</th>
-      <th>rem</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>182</th>
-      <td>GUAVIARE</td>
-      <td>2018</td>
-      <td>10.059163</td>
-    </tr>
-    <tr>
-      <th>198</th>
-      <td>AMAZONAS</td>
-      <td>2019</td>
-      <td>7.409221</td>
-    </tr>
-    <tr>
-      <th>307</th>
-      <td>CASANARE</td>
-      <td>2022</td>
-      <td>5.643007</td>
-    </tr>
-    <tr>
-      <th>219</th>
-      <td>META</td>
-      <td>2019</td>
-      <td>5.372049</td>
-    </tr>
-    <tr>
-      <th>314</th>
-      <td>GUAVIARE</td>
-      <td>2022</td>
-      <td>5.154250</td>
-    </tr>
-    <tr>
-      <th>208</th>
-      <td>CASANARE</td>
-      <td>2019</td>
-      <td>4.384685</td>
-    </tr>
-    <tr>
-      <th>330</th>
-      <td>AMAZONAS</td>
-      <td>2023</td>
-      <td>4.229248</td>
-    </tr>
-    <tr>
-      <th>50</th>
-      <td>GUAVIARE</td>
-      <td>2014</td>
-      <td>4.103420</td>
-    </tr>
-    <tr>
-      <th>186</th>
-      <td>META</td>
-      <td>2018</td>
-      <td>4.039955</td>
-    </tr>
-    <tr>
-      <th>351</th>
-      <td>META</td>
-      <td>2023</td>
-      <td>3.881751</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_panel_rem</span><span class="p">(</span><span class="n">rem_grave</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">evento</span><span class="o">=</span><span class="s2">&quot;Grave&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/ccc1ff23fe25607a81c21d2644a05e6e608f20ab7d3dbd9a6f9317d08cb0d326.png" src="_images/ccc1ff23fe25607a81c21d2644a05e6e608f20ab7d3dbd9a6f9317d08cb0d326.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === 1. Pivotear ===</span>
-<span class="n">tabla_grave_rem</span> <span class="o">=</span> <span class="n">rem_grave</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
-    <span class="n">index</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
-    <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
-    <span class="n">values</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># === 2. Seleccionar top 10 departamentos con mayores valores de REM ===</span>
-<span class="n">top10_departamentos</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">tabla_grave_rem</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># máximo de cada depto en todos los años</span>
-    <span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                  <span class="c1"># los 10 más altos</span>
-    <span class="o">.</span><span class="n">index</span>                         <span class="c1"># nombres de los deptos</span>
-<span class="p">)</span>
-<span class="n">tabla_top10</span> <span class="o">=</span> <span class="n">tabla_grave_rem</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">top10_departamentos</span><span class="p">]</span>
-
-<span class="c1"># === 3. Graficar heatmap ===</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
-    <span class="n">tabla_top10</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span><span class="p">,</span>
-    <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span>              <span class="c1"># &lt;-- mostrar con 2 decimales</span>
-    <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;REM&#39;</span><span class="p">}</span>
-<span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Top 10 Departamentos con mayor REM del Dengue Grave&quot;</span><span class="p">,</span> 
-          <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Departamento&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/cb675ac91e75ce404f4a32588f3c938679e0c5eae67cb7f7b376356ef57dfab0.png" src="_images/cb675ac91e75ce404f4a32588f3c938679e0c5eae67cb7f7b376356ef57dfab0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === 1. Aplanar la tabla a formato largo ===</span>
-<span class="n">df_long</span> <span class="o">=</span> <span class="n">tabla_grave_rem</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-    <span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
-    <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
-    <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
-<span class="p">)</span>
-
-<span class="c1"># === 2. Ordenar por rem descendente y tomar los 10 más altos ===</span>
-<span class="n">top10_rem</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># === 3. Mostrar resultado ===</span>
-<span class="n">top10_rem</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>departamento</th>
-      <th>anio</th>
-      <th>rem</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>115</th>
-      <td>GUAINIA</td>
-      <td>2016</td>
-      <td>9.640146</td>
-    </tr>
-    <tr>
-      <th>216</th>
-      <td>HUILA</td>
-      <td>2019</td>
-      <td>7.679201</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>TOLIMA</td>
-      <td>2015</td>
-      <td>6.231520</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ARAUCA</td>
-      <td>2013</td>
-      <td>6.096377</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>META</td>
-      <td>2014</td>
-      <td>5.503307</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>TOLIMA</td>
-      <td>2013</td>
-      <td>5.359629</td>
-    </tr>
-    <tr>
-      <th>84</th>
-      <td>HUILA</td>
-      <td>2015</td>
-      <td>5.127114</td>
-    </tr>
-    <tr>
-      <th>150</th>
-      <td>HUILA</td>
-      <td>2017</td>
-      <td>5.052288</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>HUILA</td>
-      <td>2020</td>
-      <td>5.032080</td>
-    </tr>
-    <tr>
-      <th>270</th>
-      <td>BOLIVAR</td>
-      <td>2021</td>
-      <td>4.550099</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
+<p>En cuanto al dengue grave, en periodo <strong>(2013–2016)</strong> se evidencia una mayor intensidad en departamentos del centro y oriente del país, con focos en <strong>Tolima</strong> y <strong>Guainía</strong>. El periodo <strong>(2017–2020)</strong> muestra una concentración destacada en el suroccidente, con mayor intensidad en el departamento de <strong>Huila</strong>. Por último, en <strong>(2021–2023)</strong>, los focos de dengue grave se distribuyen hacia el norte y oriente del país, con presencia en departamentos de la <strong>Costa Caribe</strong> y regiones de los <strong>Llanos Orientales</strong>, aunque con menores valores de REM en comparación con el primer periodo.</p>
 </section>
 </section>
 
@@ -1398,6 +714,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="EDA_Atlantico.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Atlántico</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="REM_ATL.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Razón Estandarizada de Morbilidad [Atlántico]</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1414,7 +748,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rem"><em>REM</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rem-por-ano"><strong>REM por Año</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rem-por-periodo"><strong>REM por Periodo</strong></a></li>
 </ul>
   </nav></div>
 
