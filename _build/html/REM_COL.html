@@ -180,8 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="datos.html"><em><strong>Sobre los Datos [Fuentes y ETL]</strong></em></a></li>
 <li class="toctree-l1"><a class="reference internal" href="EDA_Colombia.html"><strong>Colombia</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="EDA_Atlantico.html"><strong>Atlántico</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Razón Estandarizada de Morbilidad [Colombia]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="REM_ATL.html">Razón Estandarizada de Morbilidad [Atlántico]</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em><strong>Razón Estandarizada de Morbilidad [Colombia]</strong></em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="REM_ATL.html"><em><strong>Razón Estandarizada de Morbilidad [Atlántico]</strong></em></a></li>
 </ul>
 
     </div>
@@ -391,7 +391,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="razon-estandarizada-de-morbilidad-colombia">
-<h1>Razón Estandarizada de Morbilidad [Colombia]<a class="headerlink" href="#razon-estandarizada-de-morbilidad-colombia" title="Link to this heading">#</a></h1>
+<h1><em><strong>Razón Estandarizada de Morbilidad [Colombia]</strong></em><a class="headerlink" href="#razon-estandarizada-de-morbilidad-colombia" title="Link to this heading">#</a></h1>
 <p>La Razón Estandarizada de Morbilidad (REM) es un indicador epidemiológico que permite comparar la carga de una enfermedad entre diferentes territorios, ajustando por el tamaño de su población. Se obtiene al dividir el número de casos observados en cada departamento, en el caso de <strong>Colombia</strong>, por el número de casos esperados, calculados a partir de la tasa nacional de incidencia. Este indicador facilita identificar áreas con exceso o déficit de morbilidad respecto al promedio nacional, evidenciando territorios donde el riesgo de enfermar es mayor o menor al esperado. En el caso del dengue, la REM resulta útil para reconocer patrones espaciales de transmisión y priorizar regiones que requieren mayores esfuerzos de vigilancia y control vectorial.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -573,8 +573,8 @@ REM_{Colombia} = \frac{O_{Colombia}}{E_{Colombia}}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla_clasico_rem</span> <span class="o">=</span> <span class="n">rem_clasico</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
     <span class="n">index</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
-    <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
-    <span class="n">values</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
+    <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;año&quot;</span><span class="p">,</span> 
+    <span class="n">values</span><span class="o">=</span><span class="s2">&quot;REM&quot;</span>
 <span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">top10_departamentos</span> <span class="o">=</span> <span class="p">(</span>
@@ -604,7 +604,7 @@ REM_{Colombia} = \frac{O_{Colombia}}{E_{Colombia}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/89148424429b08c7f0c0f540433701506e72ff68a586cd33f02680601540c228.png" src="_images/89148424429b08c7f0c0f540433701506e72ff68a586cd33f02680601540c228.png" />
+<img alt="_images/cdd2c808a5efa06e261eb6a848ce0c74151b1c9871c3453af6d60448c6489942.png" src="_images/cdd2c808a5efa06e261eb6a848ce0c74151b1c9871c3453af6d60448c6489942.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -622,8 +622,8 @@ REM_{Colombia} = \frac{O_{Colombia}}{E_{Colombia}}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla_grave_rem</span> <span class="o">=</span> <span class="n">rem_grave</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
     <span class="n">index</span><span class="o">=</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> 
-    <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;anio&quot;</span><span class="p">,</span> 
-    <span class="n">values</span><span class="o">=</span><span class="s2">&quot;rem&quot;</span>
+    <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;año&quot;</span><span class="p">,</span> 
+    <span class="n">values</span><span class="o">=</span><span class="s2">&quot;REM&quot;</span>
 <span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">top10_departamentos</span> <span class="o">=</span> <span class="p">(</span>
@@ -653,7 +653,7 @@ REM_{Colombia} = \frac{O_{Colombia}}{E_{Colombia}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bbc3a9ba9225ef5f9e98bf5bf4651be7f16eeb360ba3024bfa6a172d516beaac.png" src="_images/bbc3a9ba9225ef5f9e98bf5bf4651be7f16eeb360ba3024bfa6a172d516beaac.png" />
+<img alt="_images/5ca26966f551d43abc55a4ada9fc2739532edc229264c868a620b2b8d29a8a56.png" src="_images/5ca26966f551d43abc55a4ada9fc2739532edc229264c868a620b2b8d29a8a56.png" />
 </div>
 </div>
 </section>
@@ -728,7 +728,7 @@ REM_{Colombia} = \frac{O_{Colombia}}{E_{Colombia}}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Razón Estandarizada de Morbilidad [Atlántico]</p>
+        <p class="prev-next-title"><em><strong>Razón Estandarizada de Morbilidad [Atlántico]</strong></em></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
