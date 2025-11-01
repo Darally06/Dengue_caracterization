@@ -4,11 +4,11 @@
 format: jb-book
 root: intro
 chapters:
-- file: metodologia
-- file: datos
-- file: EDA_Colombia
-- file: EDA_Atlantico
-- file: REM_COL
-- file: REM_ATL
-- file: archivosnc
+- file: 1_introduccion
+- file: 2_metodologia
+- file: 3_EDa_Atlantico
+- file: 4_incidencia+REM
+- file: 5_bivariado
+- file: 6_varentorno
+- file: 7_modelos
 
