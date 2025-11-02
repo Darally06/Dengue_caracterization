@@ -1,5 +1,13 @@
 # ***Distribución de casos de Dengue en el departamento del Atlántico***
 
+## **Departamento del Atlántico**
+El Atlántico es uno de los 32 departamentos que conforman la república de Colombia. Se encuentra conformado por 22 Municipios y el Distrito Especial Industrial y Portuario de Barranquilla, su capital.
+
+Está situado al norte del territorio nacional, límita por el norte y noreste con el mar Caribe, en una extensión aproximada de 90 Km; desde el rompeolas occidental en Bocas de Ceniza, hasta las salinas de Galerazamba. Al este, con el río Magdalena, en una longitud de 105 Km, contados desde su desembocadura en Bocas de Ceniza hasta el desprendimiento del Canal del Dique en Calamar; al sur, suroeste y oeste con el departamento de Bolívar desde Calamar hasta las Salinas de Galerazamba.
+
+Presenta un clima tropical de tipo estepa y sabana de carácter árido en la desembocadura del río Magdalena y alrededores de Barranquilla; semi-árido en las fajas aledañas al litoral y al río Magdalena y semihúmedo desde Sabanalarga hacia el sur.
+
+
 ## **Contexto epidemiológico del dengue**
 
 El dengue es una enfermedad febril aguda de etiología viral, transmitida por vectores del género *Aedes* (*A. aegypti* y *A. albopictus*). Según la [Organización Mundial de la Salud (OMS, 2023)](https://www.who.int/es/news-room/fact-sheets/detail/dengue-and-severe-dengue), esta patología representa una de las mayores cargas sanitarias en regiones tropicales y subtropicales, con un estimado de **390 millones de infecciones anuales** a nivel global. Su espectro clínico abarca desde cuadros leves hasta formas graves potencialmente mortales que requieren atención médica urgente.  
