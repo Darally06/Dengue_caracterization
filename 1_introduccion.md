@@ -8,6 +8,8 @@ La dinámica del dengue en el país está ligada a condiciones locales de temper
 
 Para el análisis de la dinámica del dengue en el país, se utilizaron los registros oficiales reportados al SIVIGILA, fuente primaria de información epidemiológica en Colombia. A partir de esta base de datos se realizó una caracterización descriptiva de 491,869 registros correspondientes al periodo 2018-2023, que incluye la distribución temporal de los casos, la incidencia ajustada por población expuesta y los patrones demográficos asociados al evento. 
 
+___________
+
 Durante el periodo analizado, la mayor proporción de casos correspondió a personas en edad adulta (18–59 años), con un 32.6% del total. Le siguieron los niños en primera infancia (1-5 años), con un 24.4%, y los adolescentes (12-17 años), con un 21.9%. En contraste, las personas mayores de 60 años representaron apenas el 5%. En cuanto al sexo, los casos fueron ligeramente más frecuentes en masculinos (52,4%) que en femeninas (47.6%). Solo el 5.5% de los casos correspondió a grupos étnicos reconocidos (afrocolombianos, indígenas o ROM). Con respecto al régimen de afiliación en salud, el 52.2% pertenecía al régimen subsidiado, el 39.3% al contributivo y el 8.4% a otros tipos.
 
 En términos clínicos, el conjunto de casos estuvo conformado por 485,139 diagnósticos de dengue clásico y 6,730 de dengue grave. El 70.2% de los registros correspondió a casos probables, mientras que el resto fueron confirmados por laboratorio o nexo epidemiológico. Aproximadamente el 48.4% de los pacientes requirió hospitalización y se registraron 158 muertes asociadas a dengue grave durante el periodo de estudio. 
@@ -20,6 +22,8 @@ El comportamiento temporal de dengue entre 2018 y 2023 mostró un patrón de flu
 
 El análisis gráfico confirma un comportamiento cíclico y estacional, con incrementos sostenidos en los primeros meses de cada año y descensos posteriores. Dos picos epidémicos destacan de manera clara: uno a finales de 2019 e inicios de 2020, y otro más pronunciado hacia el segundo semestre de 2023. Tras el pico de 2020 se observó un descenso abrupto que marcó un periodo de baja transmisión entre 2020 y 2021. A partir de 2022 se evidenció un nuevo incremento, con fluctuaciones mensuales pero con una tendencia general al alza que culminó en un repunte epidémico a finales de 2023. 
 
+____
+
 Si bien el análisis nacional permite comprender el comportamiento general del dengue en el país, resulta necesario profundizar en dinámicas territoriales específicas. Situamos el contexto territorial en el departamento del Atlántico. Ubicado en la región caribe y conformado por 22 municipios y el Distrito Especial de Barranquilla, presenta condiciones climáticas de tipo tropical con variaciones entre estepa, sabana y zonas semiáridas, particularmente en áreas cercanas al río Magdalena y franja costera. La combinación de factores climáticos y la alta concentración urbana genera condiciones favorables para la reproducción del vector _Aedes aegypti_. Estas características hacen del Atlántico un escenario estratégico para analizar patrones locales de transmisión.
 
 En el Atlántico, exceptuando la ciudad de Barranquilla, la distribución de los casos de dengue por ciclo vital muestra una marcada concentración en población infantil y adolescente. La infancia mayor (6-11 años) agrupa 30.5% de los casos, seguida de la adolescencia (12-17 años) con el 29.8%; en conjunto representan más de la mitad de las notificaciones. En tercer lugar se ubica la población adulta (18-59 años) con el 24.9%, mientras que la infancia menor (1-5 años) aporta el 12.6%. Este patrón difiere observado a nivel nacional, donde la carga tiende a concentrarse en población adulta, evidenciando que en el Atlántico la transmisión afecta especialmente a grupos en edades tempranas. 
@@ -31,6 +35,12 @@ La distribución municipal evidencia grandes contrastes territoriales. Soledad c
 ![alt text](periodo_atl.png)
 
 La dinámica temporal del dengue en el Atlántico presenta un comportamiento fluctuante y marcadamente estacional. Los años con mayor número de casos fueron 2021 (3,172) y 2022 (4,257), contrastando con los descensos observados en 2020 y 2023, cuando las notificaciones bajaron a 1,295 y 2,144 respectivamente. La serie por periodo epidemiológico entre 2018 y 2023 evidencia varios picos relevantes: uno a finales de 2019 e inicios de 2020 con cerca de 450 casos por periodo; un segundo y más alto en 2022 (más de 780); y otro hacia finales de 2023 (alrededor de 700). A lo largo de toda la serie se observan ciclos de incrementos rápidos seguidos por descensos bruscos. El patrón general indica un descenso en la primera mitad del año y un aumento marcado en la segunda, configurando un comportamiento cíclico y estacional.
+
+______
+
+Luego de caracterizar el comportamiento epidemiológico del dengue en el departamento del Atlántico, es pertinente examinar los factores del entorno que pueden influir en la transmisión del virus. Entre estos, las variables climáticas desempeñan un papel fundamental, dado que condicionan tanto la presencia del Aedes aegypti como la velocidad de su ciclo de vida y la replicación viral. En particular, estudios recientes han demostrado que la combinación de precipitación, temperatura media y humedad relativa constituye uno de los conjuntos de predictores más robustos para explicar la variabilidad espacial y temporal del dengue. Por ejemplo, el trabajo de [Pérez-Castellanos et al. (2024)](https://doi.org/10.1371/journal.pone.0311607) encontró que estas tres variables, especialmente cuando se consideran bajo efectos no lineales y rezagados, ofrecen el mejor ajuste estadístico. Con base en esta evidencia, el presente estudio incorpora precipitación, temperatura y humedad relativa como variables para explorar la relación entre condiciones del entorno y comportamiento epidemiológico del dengue en el Atlántico.
+
+
 
 Autoras: 
 * Daniella Guerra Gutiérrez
