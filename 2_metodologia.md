@@ -8,8 +8,19 @@
 ## **Variables de estudio**
 [comment]: <> (Tanto las de dengue como las variables de entorno)
 
-##  **Definición de indicadores**
+##  **Indicadores**
 [comment]: <> (Incidencia, REM)
+
+Para el estudio se emplearon dos indicadores fundamentales: La *tasa de incidencia poblacional* y la *razón estandarizada de morbilidada (REM)*.
+
+### *Tasa de Incidencia Poblacional*
+
+Es una medida epidemiológica que describe la frecuencia con la que ocurren nuevos casos de una enfermedad en especifico (el dengue, en este caso) en una población especifica durante un período de tiempo determinado. Expresa el riesgo relativo de caer en enfermedad de  un territorio en terminos proporcionales y no absolutos. Asi como tambien describe la magnitud del problema en terminos poblacionales. 
+
+### *Razón Estandarizada de Morbilidad (REM)*
+
+Por su parte, el REM  es un indicador comparativo que relaciona el número de casos observados con los casos esperados. Este indicador nos permite identificar municipios con un riesgo mayor o menor al esperado, detectando patrones atípico que podría señalar brotes o condiciones de mayor vulnerabilidad. Esta medida permite e
+
 
 
 | Municipio        | Casos Observados | Proporción | Población | Incidencia | Casos Esperados |   REM   |
@@ -38,6 +49,9 @@
 | USIACURÍ         | 250   | 0.017      | 80996     | 308.66     | 136.519   | 1.83125 |
 
 
+La tabla presenta, para cada municipio del departamento del Atlántico (exceptuando Barranquilla), la tasa de incidencia acumulada del dengue y el REM correspondientes al periodo **2018–2023**. Estos indicadores permiten comparar la carga de enfermedad entre municipios con diferentes tamaños poblacionales y evaluar si el número de casos registrados es coherente con lo que se esperaría según el comportamiento epidemiológico del territorio.
+
+Municipios como **Soledad, Sabanalarga, Baranoa, Puerto Colombia, Galapa** y **Malambo** presentan tanto una alta incidencia acumulada como valores de REM superiores a 1, lo que indica un riesgo mayor al esperado y una transmisión más intensa o sostenida. Otros municipios más pequeños, como **Polonuevo** y **Usiacurí**, destacan por REM particularmente elevados pese a su baja población, sugiriendo brotes localizados o condiciones de vulnerabilidad específicas. En contraste, municipios como **Campo de la Cruz, Candelaria, Sabanagrande, Santo Tomás, Palmar de Varela** o **Repelón** muestran tanto incidencia como REM por debajo del promedio, reflejando una menor transmisión.
 
 ## **Diagrama ETL** 
 [comment]: <> (Incluir enlace al github del ETL)
