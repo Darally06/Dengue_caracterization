@@ -48,8 +48,8 @@ Luego de caracterizar el comportamiento epidemiológico del dengue en el departa
 
 ______
 
-Para este estudio se incorporó la Razón Estandirizada de morbilidad (REM) como indicador complementario a la incidencia, con el fin de capturar diferencias en el riesgo epidemiologico que no se explican unicamente por el tamaño poblacional o el numero absoluto de casos. Mientras la incidencia muestra la frecuencia de la enfermedad ajustada por la población, el REM permite comparar cada municipio contra un patrón de referencia departamental, identificando terriotrios donde la carga observada supera o se encuentra debajo de lo esperado.
-
+Para este estudio se incorporó la Razón Estandirizada de morbilidad (REM) como indicador complementario a la incidencia, con el fin de capturar diferencias en el riesgo epidemiologico que no se explican unicamente por el tamaño poblacional o el numero absoluto de casos. Mientras la incidencia muestra la frecuencia de la enfermedad ajustada por la población, el REM permite comparar cada municipio contra un patrón de referencia departamental, identificando terriotrios donde la carga observada supera o se encuentra debajo de lo esperado. Su utilidad radica en que revela dsigualdades relativas 
+en la transmisión del dengue, permitiendo reconocer áreas con un riesgo inusualmente alto - pontenciales escenarios de brote, condiciones ambientales favorables o brechas en vigilancia- así como municipios que mantienen una transmisión por debajo del nivel esperado. En conjunto, ambos indicadores ofrecen una visión más precisa de las dinámicas locales del dengue en el Atlántico durante el periodo 2018-2023.
 
 
 
