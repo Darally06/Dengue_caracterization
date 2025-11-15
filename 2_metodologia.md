@@ -11,6 +11,35 @@
 ##  **Definición de indicadores**
 [comment]: <> (Incidencia, REM)
 
+### *Razón Estandarizada de Morbilidad (REM)*
+
+
+
+| MUNICIPIO        |   casos |   esperado |      REM |
+|:-----------------|--------:|-----------:|---------:|
+| BARANOA          |    1021 |   681.512  | 1.49814  |
+| CAMPO DE LA CRUZ |     147 |   248.785  | 0.590871 |
+| CANDELARIA       |      52 |   175.695  | 0.295967 |
+| GALAPA           |     837 |   657.891  | 1.27225  |
+| JUAN DE ACOSTA   |     249 |   225.477  | 1.10433  |
+| LURUACO          |     271 |   304.225  | 0.890788 |
+| MALAMBO          |    1675 |  1398.51   | 1.1977   |
+| MANATÍ           |     253 |   216.718  | 1.16742  |
+| PALMAR DE VARELA |     100 |   317.916  | 0.314548 |
+| PIOJÓ            |      69 |    71.9244 | 0.95934  |
+| POLONUEVO        |     394 |   196.548  | 2.0046   |
+| PONEDERA         |     186 |   255.75   | 0.727272 |
+| PUERTO COLOMBIA  |     766 |   563.463  | 1.35945  |
+| REPELÓN          |      95 |   281.551  | 0.337416 |
+| SABANAGRANDE     |      94 |   355.591  | 0.264349 |
+| SABANALARGA      |    1083 |   990.362  | 1.09354  |
+| SANTA LUCÍA      |      41 |   176.092  | 0.232833 |
+| SANTO TOMÁS      |      73 |   329.282  | 0.221695 |
+| SOLEDAD          |    6673 |  6619.4    | 1.0081   |
+| SUAN             |     119 |   130.573  | 0.911368 |
+| TUBARÁ           |      74 |   188.21   | 0.393177 |
+| USIACURÍ         |     250 |   136.519  | 1.83125  |
+
 ## **Diagrama ETL** 
 [comment]: <> (Incluir enlace al github del ETL)
 
