@@ -22,13 +22,13 @@ Más allá de las características de los pacientes, la distribución espacial d
 
 Sin embargo, al complementar el análisis anterior con la incidencia, se revela un patrón espacial distinto al observado en los casos totales. Departamentos como Meta, Casanare, Guaviare, Putumayo, Caquetá y Huila presentaron los niveles más altos de riesgo proporcional, pese a no encabezar la notificación absoluta. Destaca particularmente el Amazonas, que registró la mayor incidencia del país, con 784 casos por cada 100.000 habitantes, seguido de Meta, Guaviare, Casanare y Tolima, todos con tasas superiores a 500 casos por cada 100.000 habitantes. Este comportamiento indica que la intensidad de la transmisión se concentra en áreas de llanura, piedemonte y selvas intermedias, donde el impacto relativo sobre la población es mayor.
 
-![alt text](GRAPHICS\casos_col.png)
+![alt text](GRAPHICS/casos_col.png)
 
 En síntesis, y como se aprecia en la figura anterior, estos resultados confirman que la distribución del dengue en Colombia no es homogénea y responde a dinámicas territoriales diferenciadas. Mientras los grandes centros urbanos del Caribe y del suroccidente del país acumulan la mayor carga absoluta de casos, los territorios del piedemonte llanero y amazónico experimentan las tasas de incidencia más elevadas.
 
 Este panorama espacial se complementa con el análisis de su evolución en el tiempo. l comportamiento temporal de dengue entre 2018 y 2023 mostró un patrón de fluctuaciones multianuales. Los picos epidémicos más elevados se presentaron en 2019 y 2023, con 124,989 y 128,132 notificaciones respectivamente. Estos repuntes contrastaron con los descensos observados en  2020 y 2021, cuando los casos disminuyeron a 77,281 y 50,265, posiblemente influenciados por restricciones asociadas a la pandemia por COVID-19. Los años intermedios, como 2018 (44,171) y 2022 (67,031), presentaron niveles moderados, configurando un patrón clínico característico del dengue en el país. 
 
-![alt text](GRAPHICS\periodo_col.png)
+![alt text](GRAPHICS/periodo_col.png)
 
 Finalmente, el análisis gráfico confirma confirma un comportamiento cíclico y estacional, con incrementos sostenidos en los primeros meses de cada año y descensos posteriores. Dos picos epidémicos destacan de manera clara: uno a finales de 2019 e inicios de 2020, y otro más pronunciado hacia el segundo semestre de 2023. Tras el pico de 2020 se observó un descenso abrupto que marcó un periodo de baja transmisión entre 2020 y 2021. A partir de 2022 se evidenció un nuevo incremento, con fluctuaciones mensuales pero con una tendencia general al alza que culminó en un repunte epidémico a finales de 2023. 
 
@@ -42,11 +42,15 @@ Desde una perspectiva geográfica, la distribución municipal del dengue en el d
 
 No obstante, al analizar la incidencia, el patrón espacial se transforma de manera significativa. Los mayores niveles de riesgo proporcional se observan en Polonuevo (336.76 casos por 100,000 habitantes), Usiacurí (308.66) y Baranoa (251.98), municipios que no lideran en número absoluto de casos, pero sí presentan un impacto relativo mucho mayor sobre su población. Puerto Colombia, Galapa y Malambo también registran incidencias superiores a los 200 casos por 100,000 habitantes, consolidando un corredor central y nororiental con transmisión intensa. En contraste, Candelaria, Sabanagrande, Santo Tomás y Santa Lucía mantienen incidencias menores a 50 casos por 100,000 habitantes, identificándose como zonas de menor afectación.
 
-![alt text](GRAPHICS\casos_atl.png)
+![alt text](GRAPHICS/casos_atl.png)
+
+La dinámica de casos notificados por municipio y año revela patrones epidemiológicos distintivos. A lo largo del periodo analizado, la mayoría de los municipios no superaron los 100 casos anuales. Sin embargo, se observan concentraciones geográficas variables: Durante los primeros tres años, la carga de casos se localizó predominantemente en la región centro-oriental del departamento, específicamente en el bloque conformado por Baranoa, Galapa,  Malambo, Polonuevo, Soledad y Sabanalarga, los cuales registraron entre 100 y 400 casos anuales cada uno. En el trienio siguiente, la tendencia cambió significativamente, identificándose nuevos focos de intensificación. Municipios como Malambo (2021) y Puerto Colombia (2022) experimentaron repuntes notorios, superando los 400 casos en un solo año, mientras que soledad alcanzó sus registros más altos de más de 800 casos. Este patrón se acentuó en 2022, cuando Sabanalarga, Galapa y Malambo rebasaron conjuntamente la marca de 400 notificaciones, en este mismo año el municipio de Soledad superó el record de 2,125 notificaciones. Finalmente, en 2023, el panorama destacó por un pico pronunciado en Usiacurí, que reportó más de 200 casos.
+
+![alt text](GRAPHICS/casos_year.png)
 
 En conjunto, estos patrones confirman que el dengue en el Atlántico no se distribuye de manera homogénea y que los casos totales y el riesgo relativo responden a dinámicas territoriales distintas. Mientras el volumen absoluto de casos se concentra en los grandes centros urbanos que integran el área metropolitana de Barranquilla, las mayores tasas de incidencia se localizan en municipios intermedios del centro del departamento. 
 
-![alt text](GRAPHICS\periodo_atl.png)
+![alt text](GRAPHICS/periodo_atl.png)
 
 En el ámbito temporal, la dinámica temporal del dengue en el Atlántico presenta un comportamiento fluctuante y marcadamente estacional. Los años con mayor número de casos fueron 2021 (3,172) y 2022 (4,257), contrastando con los descensos observados en 2020 y 2023, cuando las notificaciones bajaron a 1,295 y 2,144 respectivamente. Como se aprecia en la figura anterior, la serie por periodo epidemiológico entre 2018 y 2023 evidencia varios picos relevantes: uno a finales de 2019 e inicios de 2020 con cerca de 450 casos por periodo; un segundo y más alto en 2022 (más de 780); y otro hacia finales de 2023 (alrededor de 700). A lo largo de toda la serie se observan ciclos de incrementos rápidos seguidos por descensos bruscos. El patrón general indica un descenso en la primera mitad del año y un aumento marcado en la segunda, configurando un comportamiento cíclico y estacional.
 

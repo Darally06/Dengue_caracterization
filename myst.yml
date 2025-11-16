@@ -1,0 +1,17 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 5a131d61-9b39-4c8f-9b4f-54efe48ce0d5
+  title: "Tasa de incidencia del dengue en el Atlántico"
+  # description:
+  # keywords: []
+  authors:
+    - "Daniella Guerra"
+    - "Tawy Torres"
+  github: https://github.com/Darally06/Dengue_caracterization
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
