@@ -70,7 +70,7 @@ Para caracterizar estas relaciones de manera más precisa, es crucial considerar
 Con base en esta evidencia metodológica y empírica, el presente estudio incorpora la precipitación, la temperatura media y la humedad relativa —considerando sus potenciales efectos no lineales y de rezago— para explorar la relación entre las condiciones del entorno y el comportamiento epidemiológico del dengue en el Atlántico. Los datos climáticos para este análisis fueron proporcionados por el Copernicus Climate Change Service (C3S) a través del Atmosphere Monitoring Service [(CAMS)](https://cds.climate.copernicus.eu/datasets?kw=Temporal+coverage%3A+Past).
 
 
-![alt text](GRAPHICS\clima.png)
+![alt text](GRAPHICS/clima.png)
 
 En cuanto a los resultados del análisis climático, la distribución determina que la media osciló entre 25.1°C y 30.2°C, con un promedio general de 27.7°C (± 0.9°C), con registros extremos que variaron entre 23.9°C y 31.6°C. A lo largo del tiempo mostró una marcada variabilidad estacional, alcanzando los valores más altos hacia la mitad de cada año. A nivel espacial, se evidencia un predominio del calor hacia el sur y sureste del departamento, especialmente en municipios como Manatí, Candelaria, Santa Lucía y áreas vecinas, que se destacan como los sectores más cálidos del Atlántico. En contraste, municipios como Tubará, Baranoa y sus alrededores presentan temperaturas más moderadas, propias de las zonas costeras y con mayor elevación. De este modo, el patrón térmico parece estar influido principalmente por la proximidad al mar y las variaciones en el relieve, que generan microclimas locales más frescos. 
 
@@ -131,7 +131,7 @@ La distribución espacio-temporal de la REM, vizualizada en el mapa de calor, re
 
 Para el segundo trienio (2021-2023) se observa una reconfiguración en la aparición de nuevos epicentros. La mayoría del territorio muestra una notable reducción (REM < 1), lo que indica una morbilidad dentro o por debajo de lo esperado. Sin embargo, surgen focos nuevos y aislados. Luruaco y Malambo (2021), junto con Manatí y Puerto Colombia (2022), se convierten en los puntos de mayor morbilidad (REM > 2), mostrando un pico notorio en el contexto departamental. Resulta llamativa la lejanía geográfica entre estos pares de municipios, lo que sugiere dinámicas de transmisión localizadas e independientes. Para 2023, Usiacurí se convierte en el epicentro absoluto, registrando el valor de REM más alto de todo el periodo (10.33). Así, es posible determinar una transición entre trienios que ilustra un escenario epidemiológico cambiante: se pasa de una epidemia intensa y multifocal a una situación de control basal con brotes esporádicos pero extremadamente severos.
 
-![REM](GRAPHICS\REM_[ini-fin].png)
+![REM](GRAPHICS/REM_[ini-fin].png)
 
 La comparación de la REM entre 2018 y 2023, remarca el cambio de la configuración de la morbilidad. Hacia el final del periodo estudiado, los municipios de Usiacurí, Piojó, Ponedera y Soledad, son los que mayor morbilidad por dengue presentan, superando el valor obtenido al inicio del periodo. Otros 8 municipios tamhién aumentaron la morbilidad, en contraste a los 10 restantes, donde la morbilidad bajó considerablemente.
 
