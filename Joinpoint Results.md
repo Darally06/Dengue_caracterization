@@ -1,4 +1,4 @@
-# **Análisis de Tendecias Espacio-Temporales de la Razón Estandarida del Dengue en el Atlántico (2018-2023) utilizando Joinpoint Regression Model**
+# **Análisis de Tendecias Espacio-Temporales de la Razón Estandarizada del Dengue en el Atlántico (2018-2023) utilizando Joinpoint Regression Model**
 
 ## **Introducción**
 
@@ -9,7 +9,7 @@ Para ello se emplea el Modelo de Regresión Joinpoint, una metodología que perm
 -----
 ## **Modelo Joinpoint**
 
-El análisis se realizó a partir de una base de datos estructurada por tres variables clave: Municipio, Periodo global y REM. Primero, para 'Municipio' se incluyeron todos los municipios del Atlántico, exceptuando Barranquilla. Esta variable fue establecida como *by-variable* dentro del program, de esta manera logramos ajustar modelos Joinpoints independientes por cada zona geografica y asi poder capturar dinamicas locales. 
+El análisis se realizó a partir de una base de datos estructurada por tres variables clave: Municipio, Periodo global y REM. Primero, para 'Municipio' se incluyeron todos los municipios del Atlántico, exceptuando Barranquilla. Esta variable fue establecida como *by-variable* dentro del programa, de esta manera logramos ajustar modelos Joinpoints independientes por cada zona geografica y asi poder capturar dinamicas locales. 
 
 Luego, se construyó la variable 'Periodo global' como una variable independiente de tiempo continua que enumera los periodos epidemiológicos consecutivos entre 2018 y 2023. Por lo tanto, si se tienen trece periodos por cada año, tendriamos 78 periodos totales en el intervalo completo. Esto con el objetivo de que el modelo detecte con precisión los puntos de cambio en la serie sin tener que agrupar los datos tambien por año. 
 
@@ -23,7 +23,7 @@ Al ejecutar el modelo, se exportaron varios archivos que reunen los resultados d
 - Archivo con los resultados finales de tendencias por segmentos. Donde se puede ver como cambia la tendencia del REM (variable dependiente) y si ese cambio es signifiactivo.
 - Base de datos original junto con columnas agregadas por el programa, las cuales fueron utilizadas en el modelamiento. Entre ellas se encuentran los valores predichos por el modelo.
 - Cantidad de joinpoints seleccionados por el modelo final para cada municipio.
-- Estimadores del modelo. Donde se incluyen las estimaciones matematicas del modelos y los parametros usados para calcular las tendecias.
+- Estimadores del modelo. Donde se incluyen las estimaciones matematicas del modelo y los parametros usados para calcular las tendencias.
 - Selección del Modelo. Muestra las variables que el programa tuvo en cuenta para comparar los modelos con diferentes números de joinpoints.
 
 -----
@@ -32,7 +32,7 @@ Como se había hablado anteriormente, la variable 'Municipio' sirvió como *by-v
 
 Para cada municipio, el programa comenzó probando un modelo sin puntos de cambio (0 joinpoints), equivalente a una tendencia lineal simple. Luego, de forma iterativa, fue incorporando más puntos de cambio y evaluando si estos mejoraban significativamente el ajuste.
 
-De esta manera, se generó una tabla de selección del modelo para cada municipio. Donde cadad registro equivale a un modelo con distinto número de joinpoints. Se comparan el error del modelo (SSE), el numero de parametros y el criterio de información bayesiano (BIC). Cada modelo candidato fue evaluado con criterios estadísticos que penalizan la complejidad, como el BIC, lo que evita seleccionar modelos que agreguen joinpoints sin aportar información real. Normalmente, El mejor modelo para ese municipio es aquel con el menor BIC, o en algunos casos, el que recibe mayor peso estadístico según los criterios internos del programa (Weight/WBIC).
+De esta manera, se generó una tabla de selección del modelo para cada municipio. Donde cada registro equivale a un modelo con distinto número de joinpoints. Se comparan el error del modelo (SSE), el numero de parametros y el criterio de información bayesiano (BIC). Cada modelo candidato fue evaluado con criterios estadísticos que penalizan la complejidad, como el BIC, lo que evita seleccionar modelos que agreguen joinpoints sin aportar información real. Normalmente, el mejor modelo para ese municipio es aquel con el menor BIC, o en algunos casos, el que recibe mayor peso estadístico según los criterios internos del programa (Weight/WBIC).
 
 Tomemos como ejemplo el municipio de Baranoa, debido a que este presenta uno de los modelos con mayor complejidad, es decir, con mas joinpoints. Esto indica que su tendecia del REM a lo largo del tiempo experimenta cambios bastantes significativos para el analisis. 
 
@@ -50,7 +50,7 @@ Tomemos como ejemplo el municipio de Baranoa, debido a que este presenta uno de 
 
 *Tabla 1. Variables de selección del modelo para el municipio de Baranoa.*
 
-Al ver las variables tomadas en cuenta en la selección del modelo para Baranoa, se puede evidenciar que a medida que el número de joinpoints, el error del modelo (SSE) disminuye y el modelo se ajusta mejor a los datos. Sin embargo, para seleccionar al mejor modelos tambien se necesita evaluar criterios de penalización, en este caso, el BIC. O en caso de aplique, el BIC3, que penaliza tres veces más la complejidad del modelo en comparación del BIC clásico. 
+Al ver las variables tomadas en cuenta en la selección del modelo para Baranoa, se puede evidenciar que a medida que el número de joinpoints, el error del modelo (SSE) disminuye y el modelo se ajusta mejor a los datos. Sin embargo, para escoger el mejor modelo también es necesario evaluar criterios de penalización, como el BIC o, cuando resulte pertinente, el BIC3, que penaliza tres veces más la complejidad del modelo en comparación del BIC clásico. 
 
 ![bic_baranoa](GRAPHICS/bic_baranoa.png)
 
