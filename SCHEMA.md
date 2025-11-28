@@ -16,7 +16,7 @@ Sin embargo, el análisis a escala nacional puede ocultar dinámicas subregional
 Analizar la distribución espacio-temporal del dengue en el Atlántico mediante un modelo Joinpoint de efectos mixtos para identificar puntos de cambio en las tendencias municipales.
 - Caracterizar los casos del dengue en el departamento del Atlántico.
 - Determinar los puntos de quiebre temporales en la tendencia de la morbilidad por dengue a nivel municipal.
-- Calcular los porcentajes de cambio anual (APC) para cada segmento de tendencia.
+- Calcular los porcentajes de cambio por periodo (PPC) para cada segmento de tendencia.
 - Identificar factores demográficos y climáticos asociados a las tendencias municipales.
 
 -----
